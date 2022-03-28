@@ -5,7 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 
 public class InicioSesion {
 
@@ -67,5 +70,15 @@ public class InicioSesion {
 		JLabel lblNewLabel_2 = new JLabel("CONTRASE\u00D1A");
 		lblNewLabel_2.setBounds(22, 238, 99, 14);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		
+		lblNewLabel_3.setBounds(102, 33, 231, 116);
+		
+		
+		ImageIcon ico = new ImageIcon(getClass().getResource("usuario.png"));
+		ImageIcon img = new ImageIcon(ico.getImage().getScaledInstance(lblNewLabel_3.getWidth(), lblNewLabel_3.getHeight(), Image.SCALE_SMOOTH));
+		frame.getContentPane().add(lblNewLabel_3);
+		lblNewLabel_3.setIcon(img);
 	}
 }
