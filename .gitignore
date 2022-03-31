@@ -23,3 +23,4 @@
 hs_err_pid*
 /.metadata/
 ServWeb/__pycache__/program.cpython-310.pyc
+ServWeb/env
