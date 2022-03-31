@@ -22,7 +22,17 @@ class empleado:
         self.cursor.execute("SELECT * FROM empleado");
 
         datos = self.cursor.fetchall();
+        lista = [];
+        for linea in datos:
+            lista.append({
+                "nombre" : linea[1],
+                "apellido1" : linea[2],
+                "apellido2" : linea[3],
+                "direccion" : linea[4],
+                "idPuesto" : linea[5],
+                "idSucursal" : linea[6]
+            })
 
-        return datos
+        return lista
         
 
