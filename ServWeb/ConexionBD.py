@@ -1,21 +1,42 @@
+from ast import Try
 from ctypes.wintypes import PINT
 import mysql.connector as con
 
 class conexionBD:
     
     def __init__(self):
-        self.conexion = con.connect(user="root", password="Roteh_gaby2013",host="localhost",database="db_cine");
+        try:
+            self.conexion = con.connect(user="root", password="Roteh_gaby2013",host="localhost",database="db_cine");
+            self.cursor = self.conexion.cursor()
+        except con.Error:
+            print("Error connecting to database");
     
+    def ejecutarInsercion(self,nombreTabla:str,datos:list):
+        try:
+            cadenaTabla = "insert into "+nombreTabla+" values("
+            i = 0
+            for dato in datos.values():
+                if i == 0:
+                    cadenaTabla += str(dato)
+                    i += 1
+                    continue
+                cadenaTabla += ","+str(dato)
+            cadenaTabla+=")"
+            print (cadenaTabla)
+            self.cursor.execute(cadenaTabla)
 
-# cnn = conexionBD()
+        except con.Error:
+            print("Error al ejecutar procedure");
 
+    def ejecutarConsulta(self,nombreConsulta:str):
+        try:
+            self.cursor.execute("SELECT * FROM "+nombreConsulta);
+            return self.cursor.fetchall();
+        except con.Error:
+            print("Error connecting to database");
+cnn = conexionBD()
 
-# cursor = cnn.conexion.cursor();
-
-
-# cursor.execute("SELECT * FROM empleado");
-
-# datos = cursor.fetchall();
+# datos = cnn.ejecutarConsulta("ver_empleados");
 
 # for fila in datos:
 #     print(fila)

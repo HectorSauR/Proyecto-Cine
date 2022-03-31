@@ -10,8 +10,9 @@ class empleado:
     direccion = ""
     idPuesto = 0
     idSucursal = 0
+    usuario = ""
+    contrasena = ""
     cnn = ConexionBD.conexionBD()
-    cursor = cnn.conexion.cursor();
     
     #constructor
     # def __init__(self):
@@ -19,9 +20,8 @@ class empleado:
     
     #métodos
     def mostrarEmpleados(self):#Encapsulamiento
-        self.cursor.execute("SELECT * FROM empleado");
-
-        datos = self.cursor.fetchall();
+        
+        datos = self.cnn.ejecutarConsulta("ver_empleados");
         lista = [];
         for linea in datos:
             lista.append({
@@ -34,5 +34,17 @@ class empleado:
             })
 
         return lista
-        
+
+    def mostrarUsuarios(self):#Encapsulamiento
+        datos =  self.cnn.ejecutarConsulta("ver_usuarios");
+        lista = [];
+
+        for linea in datos:
+            lista.append({
+                "usuario" : linea[0],
+                "contra" : linea[1],
+                "puesto_id" : linea[2]
+            })
+            
+        return lista
 
