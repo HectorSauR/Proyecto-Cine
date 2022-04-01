@@ -6,7 +6,7 @@ class conexionBD:
     
     def __init__(self):
         try:
-            self.conexion = con.connect(user="root", password="Roteh_gaby2013",host="localhost",database="db_cine");
+            self.conexion = con.connect(user="root", password="Roteh2345@",host="localhost",database="db_cine");
             self.cursor = self.conexion.cursor()
         except con.Error:
             print("Error connecting to database");
@@ -14,16 +14,28 @@ class conexionBD:
     def ejecutarInsercion(self,nombreTabla:str,datos:list):
         try:
             cadenaTabla = "insert into "+nombreTabla+" values("
+            
             i = 0
+            
             for dato in datos.values():
+                # print(dato)
+                if type(dato) == str:
+                    dato = "\"" + dato +"\""
+                
+                if type(dato) == bytes:
+                    dato = str(dato)[1:]
+                # if type(dato) == bytes:
+                #     dato = "\'" + dato +"\'"
+
                 if i == 0:
                     cadenaTabla += str(dato)
                     i += 1
                     continue
                 cadenaTabla += ","+str(dato)
             cadenaTabla+=")"
-            print (cadenaTabla)
+            # print(cadenaTabla)
             self.cursor.execute(cadenaTabla)
+            self.conexion.commit()
 
         except con.Error:
             print("Error al ejecutar procedure");
@@ -34,9 +46,12 @@ class conexionBD:
             return self.cursor.fetchall();
         except con.Error:
             print("Error connecting to database");
-cnn = conexionBD()
+    
 
-# datos = cnn.ejecutarConsulta("ver_empleados");
+#----------------------Pruebas--------------------------
+# cnn = conexionBD()
+
+# cnn.insercionPrueba();
 
 # for fila in datos:
 #     print(fila)
