@@ -21,6 +21,8 @@ def registrarPelicula():
     with open("imagenes/a.jpg", "rb") as img:
         f = img.read()
         b = bytearray(f)
+        b = bytes(b)
+        
     peli = CPelicula.pelicula("piratas caribe",1,50,210,1,b);
     return peli.registrarPelicula()
 

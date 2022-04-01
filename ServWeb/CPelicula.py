@@ -1,12 +1,6 @@
 import ConexionBD
 
 class pelicula:
-    nombre_pelicula = ""
-    categoria_id = 0
-    duracion_pelicula = 0
-    idioma_pelicula_id = 0
-    precio_boleto = 0
-    imagen_pelicula = 0
     cnn = ConexionBD.conexionBD()
 
     #registrar pelicula
@@ -14,13 +8,13 @@ class pelicula:
         self.nombre_pelicula = nombre
         self.categoria_id = categoria
         self.precio_boleto = precio
-        self.duracion = dur
-        self.idioma = lang
-        self.imagen = img
+        self.duracion_pelicula = dur
+        self.idioma_pelicula_id = lang
+        self.imagen_pelicula = img
 
     def registrarPelicula(self):
         lista = {
-            "id" : 2,
+            "id" : 3,
             "nombre" : self.nombre_pelicula,
             "cat" : self.categoria_id,
             "duracion" : self.duracion_pelicula,

@@ -32,7 +32,6 @@ class empleado:
                 "idPuesto" : linea[5],
                 "idSucursal" : linea[6]
             })
-
         return lista
 
     def mostrarUsuarios(self):#Encapsulamiento
