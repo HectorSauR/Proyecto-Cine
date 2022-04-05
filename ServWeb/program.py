@@ -1,10 +1,11 @@
-import CEmpleado,CPelicula
+import CEmpleado,CPelicula,CProducto
+
 from flask import Flask,jsonify,request
 
 app = Flask(__name__)
 
 empleado = CEmpleado.empleado();
-
+producto = CProducto.producto();
 
 
 # lista.append += { "fila": datos[1]};
@@ -15,6 +16,10 @@ def mostrarEmpleados():
 @app.route('/empleados/usuarios', methods=['GET'])
 def mostrarUsuarios():
     return jsonify(empleado.mostrarUsuarios());
+
+@app.route('/productos/mostrar', methods=['GET'])
+def mostrarProductos():
+    return jsonify(producto.verProducto());
 
 @app.route('/pelicula/registrar', methods=['POST'])
 def registrarPelicula():

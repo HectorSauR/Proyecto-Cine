@@ -26,4 +26,5 @@ END$$
 drop procedure registrarPelicula;
 
 
-call registrarPelicula ("cosa",1,210,1,50,'xd')
+call registrarPelicula ("cosa",1,210,1,50,'xd');
+
