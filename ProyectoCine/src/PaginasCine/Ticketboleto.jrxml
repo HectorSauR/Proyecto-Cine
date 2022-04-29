@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ticketboleto" pageWidth="180" pageHeight="600" columnWidth="160" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" uuid="df44cca6-4d94-4795-bf6c-cb0ce25d967e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="3" width="160" height="27" uuid="e86fe911-4dab-49ea-818c-d6cd340962d0"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["NOMBRE CINE"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="50" width="180" height="1" uuid="be45f614-fa7c-4b45-b5f6-506aab5aad03"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="160" height="30" uuid="01130dfc-ad3b-461e-b12d-3693d53381bf"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nombre pelicula"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="120" height="30" uuid="93d2f649-98fc-4c4a-b94b-9d7603755817"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DESCRIPCIÓN:"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="233" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="100" height="30" uuid="2a9cd743-781e-492c-8394-06ac8223e3a3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hora:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="80" width="100" height="30" uuid="9ae89491-0a94-4344-95e5-d7a58f219c8b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cantidad boletos:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="40" width="100" height="30" uuid="cd32a155-513a-46f1-9dbe-94a247f7b18c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Idioma:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="120" width="100" height="30" uuid="6c9cab40-1a2b-405a-8b39-1a0d9d13913f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Clasificacion:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="160" width="100" height="30" uuid="3302d447-19db-4e10-9750-493db0f79ac5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sala:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="200" width="100" height="30" uuid="3c2d1a85-e6c7-4e5c-81b0-b1abfc51b44a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Asientos:"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="9" y="2" width="100" height="30" uuid="21f632a4-732a-4b99-b104-5a899267ede2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["IdCliente:"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="150" height="20" uuid="e97d3bc8-d534-40f9-8b76-0d3c5822b31d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FECHA DE COMPRA:"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="130" height="30" uuid="cc2a5d2c-8597-4116-8f3b-b230c940e458"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INFO EMPRESA:"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="180" height="1" uuid="8bb10a23-9555-488c-bea5-141420b6fb56"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
