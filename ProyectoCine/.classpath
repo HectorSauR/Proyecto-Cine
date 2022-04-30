@@ -6,17 +6,12 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Hp/Downloads/mysql-connector-java-8.0.28/mysql-connector-java-8.0.28.jar">
+	<classpathentry kind="lib" path="C:/Users/hecto/Downloads/mysql-connector-java-8.0.28.jar.zip">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Hp/Downloads/jar_files/jasperreports-fonts-6.19.1.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="con" path="net.sf.jasperreports.JR_DEPENDENCIES_CONTAINER"/>
 	<classpathentry kind="con" path="net.sf.jasperreports.JR_CONTAINER"/>
-	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
