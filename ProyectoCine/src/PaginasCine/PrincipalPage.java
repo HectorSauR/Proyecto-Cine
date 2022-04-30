@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class VistaPrincipal {
+public class PrincipalPage {
 
 	private JFrame frame;
 
@@ -15,7 +15,7 @@ public class VistaPrincipal {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VistaPrincipal window = new VistaPrincipal();
+					PrincipalPage window = new PrincipalPage();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class VistaPrincipal {
 	/**
 	 * Create the application.
 	 */
-	public VistaPrincipal() {
+	public PrincipalPage() {
 		initialize();
 	}
 
@@ -36,7 +36,7 @@ public class VistaPrincipal {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 977, 544);
+		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
