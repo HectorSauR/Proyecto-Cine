@@ -4,7 +4,7 @@ class pelicula:
     cnn = ConexionBD.conexionBD()
 
     #registrar pelicula
-    def __init__(self,nombre:str,categoria:int,precio:float,dur:int,lang:int,img:bytes):
+    def setPelicula(self,nombre:str,categoria:int,precio:float,dur:int,lang:int,img:bytes):
         self.nombre_pelicula = nombre
         self.categoria_id = categoria
         self.precio_boleto = precio
@@ -13,8 +13,11 @@ class pelicula:
         self.imagen_pelicula = img
 
     def registrarPelicula(self):
+
+        id = self.cnn.obtenerSiguienteID("pelicula");
+
         lista = {
-            "id" : 3,
+            "id" : id,
             "nombre" : self.nombre_pelicula,
             "cat" : self.categoria_id,
             "duracion" : self.duracion_pelicula,

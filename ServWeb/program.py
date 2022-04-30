@@ -1,4 +1,4 @@
-import CEmpleado,CPelicula,CProducto
+import CEmpleado,CPelicula,CProducto,CCombo
 
 from flask import Flask,jsonify,request
 
@@ -23,11 +23,41 @@ def mostrarProductos():
 
 @app.route('/pelicula/registrar', methods=['POST'])
 def registrarPelicula():
-    with open("imagenes/a.jpg", "rb") as img:
-        f = img.read()
-        b = bytearray(f)
-        b = bytes(b)
-        
-    peli = CPelicula.pelicula("piratas caribe",1,50,210,1,b);
+    datos = request.get_json();
+    # print(ejemplo['nombre']);
+    # return ejemplo['nombre']
+
+    peli = CPelicula.pelicula();
+    peli.setPelicula(
+        datos['nombre'],
+        datos['categoria'],
+        datos['precio'],
+        datos['duracion'],
+        datos['lenguaje'],
+        datos['imagen']);
     return peli.registrarPelicula()
+
+@app.route('/combo/registrar', methods=['POST'])
+def registrarCombo():
+    datos = request.get_json();
+
+    combo = CCombo.combo();
+
+    # print(datos['productos'])
+    combo.setCombo(
+        datos['nombre'],
+        datos['precio'],
+        datos['productos']
+    )
+
+    # for a in datos['productos']:
+    #     print(a["id"])
+    #     print(a["cantidad"])
+
+    # return "xd";
+    combo.regCombo();
+
+    return combo.msg;
+
+
 
