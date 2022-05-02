@@ -12,7 +12,7 @@ class pelicula:
         self.idioma_pelicula_id = lang
         self.imagen_pelicula = img
 
-    def registrarPelicula(self):
+    def regPelicula(self):
 
         id = self.cnn.obtenerSiguienteID("pelicula");
 
@@ -27,3 +27,6 @@ class pelicula:
         }
         self.cnn.ejecutarInsercion("pelicula",lista)
         return 'Ejecutado con exito!'
+
+    def getPelicula(self):
+        return self.cnn.ejecutarConsulta("ver_pelicula");

@@ -1,5 +1,4 @@
 import ConexionBD;
-import CProducto;
 
 class combo:
 
@@ -29,8 +28,9 @@ class combo:
             "detalle_combo" : idDetalleCombo,
             "precio" : self.price
         }
-        self.msg = "Registrado con exito!";
         self.cnn.ejecutarInsercion("combo",lista);
+        self.msg = "Registrado con exito!";
 
-    # def getCombo(self):
+    def getCombo(self):
+        return self.cnn.ejecutarConsulta("ver_combo");
 

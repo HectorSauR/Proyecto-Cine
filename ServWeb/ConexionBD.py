@@ -19,9 +19,11 @@ class conexionBD:
             
             for dato in datos.values():
                 # print(dato)
-                if type(dato) == str:
+                if type(dato) == str and dato != "default":
                     dato = "\"" + dato +"\""
 
+                if type(dato) == bool:
+                    dato = "b\'" + dato + "\'"
                 if i == 0:
                     cadenaTabla += str(dato)
                     i += 1
