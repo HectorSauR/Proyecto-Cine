@@ -7,6 +7,7 @@ from flask import Flask,jsonify,request
 # set FLASK_DEBUG=1
 
 # flask run
+# flask run -h 26.77.197.154 -port 8000
 
 app = Flask(__name__)
 
