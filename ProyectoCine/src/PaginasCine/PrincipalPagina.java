@@ -18,6 +18,7 @@ import java.awt.SystemColor;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.UIManager;
 
 public class PrincipalPagina {
 
@@ -54,30 +55,32 @@ public class PrincipalPagina {
 	 */
 	private void initialize() {
 		frmCinema = new JFrame();
+		frmCinema.getContentPane().setBackground(new Color(240, 255, 240));
+		frmCinema.setBackground(new Color(40, 75, 99));
 		frmCinema.setTitle("Cinema");
 		frmCinema.setBounds(100, 100, 1050, 650);
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btn_ventas = new JButton("Ventas");
 		btn_ventas.setBorder(null);
-		btn_ventas.setForeground(new Color(255, 255, 255));
+		btn_ventas.setForeground(Color.white);
 		btn_ventas.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_ventas.setBounds(100, 0, 100, 38);
-		btn_ventas.setBackground(new Color(0, 206, 203));
+		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
 		btn_boletos.setBorder(null);
-		btn_boletos.setForeground(new Color(255, 255, 255));
+		btn_boletos.setForeground(Color.white);
 		btn_boletos.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_boletos.setBounds(0, 0, 100, 38);
-		btn_boletos.setBackground(new Color(0, 206, 203));
+		btn_boletos.setBackground(new Color(40, 75, 99));
 		frmCinema.getContentPane().setLayout(null);
 		frmCinema.getContentPane().add(btn_ventas);
 		frmCinema.getContentPane().add(btn_boletos);
 		
 		JPanel panel_general = new JPanel();
 		panel_general.setBorder(null);
-		panel_general.setBackground(new Color(0, 206, 203));
+		panel_general.setBackground(new Color(40, 75, 99));
 		panel_general.setBounds(0, 38, 1034, 573);
 		frmCinema.getContentPane().add(panel_general);
 		panel_general.setLayout(null);
@@ -87,7 +90,7 @@ public class PrincipalPagina {
 		btn_individual.setBorder(null);
 		btn_individual.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_individual.setBounds(37, 48, 101, 46);
-		btn_individual.setBackground(new Color(255, 94, 91));
+		btn_individual.setBackground(new Color(60, 110, 113));
 		panel_general.add(btn_individual);
 		
 		JButton btn_combos = new JButton("Combos");
@@ -95,7 +98,7 @@ public class PrincipalPagina {
 		btn_combos.setBorder(null);
 		btn_combos.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_combos.setBounds(170, 48, 101, 46);
-		btn_combos.setBackground(new Color(255, 94, 91));
+		btn_combos.setBackground(new Color(60, 110, 113));
 		panel_general.add(btn_combos);
 		
 		JButton btn_extras = new JButton("Extras");
@@ -103,13 +106,13 @@ public class PrincipalPagina {
 		btn_extras.setBorder(null);
 		btn_extras.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_extras.setBounds(300, 48, 101, 46);
-		btn_extras.setBackground(new Color(255, 94, 91));
+		btn_extras.setBackground(new Color(60, 110, 113));
 		panel_general.add(btn_extras);
 		
 		JPanel panel_muestras = new JPanel();
 		panel_muestras.setBounds(37, 105, 364, 435);
 		panel_general.add(panel_muestras);
-		panel_muestras.setBackground(new Color(216, 216, 216));
+		panel_muestras.setBackground(new Color(217, 217, 217));
 		panel_muestras.setLayout(null);
 		
 		JLabel lbl_palomitas = new JLabel("Palomitas");
@@ -161,10 +164,10 @@ public class PrincipalPagina {
 		panel_muestras.add(cb_sabor_refre);
 		
 		JButton btn_confirmar = new JButton("Confirmar");
-		btn_confirmar.setForeground(Color.BLACK);
+		btn_confirmar.setForeground(Color.white);
 		btn_confirmar.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_confirmar.setBorder(null);
-		btn_confirmar.setBackground(new Color(255, 237, 102));
+		btn_confirmar.setBackground(new Color(53, 53, 53));
 		btn_confirmar.setBounds(266, 385, 88, 39);
 		panel_muestras.add(btn_confirmar);
 		
@@ -172,13 +175,13 @@ public class PrincipalPagina {
 		btn_clientes.setForeground(Color.WHITE);
 		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes.setBorder(null);
-		btn_clientes.setBackground(new Color(255, 94, 91));
+		btn_clientes.setBackground(new Color(60, 110, 113));
 		btn_clientes.setBounds(450, 494, 101, 46);
 		panel_general.add(btn_clientes);
 		
 		JPanel panel_resumen = new JPanel();
 		panel_resumen.setBounds(606, 105, 378, 435);
-		panel_resumen.setBackground(new Color(216, 216, 216));
+		panel_resumen.setBackground(new Color(217, 217, 217));
 		panel_general.add(panel_resumen);
 		panel_resumen.setLayout(null);
 		
