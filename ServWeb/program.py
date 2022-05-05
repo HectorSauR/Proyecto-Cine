@@ -39,6 +39,7 @@ def registrarPelicula():
     if(datos == None):
         return "No se encontraron datos en formato JSON";
     peli = CPelicula.pelicula();
+    
     peli.setPelicula(
         datos['nombre'],
         datos['categoria'],
@@ -46,7 +47,7 @@ def registrarPelicula():
         datos['duracion'],
         datos['lenguaje'],
         datos['imagen']);
-    return peli.registrarPelicula()
+    return peli.regPelicula()
 
 @app.route('/combo/registrar', methods=['POST'])
 def registrarCombo():
