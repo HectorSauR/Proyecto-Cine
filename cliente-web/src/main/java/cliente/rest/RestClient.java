@@ -17,12 +17,12 @@ public class RestClient {
 			
 			JSONObject vo = new JSONObject(); 
 			
-			vo.put("nombre", "nemo");
+			vo.put("nombre", "chanate");
 			vo.put("categoria", "1");
-			vo.put("precio", "40");
-			vo.put("duracion", "150");
-			vo.put("lenguaje", "1");
-			vo.put("imagen", "img/nemo.png");
+			vo.put("precio", "100");
+			vo.put("duracion", "100");
+			vo.put("lenguaje", "2");
+			vo.put("imagen", "img/chanate.png");
 			
 			
 			String urlRestService = "http://26.77.197.154:8000/pelicula/registrar";
