@@ -8,64 +8,127 @@ select  `empleado`.`empleado_id`,
     `empleado`.`sucursal_id`
 FROM `db_cine`.`empleado`;
 
-create view ver_producto as
-select nombre_producto as producto,tam_producto.nombre_tam as tamaño,unidad_medida.nombre_unidad_medida as unidad_medida,precio_producto as precio from producto
-inner join unidad_medida on producto.unidad_medida_id = unidad_medida.unidada_medida_id
-inner join tam_producto on producto.tam_producto_id = tam_producto.tam_producto_id;
+CREATE VIEW ver_producto AS
+    SELECT 
+        producto.nombre_producto AS producto,
+        tam_producto.nombre_tam AS tamaño,
+        unidad_medida.nombre_unidad_medida AS unidad_medida,
+        producto.precio_producto AS precio
+    FROM
+        producto
+            INNER JOIN
+        unidad_medida ON producto.unidad_medida_id = unidad_medida.unidada_medida_id
+            INNER JOIN
+        tam_producto ON producto.tam_producto_id = tam_producto.tam_producto_id;
 
-select * from ver_producto;
+SELECT 
+    *
+FROM
+    ver_producto;
 
-CREATE VIEW ver_usuarios as
-select usuario,contrasena,puesto_id from empleado;
+CREATE VIEW ver_usuarios AS
+    SELECT 
+        usuario, contrasena, puesto_id
+    FROM
+        empleado;
 
-create view ver_clientes as
-select nombre_cliente,apellido1_cliente,apellido2_cliente,fecha_cumple,tarjeta_cine.nombre_tarjeta from cliente
-inner join tarjeta_cliente on cliente.tarjeta_cliente_id = tarjeta_cliente.tarjeta_cliente_id
-inner join tarjeta_cine on tarjeta_cliente.tarjeta_cine_id = tarjeta_cine.tarjeta_cine_id;
-select * from ver_usuarios;
+CREATE VIEW ver_clientes AS
+    SELECT 
+        nombre_cliente,
+        apellido1_cliente,
+        apellido2_cliente,
+        fecha_cumple,
+        tarjeta_cine.nombre_tarjeta
+    FROM
+        cliente
+            INNER JOIN
+        tarjeta_cliente ON cliente.tarjeta_cliente_id = tarjeta_cliente.tarjeta_cliente_id
+            INNER JOIN
+        tarjeta_cine ON tarjeta_cliente.tarjeta_cine_id = tarjeta_cine.tarjeta_cine_id;
 
-create view ver_combo as
-select combo.combo_id as ID,combo.nombre_combo as nombreCombo, combo.precio_combo as precio, producto.nombre_producto as nombreProd, tam_producto.nombre_tam as tamano, detalle_combo.cantidad as cantidad from detalle_combo
-inner join combo on combo.detalle_combo_id = detalle_combo.detalle_combo_id
-inner join producto on detalle_combo.producto_id = producto.producto_id
-inner join tam_producto on producto.tam_producto_id = tam_producto.tam_producto_id;
+SELECT 
+    *
+FROM
+    ver_usuarios;
+
+CREATE VIEW ver_combo AS
+    SELECT 
+        combo.combo_id AS id,
+        combo.nombre_combo AS nombreCombo,
+        combo.precio_combo AS precio,
+        producto.nombre_producto AS nombreProd,
+        tam_producto.nombre_tam AS tamano,
+        detalle_combo.cantidad AS cantidad
+    FROM
+        detalle_combo
+            INNER JOIN
+        combo ON combo.detalle_combo_id = detalle_combo.detalle_combo_id
+            INNER JOIN
+        producto ON detalle_combo.producto_id = producto.producto_id
+            INNER JOIN
+        tam_producto ON producto.tam_producto_id = tam_producto.tam_producto_id;
 
 
-create view ver_pelicula as
-select nombre_pelicula as nombre, categoria.nombreCategoria as categoria, duracion_pelicula as duracion, idioma.nombreIdioma as idioma,precio_boleto as precio, imagen_pelicula as ruta from pelicula
-inner join categoria on pelicula.categoria_id = categoria.categoria_id
-inner join idioma on pelicula.idoma_pelicula_id = idioma.idioma_id;
+CREATE VIEW ver_pelicula AS
+    SELECT 
+        nombre_pelicula AS nombre,
+        categoria.nombreCategoria AS categoria,
+        duracion_pelicula AS duracion,
+        idioma.nombreIdioma AS idioma,
+        precio_boleto AS precio,
+        imagen_pelicula AS ruta
+    FROM
+        pelicula
+            INNER JOIN
+        categoria ON pelicula.categoria_id = categoria.categoria_id
+            INNER JOIN
+        idioma ON pelicula.idoma_pelicula_id = idioma.idioma_id;
 
-create view ver_funciones as
-select pelicula.nombre_pelicula as nombre, 
-	categoria.nombreCategoria as categoria, 
-	pelicula.duracion_pelicula as duracion,
-    idioma.nombreIdioma as idioma,
-    pelicula.precio_boleto as precio, 
-	fecha,
-    hora,
-    sala_id
-    from funcion
-inner join pelicula on funcion.pelicula_id = pelicula.pelicula_id
-inner join categoria on pelicula.categoria_id = categoria.categoria_id
-inner join idioma on pelicula.idoma_pelicula_id = idioma.idioma_id;
+CREATE VIEW ver_funciones AS
+    SELECT 
+        pelicula.nombre_pelicula AS nombre,
+        categoria.nombreCategoria AS categoria,
+        pelicula.duracion_pelicula AS duracion,
+        idioma.nombreIdioma AS idioma,
+        pelicula.precio_boleto AS precio,
+        fecha,
+        hora,
+        sala_id
+    FROM
+        funcion
+            INNER JOIN
+        pelicula ON funcion.pelicula_id = pelicula.pelicula_id
+            INNER JOIN
+        categoria ON pelicula.categoria_id = categoria.categoria_id
+            INNER JOIN
+        idioma ON pelicula.idoma_pelicula_id = idioma.idioma_id;
 
-create view ver_asientos_disponibles as
-select 
-	pelicula.nombre_pelicula as nombre,
-    concat(sala.numAsiento,sala.filaAsientos) as Asiento,
-	fecha,
-    hora,
-    funcion.sala_id
-    from funcion
-inner join pelicula on funcion.pelicula_id = pelicula.pelicula_id
-inner join sala on funcion.sala_id = sala.sala_id
-where estadoAsiento = 1
-order by funcion_id;
+CREATE VIEW ver_asientos_disponibles AS
+    SELECT 
+        pelicula.nombre_pelicula AS nombre,
+        CONCAT(sala.numAsiento, sala.filaAsientos) AS Asiento,
+        fecha,
+        hora,
+        funcion.sala_id
+    FROM
+        funcion
+            INNER JOIN
+        pelicula ON funcion.pelicula_id = pelicula.pelicula_id
+            INNER JOIN
+        sala ON funcion.sala_id = sala.sala_id
+    WHERE
+        estadoAsiento = 1
+    ORDER BY funcion_id;
 
-select * from ver_asientos_disponibles;
+SELECT 
+    *
+FROM
+    ver_asientos_disponibles;
 
-select * from sala;
+SELECT 
+    *
+FROM
+    sala;
 
 
 
