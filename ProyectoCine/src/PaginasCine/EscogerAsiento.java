@@ -7,10 +7,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JMenuItem;
 import javax.swing.ImageIcon;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+
 
 
 public class EscogerAsiento {
@@ -447,6 +451,94 @@ public class EscogerAsiento {
 		menu_asiento_libre_32.setBackground(new Color(217, 217, 217));
 		menu_asiento_libre_32.setBounds(462, 321, 51, 42);
 		panel_asientos.add(menu_asiento_libre_32);
+		
+		JLabel lbl_cant_asientos_1 = new JLabel("A");
+		lbl_cant_asientos_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1.setBounds(18, 45, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1);
+		
+		JLabel lbl_cant_asientos_1_1 = new JLabel("B");
+		lbl_cant_asientos_1_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_1.setBounds(18, 135, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_1);
+		
+		JLabel lbl_cant_asientos_1_2 = new JLabel("C");
+		lbl_cant_asientos_1_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_2.setBounds(18, 234, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_2);
+		
+		JLabel lbl_cant_asientos_1_3 = new JLabel("D");
+		lbl_cant_asientos_1_3.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_3.setBounds(18, 331, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_3);
+		
+		JLabel lbl_cant_asientos_1_4 = new JLabel("1");
+		lbl_cant_asientos_1_4.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_4.setBounds(53, 11, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_4);
+		
+		JLabel lbl_cant_asientos_1_5 = new JLabel("2");
+		lbl_cant_asientos_1_5.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_5.setBounds(113, 11, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_5);
+		
+		JLabel lbl_cant_asientos_1_6 = new JLabel("3");
+		lbl_cant_asientos_1_6.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_6.setBounds(176, 11, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_6);
+		
+		JLabel lbl_cant_asientos_1_7 = new JLabel("4");
+		lbl_cant_asientos_1_7.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_7.setBounds(237, 11, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_7);
+		
+		JLabel lbl_cant_asientos_1_8 = new JLabel("5");
+		lbl_cant_asientos_1_8.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_8.setBounds(298, 11, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_8);
+		
+		JLabel lbl_cant_asientos_1_9 = new JLabel("6");
+		lbl_cant_asientos_1_9.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_9.setBounds(358, 11, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_9);
+		
+		JLabel lbl_cant_asientos_1_10 = new JLabel("7");
+		lbl_cant_asientos_1_10.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_10.setBounds(419, 11, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_10);
+		
+		JLabel lbl_cant_asientos_1_11 = new JLabel("8");
+		lbl_cant_asientos_1_11.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos_1_11.setBounds(479, 11, 18, 22);
+		panel_asientos.add(lbl_cant_asientos_1_11);
+		
+		JLabel lbl_cant_asientos = new JLabel("Cantidad de asientos:");
+		lbl_cant_asientos.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_cant_asientos.setBounds(27, 32, 129, 22);
+		panel_general.add(lbl_cant_asientos);
+		
+		JComboBox cb_cant_asiento = new JComboBox();
+		cb_cant_asiento.setMaximumRowCount(6);
+		cb_cant_asiento.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3", "4", "5"}));
+		cb_cant_asiento.setFont(new Font("Arial", Font.PLAIN, 12));
+		cb_cant_asiento.setBounds(155, 32, 76, 22);
+		panel_general.add(cb_cant_asiento);
+		
+		JButton btn_confirmar = new JButton("Confirmar");
+		btn_confirmar.setForeground(Color.WHITE);
+		btn_confirmar.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_confirmar.setBorder(null);
+		btn_confirmar.setBackground(new Color(53, 53, 53));
+		btn_confirmar.setBounds(636, 553, 88, 39);
+		panel_general.add(btn_confirmar);
+		
+		JButton btn_confirmar_1 = new JButton("Cancelar");
+		btn_confirmar_1.setForeground(Color.WHITE);
+		btn_confirmar_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_confirmar_1.setBorder(null);
+		btn_confirmar_1.setBackground(new Color(53, 53, 53));
+		btn_confirmar_1.setBounds(739, 553, 88, 39);
+		panel_general.add(btn_confirmar_1);
 		
 	}
 }
