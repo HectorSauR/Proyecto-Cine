@@ -193,14 +193,6 @@ public class VistaBoletos {
 		lbl_clasifi_3.setBounds(243, 14, 80, 14);
 		panel_peli1_3.add(lbl_clasifi_3);
 		
-		JButton btn_clientes = new JButton("Clientes");
-		btn_clientes.setBounds(450, 494, 101, 46);
-		btn_clientes.setForeground(Color.WHITE);
-		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
-		btn_clientes.setBorder(null);
-		btn_clientes.setBackground(new Color(60, 110, 113));
-		panel_general.add(btn_clientes);
-		
 		JPanel panel_resumen = new JPanel();
 		panel_resumen.setBounds(606, 49, 364, 426);
 		panel_resumen.setBackground(new Color(217, 217, 217));
@@ -229,6 +221,14 @@ public class VistaBoletos {
 		JLabel lbl_asientos = new JLabel("Asientos");
 		lbl_asientos.setBounds(92, 51, 82, 14);
 		panel_peli1_4.add(lbl_asientos);
+		
+		JButton btn_clientes = new JButton("Clientes");
+		btn_clientes.setForeground(Color.WHITE);
+		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_clientes.setBorder(null);
+		btn_clientes.setBackground(new Color(40, 75, 99));
+		btn_clientes.setBounds(199, 0, 100, 38);
+		frmCinema.getContentPane().add(btn_clientes);
 		
 	}
 }

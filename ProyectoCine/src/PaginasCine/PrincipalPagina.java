@@ -171,14 +171,6 @@ public class PrincipalPagina {
 		btn_confirmar.setBounds(266, 385, 88, 39);
 		panel_muestras.add(btn_confirmar);
 		
-		JButton btn_clientes = new JButton("Clientes");
-		btn_clientes.setForeground(Color.WHITE);
-		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
-		btn_clientes.setBorder(null);
-		btn_clientes.setBackground(new Color(60, 110, 113));
-		btn_clientes.setBounds(450, 494, 101, 46);
-		panel_general.add(btn_clientes);
-		
 		JPanel panel_resumen = new JPanel();
 		panel_resumen.setBounds(606, 105, 378, 435);
 		panel_resumen.setBackground(new Color(217, 217, 217));
@@ -189,6 +181,14 @@ public class PrincipalPagina {
 		lbl_total.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_total.setBounds(238, 410, 59, 14);
 		panel_resumen.add(lbl_total);
+		
+		JButton btn_clientes = new JButton("Clientes");
+		btn_clientes.setForeground(Color.WHITE);
+		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_clientes.setBorder(null);
+		btn_clientes.setBackground(new Color(40, 75, 99));
+		btn_clientes.setBounds(199, 0, 100, 38);
+		frmCinema.getContentPane().add(btn_clientes);
 		
 	}
 }
