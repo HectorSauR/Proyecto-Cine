@@ -12,14 +12,13 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
+import javax.swing.JComboBox;
 
 
 
-public class Almacen {
+public class Reportes {
 
 	private JFrame frmCinema;
-	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -28,7 +27,7 @@ public class Almacen {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Almacen window = new Almacen();
+					Reportes window = new Reportes();
 					window.frmCinema.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +42,7 @@ public class Almacen {
 	/**
 	 * Create the application.
 	 */
-	public Almacen() {
+	public Reportes() {
 		initialize();
 	}
 
@@ -83,74 +82,33 @@ public class Almacen {
 		panel_general.setLayout(null);
 		
 		JPanel panel_muestras = new JPanel();
-		panel_muestras.setBounds(37, 49, 364, 426);
+		panel_muestras.setBounds(290, 61, 706, 481);
 		panel_general.add(panel_muestras);
 		panel_muestras.setBackground(new Color(217, 217, 217));
 		panel_muestras.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Cantidad");
-		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblNewLabel.setBounds(241, 11, 57, 14);
-		panel_muestras.add(lblNewLabel);
+		JLabel lblNombre_reporte = new JLabel("Nombre del reporte");
+		lblNombre_reporte.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblNombre_reporte.setBounds(10, 11, 114, 14);
+		panel_muestras.add(lblNombre_reporte);
 		
-		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblNombre.setBounds(62, 11, 57, 14);
-		panel_muestras.add(lblNombre);
+		JLabel lblReportes = new JLabel("Reportes:");
+		lblReportes.setForeground(Color.WHITE);
+		lblReportes.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblReportes.setBounds(24, 65, 57, 14);
+		panel_general.add(lblReportes);
 		
-		JPanel panel_peli1_4_1 = new JPanel();
-		panel_peli1_4_1.setLayout(null);
-		panel_peli1_4_1.setBackground(SystemColor.activeCaptionBorder);
-		panel_peli1_4_1.setBounds(10, 36, 165, 379);
-		panel_muestras.add(panel_peli1_4_1);
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(91, 61, 189, 22);
+		panel_general.add(comboBox);
 		
-		JPanel panel_peli1_4_2 = new JPanel();
-		panel_peli1_4_2.setLayout(null);
-		panel_peli1_4_2.setBackground(SystemColor.activeCaptionBorder);
-		panel_peli1_4_2.setBounds(189, 36, 165, 379);
-		panel_muestras.add(panel_peli1_4_2);
-		
-		JPanel panel_resumen = new JPanel();
-		panel_resumen.setBounds(606, 49, 364, 185);
-		panel_resumen.setBackground(new Color(217, 217, 217));
-		panel_general.add(panel_resumen);
-		panel_resumen.setLayout(null);
-		
-		JLabel lblNombre_1 = new JLabel("Nombre:");
-		lblNombre_1.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblNombre_1.setBounds(33, 32, 129, 14);
-		panel_resumen.add(lblNombre_1);
-		
-		JLabel lblApellidoPaterno = new JLabel("Cantidad");
-		lblApellidoPaterno.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblApellidoPaterno.setBounds(33, 85, 129, 14);
-		panel_resumen.add(lblApellidoPaterno);
-		
-		textField = new JTextField();
-		textField.setBounds(172, 29, 182, 20);
-		panel_resumen.add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(172, 82, 182, 20);
-		panel_resumen.add(textField_1);
-		
-		JButton btn_confirmar = new JButton("Registrar");
-		btn_confirmar.setBounds(266, 129, 88, 39);
-		panel_resumen.add(btn_confirmar);
-		btn_confirmar.setForeground(Color.WHITE);
-		btn_confirmar.setFont(new Font("Arial", Font.PLAIN, 12));
-		btn_confirmar.setBorder(null);
-		btn_confirmar.setBackground(new Color(53, 53, 53));
-		
-		JButton btn_deshabilitar = new JButton("Deshabilitar");
-		btn_deshabilitar.setForeground(Color.WHITE);
-		btn_deshabilitar.setFont(new Font("Arial", Font.PLAIN, 12));
-		btn_deshabilitar.setBorder(null);
-		btn_deshabilitar.setBackground(new Color(60, 110, 113));
-		btn_deshabilitar.setBounds(869, 429, 101, 46);
-		panel_general.add(btn_deshabilitar);
+		JButton btn_buscar = new JButton("Buscar");
+		btn_buscar.setForeground(Color.WHITE);
+		btn_buscar.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_buscar.setBorder(null);
+		btn_buscar.setBackground(new Color(60, 110, 113));
+		btn_buscar.setBounds(179, 94, 101, 46);
+		panel_general.add(btn_buscar);
 		
 		JButton btn_clientes = new JButton("Clientes");
 		btn_clientes.setForeground(Color.WHITE);
