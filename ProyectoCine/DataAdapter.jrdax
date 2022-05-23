@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl">
+  <name>otro</name>
+  <classpath>C:\Users\hecto\Downloads\mysql-connector-java-8.0.28.jar.zip</classpath>
+  <driver>com.mysql.jdbc.Driver</driver>
+  <username>root</username>
+  <password>Roteh_gaby2013</password>
+  <url>jdbc:mysql://localhost:3306/db_cine</url>
+  <database></database>
+  <savePassword>true</savePassword>
+  <serverAddress></serverAddress>
+</jdbcDataAdapter>
