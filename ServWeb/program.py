@@ -15,9 +15,10 @@ empleado = CEmpleado.empleado();
 producto = CProducto.producto();
 combo = CCombo.combo();
 
+# -------------------------------- Pruebas --------------------------------
 @app.route('/')
 def index():
-    return "Hola :D"
+    return "<h1>Servicio Web para un Cine</h1>"
 # lista.append += { "fila": datos[1]};
 @app.route('/empleados/mostrar', methods=['GET'])
 def mostrarEmpleados():
@@ -27,9 +28,13 @@ def mostrarEmpleados():
 def mostrarUsuarios():
     return jsonify(empleado.mostrarUsuarios());
 
+# -------------------------------- Productos --------------------------------
+
 @app.route('/productos/mostrar', methods=['GET'])
 def mostrarProductos():
     return jsonify(producto.verProducto());
+
+# -------------------------------- Películas --------------------------------
 
 @app.route('/pelicula/registrar', methods=['POST'])
 def registrarPelicula():
@@ -48,6 +53,8 @@ def registrarPelicula():
         datos['lenguaje'],
         datos['imagen']);
     return peli.regPelicula()
+
+# -------------------------------- Combos --------------------------------
 
 @app.route('/combo/registrar', methods=['POST'])
 def registrarCombo():
@@ -72,4 +79,15 @@ def registrarCombo():
 @app.route('/combo/mostrar', methods=['GET'])
 def mostrarCombo():
     return jsonify(combo.getCombo());
+
+# -------------------------------- Cliente --------------------------------
+
+# -------------------------------- Funcion --------------------------------
+
+# -------------------------------- Sucursal --------------------------------
+
+# -------------------------------- Tarjeta --------------------------------
+
+# -------------------------------- Venta --------------------------------
+
 

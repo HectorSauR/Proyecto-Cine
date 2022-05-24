@@ -8,7 +8,7 @@ select  `empleado`.`empleado_id`,
     `empleado`.`sucursal_id`
 FROM `db_cine`.`empleado`;
 
-CREATE VIEW ver_producto AS
+ALTER VIEW ver_producto AS
     SELECT 
         producto.nombre_producto AS producto,
         tam_producto.nombre_tam AS tamaño,
