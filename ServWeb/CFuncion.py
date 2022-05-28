@@ -11,20 +11,23 @@ class funcion:
         self.hora = hora
 
     def regFuncion(self):
-        id = self.cnn.obtenerSiguienteID("funcion");
+        ident = self.cnn.obtenerSiguienteID("funcion");
 
         lista = {
-            "id" : id,
+            "id" : ident,
             "sala" : self.sala,
+            "pelicula" : self.pelicula,
             "fecha" : self.fecha,
             "hora" : self.hora
         }
+        # print(lista);
+        x = self.cnn.ejecutarInsercion("funcion",lista);
 
-        self.cnn.ejecutarInsercion("funcion",lista);
-        return "Registrado con éxito!"
+        if(x == "1"): return "Registrado con éxito!"
+        else : return "Error"
 
     def getFuncion(self):
-        return self.cnn.ejecutarConsulta("ver_funcion");
+        return self.cnn.ejecutarConsulta("ver_funciones");
 
     def getAsientosDisponibles(self):
         return self.cnn.ejecutarConsulta("ver_asientos_disponibles");

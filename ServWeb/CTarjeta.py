@@ -10,17 +10,19 @@ class tarjeta:
         self.puntos_necesarios = puntos_necesarios;
     
     def regTarjeta(self):
-        id = self.cnn.obtenerSiguienteID("tarjeta");
+        ident = self.cnn.obtenerSiguienteID("tarjeta_cine");
 
         lista = {
-            "id": id,
+            "id": ident,
             "nombre" : self.nombre,
             "beneficios" : self.beneficios,
             "puntos_necesarios" : self.puntos_necesarios
         }
 
-        self.cnn.ejecutarInsercion("tarjeta_cine",lista);
-        return "Registrado con éxito!"
+        x = self.cnn.ejecutarInsercion("tarjeta_cine",lista);
+        
+        if(x == "1"): return "Registrado con éxito!"
+        else: return "Error de inserción";
 
     def getTarjetas(self):
         return self.cnn.ejecutarConsulta("tarjeta_cine")

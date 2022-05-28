@@ -4,7 +4,7 @@ class pelicula:
     cnn = ConexionBD.conexionBD()
 
     #registrar pelicula
-    def setPelicula(self,nombre:str,categoria:int,precio:float,dur:int,lang:int,img:bytes):
+    def setPelicula(self,nombre:str,categoria:int,precio:float,dur:int,lang:int,img:str):
         self.nombre_pelicula = nombre
         self.categoria_id = categoria
         self.precio_boleto = precio
@@ -25,8 +25,14 @@ class pelicula:
             "precio" : self.precio_boleto,
             "imagen" : self.imagen_pelicula,
         }
-        self.cnn.ejecutarInsercion("pelicula",lista)
-        return 'Ejecutado con exito!'
+        try:
+            self.cnn.ejecutarInsercion("pelicula",lista)
+            return 'Ejecutado con exito!'
+        except Exception:
+            return 'Error al hacer la insercion';
 
     def getPelicula(self):
-        return self.cnn.ejecutarConsulta("ver_pelicula");
+        try:
+            return self.cnn.ejecutarConsulta("ver_pelicula");
+        except Exception:
+            return 'Error al hacer la conexion';

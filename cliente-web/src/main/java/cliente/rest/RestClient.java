@@ -25,7 +25,8 @@ public class RestClient {
 			vo.put("imagen", "img/chanate.png");
 			
 			
-			String urlRestService = "http://26.77.197.154:8000/pelicula/registrar";
+			//String urlRestService = "http://26.77.197.154:8000/pelicula/registrar";
+			String urlRestService = "http://127.0.0.1:5000/pelicula/registrar";
 			ClientConfig clientConfig = new DefaultClientConfig();
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);

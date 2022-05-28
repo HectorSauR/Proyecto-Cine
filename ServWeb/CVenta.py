@@ -13,7 +13,6 @@ class venta:
         self.sucursal = sucursal
     
     def regVentaProducto(self):
-        
 
         if(self.individual != None):
             idIndvidual = self.cnn.obtenerSiguienteIDRep("detalle_venta_individual","detalle_venta_individual_id")
@@ -59,6 +58,9 @@ class venta:
         }
 
         self.cnn.ejecutarInsercion("venta_producto",lista)
+
+    def getVentasProductos(self):
+        self.cnn.ejecutarConsulta("ventas_productos")
 
 
     def setVentaBoleto(self, cantidad:int, funcion:int,empleado:int,cliente:int,fechaHora:str, sucursal:int):

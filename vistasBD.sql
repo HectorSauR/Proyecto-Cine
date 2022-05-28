@@ -8,7 +8,7 @@ select  `empleado`.`empleado_id`,
     `empleado`.`sucursal_id`
 FROM `db_cine`.`empleado`;
 
-CREATE VIEW ver_producto AS
+ALTER VIEW ver_producto AS
     SELECT 
         producto.nombre_producto AS producto,
         tam_producto.nombre_tam AS tamaño,
@@ -32,19 +32,34 @@ CREATE VIEW ver_usuarios AS
     FROM
         empleado;
 
-CREATE VIEW ver_clientes AS
+Alter VIEW ver_clientes AS
     SELECT 
-        nombre_cliente,
-        apellido1_cliente,
-        apellido2_cliente,
-        fecha_cumple,
-        tarjeta_cine.nombre_tarjeta
+        nombre_cliente as Nombre,
+        apellido1_cliente as Apellido_1,
+        apellido2_cliente as Apellido_2,
+        DATE_FORMAT(fecha_cumple, '%Y/%m/%d') as cumple, 
+        tarjeta_cine.nombre_tarjeta as Tarjeta
     FROM
         cliente
             INNER JOIN
         tarjeta_cliente ON cliente.tarjeta_cliente_id = tarjeta_cliente.tarjeta_cliente_id
             INNER JOIN
         tarjeta_cine ON tarjeta_cliente.tarjeta_cine_id = tarjeta_cine.tarjeta_cine_id;
+
+select * from ver_clientes;
+select * from cliente;
+select * from tarjeta_cliente;
+select * from tarjeta_cine;
+
+delete from cliente where cliente_id > 1;
+delete from tarjeta_cliente where tarjeta_cliente_id > 1;
+
+
+INSERT INTO tarjeta_cliente values(1,0,1);
+
+INSERT INTO cliente values(1,"Elder","Sauceda","Ruiz","14/03/00",1);
+
+update cliente set fecha_cumple = "00/03/14" where cliente_id = 1;
 
 SELECT 
     *
@@ -84,15 +99,15 @@ CREATE VIEW ver_pelicula AS
             INNER JOIN
         idioma ON pelicula.idoma_pelicula_id = idioma.idioma_id;
 
-CREATE VIEW ver_funciones AS
+ALTER VIEW ver_funciones AS
     SELECT 
         pelicula.nombre_pelicula AS nombre,
         categoria.nombreCategoria AS categoria,
         pelicula.duracion_pelicula AS duracion,
         idioma.nombreIdioma AS idioma,
         pelicula.precio_boleto AS precio,
-        fecha,
-        hora,
+        DATE_FORMAT(fecha, '%Y/%m/%d') as Fecha,
+        convert(hora,char) as Hora,
         sala_id
     FROM
         funcion
@@ -103,12 +118,14 @@ CREATE VIEW ver_funciones AS
             INNER JOIN
         idioma ON pelicula.idoma_pelicula_id = idioma.idioma_id;
 
-CREATE VIEW ver_asientos_disponibles AS
+select * from ver_funciones;
+
+ALTER VIEW ver_asientos_disponibles AS
     SELECT 
         pelicula.nombre_pelicula AS nombre,
         CONCAT(sala.numAsiento, sala.filaAsientos) AS Asiento,
-        fecha,
-        hora,
+        DATE_FORMAT(fecha, '%Y/%m/%d') as Fecha,
+        convert(hora,char) as Hora,
         funcion.sala_id
     FROM
         funcion
@@ -131,6 +148,20 @@ FROM
     sala;
 
 
+
+
+create view ventas_productos as
+    Select
+        venta_producto_id  as ID
+    From
+        venta_producto
+            inner join
+        cliente on venta_producto.cliente_id = cliente.cliente_id
+            inner join
+        detalle_venta_combo on venta_producto.detalle_venta_combo = detalle_venta_combo.detalle_venta_combo_id
+            inner join
+        detalle_venta_individual on venta_producto.detalle_venta_individual = detalle_venta_individual.detalle_venta_individual_id
+    
 
 
 
