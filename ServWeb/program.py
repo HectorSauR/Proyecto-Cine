@@ -1,4 +1,4 @@
-import CEmpleado,CPelicula,CProducto,CCombo
+import CEmpleado,CPelicula,CProducto,CCombo,CCliente,CFuncion,CSucursal,CTarjeta,CVenta
 
 from flask import Flask,jsonify,request
 
@@ -8,6 +8,19 @@ from flask import Flask,jsonify,request
 
 # flask run
 # flask run -h 26.77.197.154 -p 8000
+
+
+# 
+# 
+#    EL FORMATO DE HORA Y DE FECHA 
+# 
+# 
+#   FECHA = 2020-12-31 // YY-MM-DD
+#   
+#   HORA = 12:00 // HH:MM:SS
+# 
+# 
+# 
 
 app = Flask(__name__)
 
@@ -54,6 +67,11 @@ def registrarPelicula():
         datos['imagen']);
     return peli.regPelicula()
 
+@app.route('/pelicula/mostrar', methods=['GET'])
+def mostrarPeliculas():
+    peli = CPelicula.pelicula();
+    return jsonify(peli.getPelicula());
+
 # -------------------------------- Combos --------------------------------
 
 @app.route('/combo/registrar', methods=['POST'])
@@ -82,11 +100,85 @@ def mostrarCombo():
 
 # -------------------------------- Cliente --------------------------------
 
+@app.route('/cliente/registrar', methods=['POST'])
+def registrarCliente():
+    datos = request.get_json();
+
+    if(datos == None):
+        return "No se encontraron datos en formato JSON";
+    
+    cliente = CCliente.cliente();
+    
+    cliente.setCliente(
+        datos['nombre'],
+        datos['apellido1'],
+        datos['apellido2'],
+        datos['cumple']);
+
+    return cliente.regCliente();
+
+@app.route('/cliente/mostrar', methods=['GET'])
+def mostrarCliente():
+    cliente = CCliente.cliente();
+    # print(cliente.getCliente());
+    return jsonify(cliente.getCliente());
+
 # -------------------------------- Funcion --------------------------------
 
+@app.route('/funcion/registrar', methods=['POST'])
+def registrarFuncion():
+    datos = request.get_json();
+
+    if(datos == None):
+        return "No se encontraron datos en formato JSON";
+    
+    funcion = CFuncion.funcion();
+    # print(datos)
+    funcion.setFuncion(
+        datos['sala'],
+        datos['pelicula'],
+        datos['fecha'],
+        datos['hora']
+    );
+
+    # return datos
+    return funcion.regFuncion();
+
+@app.route('/funcion/mostrar', methods=['GET'])
+def mostrarFuncion():
+    funcion = CFuncion.funcion();
+    return jsonify(funcion.getFuncion());
+
+@app.route('/funcion/asientosDisponibles', methods=['GET'])
+def mostrarAsientosDisponibles():
+    funcion = CFuncion.funcion();
+    # print(funcion.getAsientosDisponibles())
+    return jsonify(funcion.getAsientosDisponibles());
+    # return "a"
 # -------------------------------- Sucursal --------------------------------
 
 # -------------------------------- Tarjeta --------------------------------
+@app.route('/tarjeta/mostrar', methods=['GET'])
+def mostrarTarjeta():
+    tarjeta = CTarjeta.tarjeta();
+    return jsonify(tarjeta.getTarjetas());
+
+@app.route('/tarjeta/registrar', methods=['GET'])
+def registrarTarjeta():
+    datos = request.get_json();
+
+    if(datos == None):
+        return "No se encontraron datos en formato JSON";
+    
+    tarjeta = CTarjeta.tarjeta();
+    
+    tarjeta.setTarjeta(
+        datos['nombre'],
+        datos['beneficios'],
+        datos['puntosNecesarios']
+    );
+
+    return tarjeta.regTarjeta();
 
 # -------------------------------- Venta --------------------------------
 

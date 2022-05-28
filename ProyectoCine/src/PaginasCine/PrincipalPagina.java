@@ -19,6 +19,8 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PrincipalPagina {
 
@@ -86,6 +88,12 @@ public class PrincipalPagina {
 		panel_general.setLayout(null);
 		
 		JButton btn_individual = new JButton("Individual");
+		btn_individual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				messageBox mensaje = new messageBox("OK");
+				mensaje.setVisible(true);
+			}
+		});
 		btn_individual.setForeground(new Color(255, 255, 255));
 		btn_individual.setBorder(null);
 		btn_individual.setFont(new Font("Arial", Font.PLAIN, 12));

@@ -28,8 +28,11 @@ class combo:
             "detalle_combo" : idDetalleCombo,
             "precio" : self.price
         }
-        self.cnn.ejecutarInsercion("combo",lista);
-        self.msg = "Registrado con exito!";
+        x = self.cnn.ejecutarInsercion("combo",lista);
+        
+        if(x == "1"): self.msg = "Registrado con exito!";
+        else: self.msg = "Error en inserción";
+
 
     def getCombo(self):
         return self.cnn.ejecutarConsulta("ver_combo");

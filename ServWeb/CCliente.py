@@ -16,6 +16,13 @@ class cliente:
         idTarjeta = self.cnn.obtenerSiguienteID("tarjeta_cliente");
 
         lista = {
+            "id" : idTarjeta,
+            "puntos" : 0,
+            "tarjeta_cine" : 1
+        }
+        self.cnn.ejecutarInsercion("tarjeta_cliente",lista);
+        
+        lista = {
             "id" : idCliente,
             "nombre" : self.name,
             "apellido1" : self.apellido1,
@@ -23,17 +30,11 @@ class cliente:
             "cumpleanos" : self.cumple,
             "tarjeta" : idTarjeta
         }
-
-        self.cnn.ejecutarInsercion("cliente",lista);
-
-        lista = {
-            "id" : idTarjeta,
-            "puntos" : 0,
-            "tarjeta_cine" : 1
-        }
-
-        self.cnn.ejecutarInsercion("tarjeta_cliente",lista);
-        return "Registrado con éxito!"
+        x = self.cnn.ejecutarInsercion("cliente",lista);
+        
+        if(x == 1): return "Registrado con éxito!"
+        else: return "Error al registrar"
 
     def getCliente(self):
-        self.cnn.ejecutarConsulta("ver_clientes")
+        return self.cnn.ejecutarConsulta("ver_clientes")
+

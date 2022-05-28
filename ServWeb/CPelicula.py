@@ -25,8 +25,14 @@ class pelicula:
             "precio" : self.precio_boleto,
             "imagen" : self.imagen_pelicula,
         }
-        self.cnn.ejecutarInsercion("pelicula",lista)
-        return 'Ejecutado con exito!'
+        try:
+            self.cnn.ejecutarInsercion("pelicula",lista)
+            return 'Ejecutado con exito!'
+        except Exception:
+            return 'Error al hacer la insercion';
 
     def getPelicula(self):
-        return self.cnn.ejecutarConsulta("ver_pelicula");
+        try:
+            return self.cnn.ejecutarConsulta("ver_pelicula");
+        except Exception:
+            return 'Error al hacer la conexion';

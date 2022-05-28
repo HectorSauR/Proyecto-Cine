@@ -6,7 +6,7 @@ class conexionBD:
     
     def __init__(self):
         try:
-            self.conexion = con.connect(user="root", password="Roteh_gaby2013",host="localhost",database="db_cine");
+            self.conexion = con.connect(user="root", password="123",host="localhost",database="db_cine");
             self.cursor = self.conexion.cursor()
         except con.Error:
             print("Error connecting to database");
@@ -14,7 +14,6 @@ class conexionBD:
     def ejecutarInsercion(self,nombreTabla:str,datos:list):
         try:
             cadenaTabla = "insert into "+nombreTabla+" values("
-            
             i = 0
             
             for dato in datos.values():
@@ -30,12 +29,14 @@ class conexionBD:
                     continue
                 cadenaTabla += ","+str(dato)
             cadenaTabla+=")"
+
             # print(cadenaTabla)
+
             self.cursor.execute(cadenaTabla)
             self.conexion.commit()
-
+            return "1"
         except con.Error:
-            print("Error al ejecutar insercion");
+            return "Error al ejecutar insercion";
 
     def ejecutarConsulta(self,nombreConsulta:str):
         try:
@@ -67,7 +68,9 @@ class conexionBD:
 #----------------------Pruebas--------------------------
 # cnn = conexionBD()
 
-# datos = cnn.ejecutarConsulta("ver_producto");
+# datos = cnn.ejecutarConsulta("ver_funcion");
+
+# print(datos)
 
 # for fila in datos:
-#     print(fila)
+    # print(fila)
