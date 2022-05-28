@@ -11,12 +11,14 @@ import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InicioSesion {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField usuariotxt;
+	private JTextField contrtxt;
 
 	/**
 	 * Launch the application.
@@ -56,15 +58,15 @@ public class InicioSesion {
 		lblNewLabel.setBounds(147, 11, 174, 22);
 		frame.getContentPane().add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(159, 173, 231, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		usuariotxt = new JTextField();
+		usuariotxt.setBounds(159, 173, 231, 20);
+		frame.getContentPane().add(usuariotxt);
+		usuariotxt.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(159, 224, 231, 20);
-		frame.getContentPane().add(textField_1);
+		contrtxt = new JTextField();
+		contrtxt.setColumns(10);
+		contrtxt.setBounds(159, 224, 231, 20);
+		frame.getContentPane().add(contrtxt);
 		
 		JLabel lblNewLabel_1 = new JLabel("USUARIO");
 		lblNewLabel_1.setBounds(24, 176, 65, 14);
@@ -85,10 +87,23 @@ public class InicioSesion {
 		lblNewLabel_3.setIcon(img);
 		
 		JButton btnNewButton = new JButton("INGRESAR");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				funciones_get_put usr = new funciones_get_put();
+				usr.inicio_sesion(usuariotxt.getText(), contrtxt.getText());
+				
+				
+			}
+		});
 		btnNewButton.setBounds(335, 261, 89, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("REGISTRARSE");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNewButton_1.setBounds(216, 261, 105, 23);
 		frame.getContentPane().add(btnNewButton_1);
 	}
