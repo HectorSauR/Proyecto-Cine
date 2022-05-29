@@ -12,11 +12,15 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 
 public class VistaBoletos {
 
-	private JFrame frmCinema;
+	JFrame frmCinema;
 
 	/**
 	 * Launch the application.
@@ -40,9 +44,14 @@ public class VistaBoletos {
 	/**
 	 * Create the application.
 	 */
+	
 	public VistaBoletos() {
 		initialize();
 	}
+	
+	
+	
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -80,10 +89,11 @@ public class VistaBoletos {
 		panel_general.setLayout(null);
 		
 		JPanel panel_muestras = new JPanel();
-		panel_muestras.setBounds(37, 49, 364, 426);
+		panel_muestras.setBounds(34, 11, 364, 537);
 		panel_general.add(panel_muestras);
 		panel_muestras.setBackground(new Color(217, 217, 217));
 		panel_muestras.setLayout(null);
+		
 		
 		JPanel panel_peli1 = new JPanel();
 		panel_peli1.setBounds(10, 11, 344, 92);
@@ -112,6 +122,15 @@ public class VistaBoletos {
 		lbl_clasifi.setBounds(239, 14, 80, 14);
 		panel_peli1.add(lbl_clasifi);
 		
+		JButton btnNewButton = new JButton("SELECCIONAR");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnNewButton.setBounds(202, 63, 121, 23);
+		panel_peli1.add(btnNewButton);
+		
 		JPanel panel_peli1_1 = new JPanel();
 		panel_peli1_1.setBackground(SystemColor.activeCaptionBorder);
 		panel_peli1_1.setBounds(10, 114, 344, 92);
@@ -138,6 +157,10 @@ public class VistaBoletos {
 		JLabel lbl_clasifi_1 = new JLabel("Clasificacion");
 		lbl_clasifi_1.setBounds(239, 14, 80, 14);
 		panel_peli1_1.add(lbl_clasifi_1);
+		
+		JButton btnNewButton_1 = new JButton("SELECCIONAR");
+		btnNewButton_1.setBounds(202, 58, 121, 23);
+		panel_peli1_1.add(btnNewButton_1);
 		
 		JPanel panel_peli1_2 = new JPanel();
 		panel_peli1_2.setBackground(SystemColor.activeCaptionBorder);
@@ -166,6 +189,10 @@ public class VistaBoletos {
 		lbl_clasifi_2.setBounds(242, 14, 80, 14);
 		panel_peli1_2.add(lbl_clasifi_2);
 		
+		JButton btnNewButton_2 = new JButton("SELECCIONAR");
+		btnNewButton_2.setBounds(205, 63, 118, 23);
+		panel_peli1_2.add(btnNewButton_2);
+		
 		JPanel panel_peli1_3 = new JPanel();
 		panel_peli1_3.setBackground(SystemColor.activeCaptionBorder);
 		panel_peli1_3.setBounds(10, 320, 344, 92);
@@ -193,6 +220,41 @@ public class VistaBoletos {
 		lbl_clasifi_3.setBounds(243, 14, 80, 14);
 		panel_peli1_3.add(lbl_clasifi_3);
 		
+		JButton btnNewButton_3 = new JButton("SELECCIONAR");
+		btnNewButton_3.setBounds(206, 63, 117, 23);
+		panel_peli1_3.add(btnNewButton_3);
+		
+		JPanel panel_peli1_4 = new JPanel();
+		panel_peli1_4.setLayout(null);
+		panel_peli1_4.setBackground(SystemColor.activeCaptionBorder);
+		panel_peli1_4.setBounds(10, 423, 344, 92);
+		panel_muestras.add(panel_peli1_4);
+		
+		JLabel lbl_pelicula_4 = new JLabel("Spiderman");
+		lbl_pelicula_4.setBounds(92, 11, 80, 20);
+		panel_peli1_4.add(lbl_pelicula_4);
+		
+		JLabel lbl_idioma_4 = new JLabel("Idioma");
+		lbl_idioma_4.setBounds(92, 32, 46, 14);
+		panel_peli1_4.add(lbl_idioma_4);
+		
+		JLabel lbl_sala_4 = new JLabel("Sala");
+		lbl_sala_4.setBounds(92, 51, 46, 14);
+		panel_peli1_4.add(lbl_sala_4);
+		
+		JLabel lbl_horario_4 = new JLabel("Horario");
+		lbl_horario_4.setHorizontalAlignment(SwingConstants.LEFT);
+		lbl_horario_4.setBounds(92, 67, 46, 14);
+		panel_peli1_4.add(lbl_horario_4);
+		
+		JLabel lbl_clasifi_4 = new JLabel("Clasificacion");
+		lbl_clasifi_4.setBounds(239, 14, 80, 14);
+		panel_peli1_4.add(lbl_clasifi_4);
+		
+		JButton btnNewButton_4 = new JButton("SELECCIONAR");
+		btnNewButton_4.setBounds(202, 63, 121, 23);
+		panel_peli1_4.add(btnNewButton_4);
+		
 		JPanel panel_resumen = new JPanel();
 		panel_resumen.setBounds(606, 49, 364, 426);
 		panel_resumen.setBackground(new Color(217, 217, 217));
@@ -204,23 +266,27 @@ public class VistaBoletos {
 		lbl_total.setFont(new Font("Arial", Font.PLAIN, 12));
 		panel_resumen.add(lbl_total);
 		
-		JPanel panel_peli1_4 = new JPanel();
-		panel_peli1_4.setLayout(null);
-		panel_peli1_4.setBackground(SystemColor.activeCaptionBorder);
-		panel_peli1_4.setBounds(10, 11, 344, 92);
-		panel_resumen.add(panel_peli1_4);
+		JPanel panel_peli1_r = new JPanel();
+		panel_peli1_r.setLayout(null);
+		panel_peli1_r.setBackground(SystemColor.activeCaptionBorder);
+		panel_peli1_r.setBounds(10, 11, 344, 92);
+		panel_resumen.add(panel_peli1_r);
 		
-		JLabel lbl_pelicula_4 = new JLabel("Spiderman");
-		lbl_pelicula_4.setBounds(92, 11, 82, 20);
-		panel_peli1_4.add(lbl_pelicula_4);
+		JLabel lbl_pelicula_r = new JLabel("Spiderman");
+		lbl_pelicula_r.setBounds(92, 11, 82, 20);
+		panel_peli1_r.add(lbl_pelicula_r);
 		
 		JLabel lbl_cantidad = new JLabel("Cantidad");
 		lbl_cantidad.setBounds(92, 32, 71, 14);
-		panel_peli1_4.add(lbl_cantidad);
+		panel_peli1_r.add(lbl_cantidad);
 		
 		JLabel lbl_asientos = new JLabel("Asientos");
 		lbl_asientos.setBounds(92, 51, 82, 14);
-		panel_peli1_4.add(lbl_asientos);
+		panel_peli1_r.add(lbl_asientos);
+		
+		JButton btn_registrar_venta = new JButton("REGISTRAR");
+		btn_registrar_venta.setBounds(849, 525, 121, 23);
+		panel_general.add(btn_registrar_venta);
 		
 		JButton btn_clientes = new JButton("Clientes");
 		btn_clientes.setForeground(Color.WHITE);
@@ -229,6 +295,13 @@ public class VistaBoletos {
 		btn_clientes.setBackground(new Color(40, 75, 99));
 		btn_clientes.setBounds(199, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes);
+		
+	}
+	
+	
+	public void boletos( String cant, String boletos ) {
+		
+		
 		
 	}
 }

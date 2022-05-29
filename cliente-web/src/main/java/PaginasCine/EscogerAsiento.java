@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -15,13 +16,16 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 
 public class EscogerAsiento {
 
 	private JFrame frame;
-
+    public int cont_a = 0;
+    public String asientos_cadena ="";
 	/**
 	 * Launch the application.
 	 */
@@ -56,7 +60,7 @@ public class EscogerAsiento {
 		
 		JPanel panel_general = new JPanel();
 		panel_general.setBackground(new Color(217, 217, 217));
-		panel_general.setBounds(0, 0, 870, 650);
+		panel_general.setBounds(10, 0, 870, 650);
 		frame.getContentPane().add(panel_general);
 		panel_general.setLayout(null);
 		
@@ -66,11 +70,36 @@ public class EscogerAsiento {
 		panel_asientos.setLayout(null);
 		panel_asientos.setBackground(new Color(217, 217, 217));
 		
+		
+
+		final JComboBox cb_cant_asiento = new JComboBox();
+		cb_cant_asiento.setMaximumRowCount(6);
+		cb_cant_asiento.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5"}));
+		cb_cant_asiento.setFont(new Font("Arial", Font.PLAIN, 12));
+		cb_cant_asiento.setBounds(155, 32, 76, 22);
+		panel_general.add(cb_cant_asiento);
+		
+		
+		
 		final JMenuItem menu_asiento_libre_1 = new JMenuItem("");
 		menu_asiento_libre_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_1.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					nom_asientos("1A");
+					menu_asiento_libre_1.setEnabled(false);
+					menu_asiento_libre_1.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
+				
+				
+				
 			}
 		});
 		
@@ -83,7 +112,18 @@ public class EscogerAsiento {
 		menu_asiento_libre_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_2.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+				
+				
+				if (cont_asientos(cant) == true) {
+					nom_asientos("2A");
+					menu_asiento_libre_2.setEnabled(false);
+					menu_asiento_libre_2.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
+				
 			}
 		});
 		menu_asiento_libre_2.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -95,7 +135,19 @@ public class EscogerAsiento {
 		menu_asiento_libre_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_3.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+				
+				
+				if (cont_asientos(cant) == true) {
+					nom_asientos("3A");
+					menu_asiento_libre_3.setEnabled(false);
+					menu_asiento_libre_3.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
+				
+				
 			}
 		});
 		menu_asiento_libre_3.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -107,7 +159,18 @@ public class EscogerAsiento {
 		menu_asiento_libre_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_4.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+				
+				
+				if (cont_asientos(cant) == true) {
+					nom_asientos("4A");
+					menu_asiento_libre_4.setEnabled(false);
+					menu_asiento_libre_4.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
+				
 			}
 		});
 		menu_asiento_libre_4.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -119,7 +182,21 @@ public class EscogerAsiento {
 		menu_asiento_libre_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_5.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+				
+				
+				if (cont_asientos(cant) == true) {
+					nom_asientos("5A");
+					menu_asiento_libre_5.setEnabled(false);
+					menu_asiento_libre_5.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+					
+				}else {
+					
+				}
+				
+				
 			}
 		});
 		menu_asiento_libre_5.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -131,7 +208,17 @@ public class EscogerAsiento {
 		menu_asiento_libre_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_6.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					nom_asientos("6A");
+					menu_asiento_libre_6.setEnabled(false);
+					menu_asiento_libre_6.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_6.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -143,7 +230,17 @@ public class EscogerAsiento {
 		menu_asiento_libre_7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_7.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					nom_asientos("7A");
+					menu_asiento_libre_7.setEnabled(false);
+					menu_asiento_libre_7.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_7.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -155,7 +252,17 @@ public class EscogerAsiento {
 		menu_asiento_libre_8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_8.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					nom_asientos("8A");
+					menu_asiento_libre_8.setEnabled(false);
+					menu_asiento_libre_8.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_8.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -167,7 +274,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_9.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_9.setEnabled(false);
+					menu_asiento_libre_9.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_9.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -179,7 +295,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_10.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_10.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_10.setEnabled(false);
+					menu_asiento_libre_10.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_10.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -191,7 +316,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_11.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_11.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_11.setEnabled(false);
+					menu_asiento_libre_11.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_11.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -203,7 +337,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_12.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_12.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_12.setEnabled(false);
+					menu_asiento_libre_12.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_12.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -215,7 +358,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_13.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_13.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_13.setEnabled(false);
+					menu_asiento_libre_13.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_13.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -227,7 +379,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_14.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_14.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_14.setEnabled(false);
+					menu_asiento_libre_14.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_14.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -239,7 +400,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_15.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_15.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_15.setEnabled(false);
+					menu_asiento_libre_15.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_15.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -251,7 +421,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_16.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_16.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_16.setEnabled(false);
+					menu_asiento_libre_16.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_16.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -263,7 +442,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_17.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_17.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_17.setEnabled(false);
+					menu_asiento_libre_17.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_17.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -275,7 +463,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_18.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_18.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_18.setEnabled(false);
+					menu_asiento_libre_18.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_18.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -287,7 +484,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_19.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_19.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_19.setEnabled(false);
+					menu_asiento_libre_19.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_19.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -299,7 +505,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_20.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_20.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_20.setEnabled(false);
+					menu_asiento_libre_20.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 			
 		});
@@ -312,7 +527,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_21.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_21.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_21.setEnabled(false);
+					menu_asiento_libre_21.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_21.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -324,7 +548,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_22.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_22.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_22.setEnabled(false);
+					menu_asiento_libre_22.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_22.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -336,7 +569,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_23.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_23.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_23.setEnabled(false);
+					menu_asiento_libre_23.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_23.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -348,7 +590,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_24.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_24.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_24.setEnabled(false);
+					menu_asiento_libre_24.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_24.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -360,7 +611,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_25.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_25.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_25.setEnabled(false);
+					menu_asiento_libre_25.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_25.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -372,7 +632,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_26.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_26.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_26.setEnabled(false);
+					menu_asiento_libre_26.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_26.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -384,7 +653,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_27.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_27.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_27.setEnabled(false);
+					menu_asiento_libre_27.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 			
 		});
@@ -397,7 +675,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_28.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_28.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_28.setEnabled(false);
+					menu_asiento_libre_28.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_28.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -409,7 +696,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_29.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_29.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_29.setEnabled(false);
+					menu_asiento_libre_29.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_29.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -421,7 +717,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_30.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_30.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_30.setEnabled(false);
+					menu_asiento_libre_30.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_30.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -433,7 +738,16 @@ public class EscogerAsiento {
 		menu_asiento_libre_31.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_31.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_31.setEnabled(false);
+					menu_asiento_libre_31.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_31.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
@@ -445,13 +759,25 @@ public class EscogerAsiento {
 		menu_asiento_libre_32.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu_asiento_libre_32.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				int cant;
+				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
+
+				
+				if (cont_asientos(cant) == true) {
+					menu_asiento_libre_32.setEnabled(false);
+					menu_asiento_libre_32.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
+				}else {
+					
+				}
 			}
 		});
 		menu_asiento_libre_32.setIcon(new ImageIcon("IMG\\asiento_libre.png"));
 		menu_asiento_libre_32.setBackground(new Color(217, 217, 217));
 		menu_asiento_libre_32.setBounds(462, 321, 51, 42);
 		panel_asientos.add(menu_asiento_libre_32);
+		
+		
+		//--------------------------
 		
 		JLabel lbl_cant_asientos_1 = new JLabel("A");
 		lbl_cant_asientos_1.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -518,14 +844,31 @@ public class EscogerAsiento {
 		lbl_cant_asientos.setBounds(27, 32, 129, 22);
 		panel_general.add(lbl_cant_asientos);
 		
-		JComboBox cb_cant_asiento = new JComboBox();
-		cb_cant_asiento.setMaximumRowCount(6);
-		cb_cant_asiento.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3", "4", "5"}));
-		cb_cant_asiento.setFont(new Font("Arial", Font.PLAIN, 12));
-		cb_cant_asiento.setBounds(155, 32, 76, 22);
-		panel_general.add(cb_cant_asiento);
+	
 		
 		JButton btn_confirmar = new JButton("Confirmar");
+		btn_confirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VistaBoletos blt = new VistaBoletos();
+				String cant_a;
+				cant_a =cb_cant_asiento.getSelectedItem().toString();
+				int cant_asientos = Integer.parseInt(   cb_cant_asiento.getSelectedItem().toString());
+				blt.boletos( cant_a,asientos_cadena);
+				
+				
+				if (cont_a < cant_asientos ) {
+					
+					JOptionPane.showMessageDialog(null, "No elegiste los asientos solisitados","ERROR",JOptionPane.ERROR_MESSAGE);
+					
+				
+				}else {
+					blt.frmCinema.setVisible(true);
+					EscogerAsiento escas = new EscogerAsiento ();
+					escas.frame.setVisible(false);
+				}
+				
+			}
+		});
 		btn_confirmar.setForeground(Color.WHITE);
 		btn_confirmar.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_confirmar.setBorder(null);
@@ -541,5 +884,38 @@ public class EscogerAsiento {
 		btn_confirmar_1.setBounds(739, 553, 88, 39);
 		panel_general.add(btn_confirmar_1);
 		
+		
+		
 	}
+	
+	public boolean cont_asientos(int cant_asientos) {
+		
+		boolean bol = false;
+		
+		System.out.println(cant_asientos);
+	     
+		if (cont_a < cant_asientos ) {
+			cont_a +=1;
+			System.out.println(cont_a);
+			
+		return bol = true;
+		}else {
+			
+			JOptionPane.showMessageDialog(null, "ESA ES LA CANTIDAD MAXIMA QUE SE ELIGIO","ERROR",JOptionPane.ERROR_MESSAGE);
+            
+			return bol = false;
+		}
+		
+	}
+	
+	
+	public void nom_asientos(String puesto) {
+		
+		
+		asientos_cadena =  asientos_cadena + puesto + ",";
+		System.out.println(asientos_cadena);
+		
+		
+	}
+	
 }

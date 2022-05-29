@@ -1,16 +1,11 @@
 package PaginasCine;
 
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
-
-import javax.swing.JTextField;
-import javax.swing.ImageIcon;
 import java.awt.Color;
-import javax.swing.JButton;
+
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -90,8 +85,20 @@ public class InicioSesion {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				funciones_get_put usr = new funciones_get_put();
-				usr.inicio_sesion(usuariotxt.getText(), contrtxt.getText());
 				
+				
+				
+				if(usr.inicio_sesion(usuariotxt.getText(), contrtxt.getText()) == true) {
+					JOptionPane.showMessageDialog(null, "Ingreso de session exitoso","Bienvenido",JOptionPane.INFORMATION_MESSAGE);
+					InicioSesion window = new InicioSesion();
+					window.frame.setVisible(false);
+					
+					PrincipalPagina window2 = new PrincipalPagina();
+					window2.frmCinema.setVisible(true);
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "REVISA USUARIO O CONTRASEÑA INVALIDOS","ERROR",JOptionPane.ERROR_MESSAGE);
+				}
 				
 			}
 		});

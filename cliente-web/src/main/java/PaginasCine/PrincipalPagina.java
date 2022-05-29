@@ -19,10 +19,12 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PrincipalPagina {
 
-	private JFrame frmCinema;
+	JFrame frmCinema;
 
 	/**
 	 * Launch the application.
@@ -40,7 +42,7 @@ public class PrincipalPagina {
 		});
 	}
 	/**
-	 REALMENTE ES LA VISTA DE LAS VENTAS, NO ES LA PAGINA PRINCIPAL, HACER RENAME O DEJARLO DE ESTÁ MANERA
+	 REALMENTE ES LA VISTA DE LAS VENTAS, NO ES LA PAGINA PRINCIPAL, HACER RENAME O DEJARLO DE ESTï¿½ MANERA
 	 */
 
 	/**
@@ -69,6 +71,11 @@ public class PrincipalPagina {
 		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
+		btn_boletos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btn_boletos.setBorder(null);
 		btn_boletos.setForeground(Color.white);
 		btn_boletos.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -121,19 +128,19 @@ public class PrincipalPagina {
 		lbl_palomitas.setBounds(10, 11, 65, 21);
 		panel_muestras.add(lbl_palomitas);
 		
-		JComboBox cb_tamano_palo = new JComboBox();
+		final JComboBox cb_tamano_palo = new JComboBox();
 		cb_tamano_palo.setFont(new Font("Arial", Font.PLAIN, 12));
 		cb_tamano_palo.setMaximumRowCount(3);
 		cb_tamano_palo.setToolTipText("");
-		cb_tamano_palo.setModel(new DefaultComboBoxModel(new String[] {"Chico", "Mediano", "Grande"}));
+		cb_tamano_palo.setModel(new DefaultComboBoxModel(new String[] {"","Chico", "Mediano", "Grande"}));
 		cb_tamano_palo.setSelectedIndex(0);
 		cb_tamano_palo.setBounds(83, 10, 126, 22);
 		panel_muestras.add(cb_tamano_palo);
 		
-		JComboBox cb_sabor_palo = new JComboBox();
+		final JComboBox cb_sabor_palo = new JComboBox();
 		cb_sabor_palo.setFont(new Font("Arial", Font.PLAIN, 12));
 		cb_sabor_palo.setToolTipText("");
-		cb_sabor_palo.setModel(new DefaultComboBoxModel(new String[] {"Mantequilla", "Takis", "Caramelo"}));
+		cb_sabor_palo.setModel(new DefaultComboBoxModel(new String[] {"","Mantequilla", "Takis", "Caramelo"}));
 		cb_sabor_palo.setSelectedIndex(0);
 		cb_sabor_palo.setMaximumRowCount(3);
 		cb_sabor_palo.setBounds(219, 10, 126, 22);
@@ -145,25 +152,50 @@ public class PrincipalPagina {
 		lbl_refresco.setBounds(10, 127, 65, 21);
 		panel_muestras.add(lbl_refresco);
 		
-		JComboBox cb_tamano_refre = new JComboBox();
+		final JComboBox cb_tamano_refre = new JComboBox();
 		cb_tamano_refre.setFont(new Font("Arial", Font.PLAIN, 12));
 		cb_tamano_refre.setToolTipText("");
-		cb_tamano_refre.setModel(new DefaultComboBoxModel(new String[] {"Chico", "Mediano", "Grande"}));
+		
+		
+		cb_tamano_refre.setModel(new DefaultComboBoxModel(new String[] {"","Chico", "Mediano", "Grande"}));
 		cb_tamano_refre.setSelectedIndex(0);
 		cb_tamano_refre.setMaximumRowCount(3);
 		cb_tamano_refre.setBounds(83, 126, 126, 22);
 		panel_muestras.add(cb_tamano_refre);
 		
-		JComboBox cb_sabor_refre = new JComboBox();
+		final JComboBox cb_sabor_refre = new JComboBox();
 		cb_sabor_refre.setFont(new Font("Arial", Font.PLAIN, 12));
 		cb_sabor_refre.setToolTipText("");
-		cb_sabor_refre.setModel(new DefaultComboBoxModel(new String[] {"Coca-Cola", "Pepsi", "Sprite"}));
+		cb_sabor_refre.setModel(new DefaultComboBoxModel(new String[] {"","Coca-Cola", "Pepsi", "Sprite"}));
 		cb_sabor_refre.setSelectedIndex(0);
 		cb_sabor_refre.setMaximumRowCount(3);
 		cb_sabor_refre.setBounds(219, 126, 126, 22);
 		panel_muestras.add(cb_sabor_refre);
 		
 		JButton btn_confirmar = new JButton("Confirmar");
+		btn_confirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String tam_palo;
+				tam_palo =	cb_tamano_palo.getSelectedItem().toString();
+				System.out.println(tam_palo);
+				
+				String sab_palo;
+				sab_palo =	cb_sabor_palo.getSelectedItem().toString();
+				System.out.println(sab_palo);
+				
+				
+			
+				String tam_refre;
+				tam_refre =	cb_tamano_refre.getSelectedItem().toString();
+				System.out.println(tam_refre);
+				
+				String sab_refre;
+				sab_refre =	cb_sabor_refre.getSelectedItem().toString();
+				System.out.println(sab_refre);
+				
+			}
+		});
 		btn_confirmar.setForeground(Color.white);
 		btn_confirmar.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_confirmar.setBorder(null);
