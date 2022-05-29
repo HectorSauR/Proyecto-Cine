@@ -22,6 +22,7 @@ public class VistaBoletos {
 
 	JFrame frmCinema;
 	JLabel lbl_cantidad;
+	JLabel lbl_asientos;
 	/**
 	 * Launch the application.
 	 */
@@ -280,7 +281,7 @@ public class VistaBoletos {
 		lbl_cantidad.setBounds(92, 32, 71, 14);
 		panel_peli1_r.add(lbl_cantidad);
 		
-		JLabel lbl_asientos = new JLabel("Asientos");
+		lbl_asientos = new JLabel("Asientos");
 		lbl_asientos.setBounds(92, 51, 82, 14);
 		panel_peli1_r.add(lbl_asientos);
 		

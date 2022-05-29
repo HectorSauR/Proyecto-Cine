@@ -279,6 +279,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("1B");
 					menu_asiento_libre_9.setEnabled(false);
 					menu_asiento_libre_9.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -300,6 +301,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("2B");
 					menu_asiento_libre_10.setEnabled(false);
 					menu_asiento_libre_10.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -321,6 +323,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("3B");
 					menu_asiento_libre_11.setEnabled(false);
 					menu_asiento_libre_11.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -342,6 +345,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("4B");
 					menu_asiento_libre_12.setEnabled(false);
 					menu_asiento_libre_12.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -363,6 +367,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("5B");
 					menu_asiento_libre_13.setEnabled(false);
 					menu_asiento_libre_13.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -384,6 +389,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("6B");
 					menu_asiento_libre_14.setEnabled(false);
 					menu_asiento_libre_14.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -405,6 +411,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("7B");
 					menu_asiento_libre_15.setEnabled(false);
 					menu_asiento_libre_15.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -426,6 +433,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("8B");
 					menu_asiento_libre_16.setEnabled(false);
 					menu_asiento_libre_16.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -447,6 +455,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("1C");
 					menu_asiento_libre_17.setEnabled(false);
 					menu_asiento_libre_17.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -468,6 +477,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("2C");
 					menu_asiento_libre_18.setEnabled(false);
 					menu_asiento_libre_18.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -489,6 +499,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("3C");
 					menu_asiento_libre_19.setEnabled(false);
 					menu_asiento_libre_19.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -510,6 +521,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("4C");
 					menu_asiento_libre_20.setEnabled(false);
 					menu_asiento_libre_20.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -532,6 +544,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("5C");
 					menu_asiento_libre_21.setEnabled(false);
 					menu_asiento_libre_21.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -553,6 +566,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("6C");
 					menu_asiento_libre_22.setEnabled(false);
 					menu_asiento_libre_22.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -574,6 +588,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("7C");
 					menu_asiento_libre_23.setEnabled(false);
 					menu_asiento_libre_23.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -595,6 +610,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("8C");
 					menu_asiento_libre_24.setEnabled(false);
 					menu_asiento_libre_24.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -616,6 +632,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("1D");
 					menu_asiento_libre_25.setEnabled(false);
 					menu_asiento_libre_25.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -637,6 +654,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("2D");
 					menu_asiento_libre_26.setEnabled(false);
 					menu_asiento_libre_26.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -658,6 +676,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("3D");
 					menu_asiento_libre_27.setEnabled(false);
 					menu_asiento_libre_27.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -680,6 +699,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("4D");
 					menu_asiento_libre_28.setEnabled(false);
 					menu_asiento_libre_28.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -701,6 +721,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("5D");
 					menu_asiento_libre_29.setEnabled(false);
 					menu_asiento_libre_29.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -722,6 +743,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("6D");
 					menu_asiento_libre_30.setEnabled(false);
 					menu_asiento_libre_30.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -743,6 +765,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("7D");
 					menu_asiento_libre_31.setEnabled(false);
 					menu_asiento_libre_31.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -764,6 +787,7 @@ public class EscogerAsiento {
 
 				
 				if (cont_asientos(cant) == true) {
+					nom_asientos("8D");
 					menu_asiento_libre_32.setEnabled(false);
 					menu_asiento_libre_32.setIcon(new ImageIcon("IMG\\asiento_ocupado.png"));
 				}else {
@@ -870,7 +894,8 @@ public class EscogerAsiento {
 					
 					//enviar asientos_cadena--------
 					
-					blt.lbl_cantidad.setText(asientos_cadena);
+					blt.lbl_cantidad.setText(cant_a);
+					blt.lbl_asientos.setText(asientos_cadena);
 					escas.frame.dispose();
 				}
 				
