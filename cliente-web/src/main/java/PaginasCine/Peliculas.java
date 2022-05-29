@@ -219,17 +219,17 @@ public class Peliculas {
 		
 		JLabel lblnom_peli_1_1 = new JLabel("Dragon Ball Super: Hero");
 		lblnom_peli_1_1.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblnom_peli_1_1.setBounds(10, 77, 143, 14);
+		lblnom_peli_1_1.setBounds(10, 36, 143, 14);
 		panel_peli1_1.add(lblnom_peli_1_1);
 		
 		JLabel lblnom_peli_1_2 = new JLabel("Dragon Ball Super: Hero");
 		lblnom_peli_1_2.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblnom_peli_1_2.setBounds(10, 177, 143, 14);
+		lblnom_peli_1_2.setBounds(10, 61, 143, 14);
 		panel_peli1_1.add(lblnom_peli_1_2);
 		
 		JLabel lblnom_peli_1_3 = new JLabel("Dragon Ball Super: Hero");
 		lblnom_peli_1_3.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblnom_peli_1_3.setBounds(10, 292, 143, 14);
+		lblnom_peli_1_3.setBounds(10, 86, 143, 14);
 		panel_peli1_1.add(lblnom_peli_1_3);
 		
 		JButton btn_clientes = new JButton("Clientes");

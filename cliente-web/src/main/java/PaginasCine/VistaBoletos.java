@@ -16,6 +16,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class VistaBoletos {
@@ -97,6 +99,12 @@ public class VistaBoletos {
 		
 		
 		JPanel panel_peli1 = new JPanel();
+		panel_peli1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("aosihdlakshdklasd");
+			}
+		});
 		panel_peli1.setBounds(10, 11, 344, 92);
 		panel_peli1.setBackground(new Color(180, 180, 180));
 		panel_muestras.add(panel_peli1);

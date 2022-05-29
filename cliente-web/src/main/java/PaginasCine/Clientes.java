@@ -86,7 +86,7 @@ public class Clientes {
 		panel_general.setLayout(null);
 		
 		JPanel panel_muestras = new JPanel();
-		panel_muestras.setBounds(37, 49, 364, 426);
+		panel_muestras.setBounds(38, 49, 364, 426);
 		panel_general.add(panel_muestras);
 		panel_muestras.setBackground(new Color(217, 217, 217));
 		panel_muestras.setLayout(null);
