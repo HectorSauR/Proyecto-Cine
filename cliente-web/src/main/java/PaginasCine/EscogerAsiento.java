@@ -864,7 +864,14 @@ public class EscogerAsiento {
 				}else {
 					blt.frmCinema.setVisible(true);
 					EscogerAsiento escas = new EscogerAsiento ();
-					escas.frame.setVisible(false);
+					
+					asientos_cadena = asientos_cadena.substring(0, asientos_cadena.length()-1);
+					
+					
+					//enviar asientos_cadena--------
+					
+					blt.lbl_cantidad.setText(asientos_cadena);
+					escas.frame.dispose();
 				}
 				
 			}

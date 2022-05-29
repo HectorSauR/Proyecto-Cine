@@ -184,8 +184,6 @@ public class PrincipalPagina {
 				sab_palo =	cb_sabor_palo.getSelectedItem().toString();
 				System.out.println(sab_palo);
 				
-				
-			
 				String tam_refre;
 				tam_refre =	cb_tamano_refre.getSelectedItem().toString();
 				System.out.println(tam_refre);

@@ -21,7 +21,7 @@ import javax.swing.DefaultComboBoxModel;
 public class VistaBoletos {
 
 	JFrame frmCinema;
-
+	JLabel lbl_cantidad;
 	/**
 	 * Launch the application.
 	 */
@@ -276,7 +276,7 @@ public class VistaBoletos {
 		lbl_pelicula_r.setBounds(92, 11, 82, 20);
 		panel_peli1_r.add(lbl_pelicula_r);
 		
-		JLabel lbl_cantidad = new JLabel("Cantidad");
+		lbl_cantidad = new JLabel("Cantidad");
 		lbl_cantidad.setBounds(92, 32, 71, 14);
 		panel_peli1_r.add(lbl_cantidad);
 		
