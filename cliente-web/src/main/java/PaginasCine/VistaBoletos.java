@@ -131,15 +131,6 @@ public class VistaBoletos {
 		lbl_clasifi.setBounds(239, 14, 80, 14);
 		panel_peli1.add(lbl_clasifi);
 		
-		JButton btnNewButton = new JButton("SELECCIONAR");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnNewButton.setBounds(202, 63, 121, 23);
-		panel_peli1.add(btnNewButton);
-		
 		JPanel panel_peli1_1 = new JPanel();
 		panel_peli1_1.setBackground(SystemColor.activeCaptionBorder);
 		panel_peli1_1.setBounds(10, 114, 344, 92);
@@ -166,10 +157,6 @@ public class VistaBoletos {
 		JLabel lbl_clasifi_1 = new JLabel("Clasificacion");
 		lbl_clasifi_1.setBounds(239, 14, 80, 14);
 		panel_peli1_1.add(lbl_clasifi_1);
-		
-		JButton btnNewButton_1 = new JButton("SELECCIONAR");
-		btnNewButton_1.setBounds(202, 58, 121, 23);
-		panel_peli1_1.add(btnNewButton_1);
 		
 		JPanel panel_peli1_2 = new JPanel();
 		panel_peli1_2.setBackground(SystemColor.activeCaptionBorder);
@@ -198,10 +185,6 @@ public class VistaBoletos {
 		lbl_clasifi_2.setBounds(242, 14, 80, 14);
 		panel_peli1_2.add(lbl_clasifi_2);
 		
-		JButton btnNewButton_2 = new JButton("SELECCIONAR");
-		btnNewButton_2.setBounds(205, 63, 118, 23);
-		panel_peli1_2.add(btnNewButton_2);
-		
 		JPanel panel_peli1_3 = new JPanel();
 		panel_peli1_3.setBackground(SystemColor.activeCaptionBorder);
 		panel_peli1_3.setBounds(10, 320, 344, 92);
@@ -229,10 +212,6 @@ public class VistaBoletos {
 		lbl_clasifi_3.setBounds(243, 14, 80, 14);
 		panel_peli1_3.add(lbl_clasifi_3);
 		
-		JButton btnNewButton_3 = new JButton("SELECCIONAR");
-		btnNewButton_3.setBounds(206, 63, 117, 23);
-		panel_peli1_3.add(btnNewButton_3);
-		
 		JPanel panel_peli1_4 = new JPanel();
 		panel_peli1_4.setLayout(null);
 		panel_peli1_4.setBackground(SystemColor.activeCaptionBorder);
@@ -259,10 +238,6 @@ public class VistaBoletos {
 		JLabel lbl_clasifi_4 = new JLabel("Clasificacion");
 		lbl_clasifi_4.setBounds(239, 14, 80, 14);
 		panel_peli1_4.add(lbl_clasifi_4);
-		
-		JButton btnNewButton_4 = new JButton("SELECCIONAR");
-		btnNewButton_4.setBounds(202, 63, 121, 23);
-		panel_peli1_4.add(btnNewButton_4);
 		
 		JPanel panel_resumen = new JPanel();
 		panel_resumen.setBounds(606, 49, 364, 426);

@@ -117,7 +117,7 @@ public class PrincipalPagina {
 		panel_general.add(btn_extras);
 		
 		JPanel panel_muestras = new JPanel();
-		panel_muestras.setBounds(37, 105, 364, 435);
+		panel_muestras.setBounds(37, 105, 349, 435);
 		panel_general.add(panel_muestras);
 		panel_muestras.setBackground(new Color(217, 217, 217));
 		panel_muestras.setLayout(null);
