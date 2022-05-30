@@ -16,13 +16,17 @@ public class RestClient {
 			//String urlRestService = "http://26.77.197.154:8000/empleados/mostrar";
 			
 			JSONObject vo = new JSONObject(); 
+			JSONObject vo2 = new JSONObject();
+			
+			vo2.put("nombre", "palomitas");
+			vo2.put("cantidad", "12");
 			
 			vo.put("nombre", "chanate");
 			vo.put("categoria", "1");
 			vo.put("precio", "100");
-			vo.put("duracion", "100");
+			vo.put("PRODUCTOS", vo2);
 			vo.put("lenguaje", "2");
-			vo.put("imagen", "img/chanate.png");
+			
 			
 			
 			String urlRestService = "http://26.77.197.154:8000/pelicula/registrar";
@@ -71,11 +75,18 @@ public class RestClient {
 	}
 	
 	
- //public static String Post() {
+ public static void Post(String path, JSONObject vo) {
 		
-	//ClientResponse response = webResource.type("application/json").post(ClientResponse.class, vo.toString());
-	//String resp = response.getEntity(String.class);
+	 String urlRestService = path;
+	 ClientConfig clientConfig = new DefaultClientConfig();
+		clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
+		Client client = Client.create(clientConfig);
+		WebResource webResource = client.resource(urlRestService);
 		
-	//}
+		
+		ClientResponse response = webResource.type("application/json").post(ClientResponse.class, vo.toString());
+		String resp = response.getEntity(String.class);
+		
+	}
 
 }

@@ -51,5 +51,18 @@ public class funciones_get_put {
 		
 		System.out.println(res);
 	}
+	
+	
+public static void ventaProductos() {
+		
+		RestClient rc = new RestClient();
+		String res = rc.Get("http://26.77.197.154:8000/venta/productos/mostrar");
+		
+		
+		System.out.println(res);
+	}
+	
+	
+	
 
 }
