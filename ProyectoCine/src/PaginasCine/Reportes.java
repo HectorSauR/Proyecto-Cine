@@ -13,12 +13,14 @@ import javax.swing.JLabel;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 
 public class Reportes {
 
-	private JFrame frmCinema;
+	public JFrame frmCinema;
 
 	/**
 	 * Launch the application.
@@ -58,6 +60,14 @@ public class Reportes {
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btn_ventas = new JButton("Ventas");
+		btn_ventas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PrincipalPagina s = new PrincipalPagina ();
+				s.frmCinema.setVisible(true);
+				Reportes window = new Reportes();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_ventas.setBounds(100, 0, 100, 38);
 		btn_ventas.setBorder(null);
 		btn_ventas.setForeground(Color.white);
@@ -65,6 +75,14 @@ public class Reportes {
 		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
+		btn_boletos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VistaBoletos s = new VistaBoletos ();
+				s.frmCinema.setVisible(true);
+				Reportes window = new Reportes();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_boletos.setBounds(0, 0, 100, 38);
 		btn_boletos.setBorder(null);
 		btn_boletos.setForeground(Color.white);
@@ -111,6 +129,14 @@ public class Reportes {
 		panel_general.add(btn_buscar);
 		
 		JButton btn_clientes = new JButton("Clientes");
+		btn_clientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Clientes s = new Clientes ();
+				s.frmCinema.setVisible(true);
+				Reportes window = new Reportes();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_clientes.setForeground(Color.WHITE);
 		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes.setBorder(null);
@@ -119,6 +145,14 @@ public class Reportes {
 		frmCinema.getContentPane().add(btn_clientes);
 		
 		JButton btn_clientes_1 = new JButton("Almacen");
+		btn_clientes_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Almacen s = new Almacen ();
+				s.frmCinema.setVisible(true);
+				Reportes window = new Reportes();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_clientes_1.setForeground(Color.WHITE);
 		btn_clientes_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes_1.setBorder(null);
@@ -127,6 +161,14 @@ public class Reportes {
 		frmCinema.getContentPane().add(btn_clientes_1);
 		
 		JButton btn_clientes_2 = new JButton("Peliculas");
+		btn_clientes_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Peliculas s = new Peliculas ();
+				s.frmCinema.setVisible(true);
+				Reportes window = new Reportes();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_clientes_2.setForeground(Color.WHITE);
 		btn_clientes_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes_2.setBorder(null);

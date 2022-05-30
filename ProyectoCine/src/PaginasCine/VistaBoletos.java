@@ -12,11 +12,13 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
-public class VistaBoletos {
+public class VistaBoletos extends JFrame{
 
-	private JFrame frmCinema;
+	public JFrame frmCinema;
 
 	/**
 	 * Launch the application.
@@ -55,7 +57,18 @@ public class VistaBoletos {
 		frmCinema.setBounds(100, 100, 1050, 650);
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		//ir al frame de ventas
 		JButton btn_ventas = new JButton("Ventas");
+		btn_ventas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				PrincipalPagina s = new PrincipalPagina();
+				s.frmCinema.setVisible(true);
+				VistaBoletos window = new VistaBoletos();
+				window.frmCinema.setVisible(false);
+				
+			}
+		});
 		btn_ventas.setBounds(100, 0, 100, 38);
 		btn_ventas.setBorder(null);
 		btn_ventas.setForeground(Color.white);
@@ -222,7 +235,16 @@ public class VistaBoletos {
 		lbl_asientos.setBounds(92, 51, 82, 14);
 		panel_peli1_4.add(lbl_asientos);
 		
+		//ir al frame de clientes
 		JButton btn_clientes = new JButton("Clientes");
+		btn_clientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Clientes s = new Clientes();
+				s.frmCinema.setVisible(true);
+				VistaBoletos window = new VistaBoletos();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_clientes.setForeground(Color.WHITE);
 		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes.setBorder(null);

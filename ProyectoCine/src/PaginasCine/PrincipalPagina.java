@@ -19,10 +19,12 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PrincipalPagina {
 
-	private JFrame frmCinema;
+	public JFrame frmCinema;
 
 	/**
 	 * Launch the application.
@@ -69,6 +71,14 @@ public class PrincipalPagina {
 		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
+		btn_boletos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VistaBoletos s = new VistaBoletos ();
+				s.frmCinema.setVisible(true);
+				PrincipalPagina window = new PrincipalPagina();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_boletos.setBorder(null);
 		btn_boletos.setForeground(Color.white);
 		btn_boletos.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -94,6 +104,14 @@ public class PrincipalPagina {
 		panel_general.add(btn_individual);
 		
 		JButton btn_combos = new JButton("Combos");
+		btn_combos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PaginaPrincipalCombo s = new PaginaPrincipalCombo ();
+				s.frmCinema.setVisible(true);
+				PrincipalPagina window = new PrincipalPagina();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_combos.setForeground(new Color(255, 255, 255));
 		btn_combos.setBorder(null);
 		btn_combos.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -183,6 +201,14 @@ public class PrincipalPagina {
 		panel_resumen.add(lbl_total);
 		
 		JButton btn_clientes = new JButton("Clientes");
+		btn_clientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Clientes s = new Clientes ();
+				s.frmCinema.setVisible(true);
+				PrincipalPagina window = new PrincipalPagina();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_clientes.setForeground(Color.WHITE);
 		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes.setBorder(null);

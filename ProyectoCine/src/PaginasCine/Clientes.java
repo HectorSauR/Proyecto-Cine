@@ -12,12 +12,14 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 
-public class Clientes {
+public class Clientes extends JFrame{
 
-	private JFrame frmCinema;
+	public JFrame frmCinema;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -62,6 +64,14 @@ public class Clientes {
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btn_ventas = new JButton("Ventas");
+		btn_ventas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PrincipalPagina s = new PrincipalPagina ();
+				s.frmCinema.setVisible(true);
+				Clientes window = new Clientes();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_ventas.setBounds(100, 0, 100, 38);
 		btn_ventas.setBorder(null);
 		btn_ventas.setForeground(Color.white);
@@ -69,6 +79,14 @@ public class Clientes {
 		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
+		btn_boletos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VistaBoletos s = new VistaBoletos ();
+				s.frmCinema.setVisible(true);
+				Clientes window = new Clientes();
+				window.frmCinema.setVisible(false);
+			}
+		});
 		btn_boletos.setBounds(0, 0, 100, 38);
 		btn_boletos.setBorder(null);
 		btn_boletos.setForeground(Color.white);
