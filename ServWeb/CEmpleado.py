@@ -1,5 +1,4 @@
 import ConexionBD 
-
 class empleado:
 
     #atributos

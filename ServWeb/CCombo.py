@@ -35,5 +35,44 @@ class combo:
 
 
     def getCombo(self):
-        return self.cnn.ejecutarConsulta("ver_combo");
+        datos =  self.cnn.ejecutarConsulta("ver_combo");
+        lista = [];
 
+        for linea in datos:
+            x = 0
+            # print(x)
+            for cmb in lista:
+                # print(cmb)
+                if(linea[0] == cmb["id"]):
+                    producto = {
+                        "nombre" : linea[3],
+                        "tam" : linea[4],
+                        "cantidad" : linea[5]
+                    }
+                    cmb["productos"].append(producto)
+                    x=1
+                    break
+            
+            if(x == 1): continue
+
+            lista.append({
+                "id": linea[0],
+                "nombre" : linea[1],
+                "precio" : linea[2],
+                "productos" :[{
+                    "nombre" : linea[3],
+                    "tam" : linea[4],
+                    "cantidad" : linea[5]
+                }]
+                
+            })
+
+        return lista
+
+
+
+# cmb = combo();
+
+# x = cmb.cnn.ejecutarConsulta("ver_combo");
+
+# print(x)

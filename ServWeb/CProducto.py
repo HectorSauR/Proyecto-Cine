@@ -45,7 +45,17 @@ class producto:
         return
 
     def getUnidadesMedida(self):
-        return self.cnn.ejecutarConsulta("unidad_medida");
+        datos =  self.cnn.ejecutarConsulta("unidad_medida");
+        lista = [];
+
+        for linea in datos:
+            lista.append({
+                "identificador": linea[0],
+                "nombre" : linea[1],
+                "abreviación" : linea[2]
+            })
+
+        return lista
 
     def setTamProducto(self,size:str, abrv:str = "default"):
 
@@ -62,7 +72,28 @@ class producto:
         return
 
     def getTamProducto(self):
-        return self.cnn.ejecutarConsulta("tam_producto");
+        datos =  self.cnn.ejecutarConsulta("tam_producto");
+        lista = [];
 
-    def verProducto(self):
-        return self.cnn.ejecutarConsulta("ver_producto");
+        for linea in datos:
+            lista.append({
+                "identificador": linea[0],
+                "nombre" : linea[1],
+                "abreviación" : linea[2]
+            })
+
+        return lista
+
+    def getProducto(self):
+        datos =  self.cnn.ejecutarConsulta("ver_producto");
+        lista = [];
+
+        for linea in datos:
+            lista.append({
+                "producto": linea[0],
+                "tam" : linea[1],
+                "unidadMedida" : linea[2],
+                "precio" : linea[3]
+            })
+
+        return lista

@@ -66,6 +66,8 @@ SELECT
 FROM
     ver_usuarios;
 
+select * from db_cine.combo; 
+
 CREATE VIEW ver_combo AS
     SELECT 
         combo.combo_id AS id,
@@ -123,7 +125,7 @@ select * from ver_funciones;
 ALTER VIEW ver_asientos_disponibles AS
     SELECT 
         pelicula.nombre_pelicula AS nombre,
-        CONCAT(sala.numAsiento, sala.filaAsientos) AS Asiento,
+        CONCAT(sala.numAsiento,"-",sala.filaAsientos) AS Asiento,
         DATE_FORMAT(fecha, '%Y/%m/%d') as Fecha,
         convert(hora,char) as Hora,
         funcion.sala_id
@@ -147,31 +149,65 @@ SELECT
 FROM
     sala;
 
+select * from tarjeta_cine;
 
 
-
-create view ventas_productos as
+create view venta_productos as
     Select
-        venta_producto_id  as ID
+        v.venta_producto_id  as ID,
+        vprd.Nombre_Combo as Nombre,
+        vprd.Precio_Combo as Precio,
+        total_venta_producto as Total_Venta,
+        concat(empleado.nombre_empleado," ",empleado.apellido1_empleado," ",empleado.apellido2_empleado) as Empleado,
+        concat(cliente.nombre_cliente," ",cliente.apellido1_cliente," ",cliente.apellido2_cliente) as Cliente,
+        convert(fechaHora,char) as Fecha,
+        v.sucursal_id
+    From
+        venta_producto v
+            LEFT JOIN
+        cliente ON v.cliente_id = cliente.cliente_id
+            INNER JOIN
+        empleado ON v.empleado_id = empleado.empleado_id 
+            INNER JOIN
+        venta_prd vprd ON vprd.ID = v.venta_producto_id
+
+
+create view venta_prd as
+    select * FROM ventas_productos_combo 
+    UNION select * FROM ventas_productos_individual;
+
+select * from venta_prd;
+
+alter view ventas_productos_combo as
+    Select
+        v.venta_producto_id  as ID,
+        combo.nombre_combo as Nombre_Combo,
+        combo.precio_combo as Precio_Combo
+    From
+        venta_producto as v
+            left JOIN
+                detalle_venta_combo as dc 
+                    ON v.detalle_venta_combo = dc.detalle_venta_combo_id
+            INNER JOIN
+        combo ON combo.combo_id = dc.combo_id
+
+select * from ventas_productos_combo;
+
+select * from ventas_productos_individual;
+
+alter view ventas_productos_individual as
+    Select
+        venta_producto.venta_producto_id  as ID,
+        concat(producto.nombre_producto," ",tam_producto.nombre_tam) as Nombre_Producto,
+        producto.precio_producto as Precio_Producto
     From
         venta_producto
-            inner join
-        cliente on venta_producto.cliente_id = cliente.cliente_id
-            inner join
-        detalle_venta_combo on venta_producto.detalle_venta_combo = detalle_venta_combo.detalle_venta_combo_id
-            inner join
-        detalle_venta_individual on venta_producto.detalle_venta_individual = detalle_venta_individual.detalle_venta_individual_id
+            INNER JOIN
+        detalle_venta_individual ON venta_producto.detalle_venta_individual = detalle_venta_individual.detalle_venta_individual_id
+            INNER JOIN
+        producto ON producto.producto_id = detalle_venta_individual.producto_id
+            INNER JOIN
+        tam_producto ON producto.tam_producto_id = tam_producto.tam_producto_id
     
-
-
-
-
-
-
-
-
-
-
-
 
 

@@ -27,7 +27,34 @@ class funcion:
         else : return "Error"
 
     def getFuncion(self):
-        return self.cnn.ejecutarConsulta("ver_funciones");
+        datos =  self.cnn.ejecutarConsulta("ver_funciones");
+        lista = [];
+
+        for linea in datos:
+            lista.append({
+                "nombre" : linea[0],
+                "categoria" : linea[1],
+                "duracion" : linea[2],
+                "idioma" : linea[3],
+                "precio" : linea[4],
+                "fecha" : linea[5],
+                "hora" : linea[6],
+                "sala" : linea[7]
+            })
+            
+        return lista 
 
     def getAsientosDisponibles(self):
-        return self.cnn.ejecutarConsulta("ver_asientos_disponibles");
+        datos =  self.cnn.ejecutarConsulta("ver_asientos_disponibles");
+        lista = [];
+
+        for linea in datos:
+            lista.append({
+                "nombre" : linea[0],
+                "asientos" : [linea[1]],
+                "fecha" : linea[2],
+                "hora" : linea[3],
+                "sala" : linea[4]
+            })
+            
+        return lista 

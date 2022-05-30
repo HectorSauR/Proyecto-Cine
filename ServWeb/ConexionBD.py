@@ -23,6 +23,10 @@ class conexionBD:
 
                 if type(dato) == bool:
                     dato = "b\'" + dato + "\'"
+
+                if(dato == None or dato == 0):
+                    dato = "default" 
+
                 if i == 0:
                     cadenaTabla += str(dato)
                     i += 1
@@ -68,7 +72,7 @@ class conexionBD:
 #----------------------Pruebas--------------------------
 # cnn = conexionBD()
 
-# datos = cnn.ejecutarConsulta("ver_funcion");
+# datos = cnn.ejecutarConsulta("venta_productos");
 
 # print(datos)
 

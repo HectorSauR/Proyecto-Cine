@@ -33,6 +33,19 @@ class pelicula:
 
     def getPelicula(self):
         try:
-            return self.cnn.ejecutarConsulta("ver_pelicula");
+            datos = self.cnn.ejecutarConsulta("ver_pelicula");
+            lista = [];
+
+            for linea in datos:
+                lista.append({
+                    "nombre" : linea[0],
+                    "categoria" : linea[1],
+                    "duracion" : linea[2],
+                    "idioma" : linea[3],
+                    "precio" : linea[4],
+                    "imagen" : linea[5]
+                })
+
+            return lista
         except Exception:
             return 'Error al hacer la conexion';

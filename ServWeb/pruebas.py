@@ -5,7 +5,7 @@ import CProducto
 producto = CProducto.producto();
 
 
-r = producto.verProducto();
+r = producto.getProducto();
 
 print (r)
 

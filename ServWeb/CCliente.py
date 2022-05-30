@@ -36,5 +36,17 @@ class cliente:
         else: return "Error al registrar"
 
     def getCliente(self):
-        return self.cnn.ejecutarConsulta("ver_clientes")
+        datos =  self.cnn.ejecutarConsulta("ver_clientes");
+        lista = [];
+
+        for linea in datos:
+            lista.append({
+                "nombre" : linea[0],
+                "apellido1" : linea[1],
+                "apellido2" : linea[2],
+                "cumple" : linea[3],
+                "tajeta" : linea[4]
+            })
+            
+        return lista
 

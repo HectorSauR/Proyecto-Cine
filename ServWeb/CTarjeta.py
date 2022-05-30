@@ -25,6 +25,17 @@ class tarjeta:
         else: return "Error de inserción";
 
     def getTarjetas(self):
-        return self.cnn.ejecutarConsulta("tarjeta_cine")
+        datos =  self.cnn.ejecutarConsulta("tarjeta_cine");
+        lista = [];
+
+        for linea in datos:
+            lista.append({
+                "id" : linea[0],
+                "nombre" : linea[1],
+                "beneficios" : linea[2],
+                "puntosNecesarios" : linea[3]
+            })
+            
+        return lista 
 
 

@@ -45,7 +45,7 @@ def mostrarUsuarios():
 
 @app.route('/productos/mostrar', methods=['GET'])
 def mostrarProductos():
-    return jsonify(producto.verProducto());
+    return jsonify(producto.getProducto());
 
 # -------------------------------- Películas --------------------------------
 
@@ -120,7 +120,7 @@ def registrarCliente():
 @app.route('/cliente/mostrar', methods=['GET'])
 def mostrarCliente():
     cliente = CCliente.cliente();
-    # print(cliente.getCliente());
+    
     return jsonify(cliente.getCliente());
 
 # -------------------------------- Funcion --------------------------------
@@ -163,7 +163,7 @@ def mostrarTarjeta():
     tarjeta = CTarjeta.tarjeta();
     return jsonify(tarjeta.getTarjetas());
 
-@app.route('/tarjeta/registrar', methods=['GET'])
+@app.route('/tarjeta/registrar', methods=['POST'])
 def registrarTarjeta():
     datos = request.get_json();
 
@@ -182,4 +182,29 @@ def registrarTarjeta():
 
 # -------------------------------- Venta --------------------------------
 
+@app.route('/venta/productos/mostrar', methods=['GET'])
+def mostrarVenta():
+    venta = CVenta.venta();
+    # print(venta.getVentasProductos());
+    return jsonify(venta.getVentasProductos());
 
+@app.route('/venta/registrar', methods=['POST'])
+def registrarVenta():
+    datos = request.get_json();
+
+    if(datos == None):
+        return "No se encontraron datos en formato JSON";
+    
+    venta = CVenta.venta();
+    
+    venta.setVentaProducto(
+        datos['total'],
+        datos['empleado'],
+        datos['fecha'],
+        datos["sucursal"],
+        datos["cliente"],
+        datos["productos"],
+        datos["combo"]
+    );
+
+    return venta.regVentaProducto();
