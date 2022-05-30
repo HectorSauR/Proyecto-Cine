@@ -4,13 +4,13 @@ class venta:
 
     cnn = ConexionBD.conexionBD();
 
-    def setVentaProducto(self, total:float,empleado:int,fechaHora:str,sucursal:int,cliente:str,individual:list = None, combo:list = None):
+    def setVentaProducto(self, total:float,empleado:int,fechaHora:str,cliente:str,individual:list = None, combo:list = None):
         self.individual = individual
         self.combo = combo
         self.total = total
         self.empleado = empleado
         self.fechaHora = fechaHora
-        self.sucursal = sucursal
+        self.sucursal = 1
         self.cliente = cliente
     
     def regVentaProducto(self):
@@ -19,15 +19,15 @@ class venta:
     
         if(self.individual != None):
             idIndvidual = self.cnn.obtenerSiguienteIDRep("detalle_venta_individual","detalle_venta_individual_id")
-            # arr = self.individual
-            # for prd in arr:
+            arr = self.individual
+            for prd in arr:
 
-            #     lista = {
-            #         "id" : idIndvidual,
-            #         "producto" : prd["producto_id"],
-            #         "cantidad" : prd["cantidad"]
-            #     }
-            #     self.cnn.ejecutarInsercion("detalle_venta_individual",lista)
+                lista = {
+                    "id" : idIndvidual,
+                    "producto" : prd["producto_id"],
+                    "cantidad" : prd["cantidad"]
+                }
+                self.cnn.ejecutarInsercion("detalle_venta_individual",lista)
             
             idIndv = idIndvidual;
 
@@ -79,11 +79,12 @@ class venta:
                 "ID" : linea[0],
                 "articulo" : linea[1],
                 "precio" : linea[2],
-                "total_venta" : linea[3],
-                "empleado" : linea[4],
-                "cliente" : linea[5],
-                "fecha" : linea[6],
-                "sucursal" : linea[7]
+                "cantidad" : linea[3],
+                "total_venta" : linea[4],
+                "empleado" : linea[5],
+                "cliente" : linea[6],
+                "fecha" : linea[7],
+                "sucursal" : linea[8]
             })
             
         return lista

@@ -188,7 +188,7 @@ def mostrarVenta():
     # print(venta.getVentasProductos());
     return jsonify(venta.getVentasProductos());
 
-@app.route('/venta/registrar', methods=['POST'])
+@app.route('/venta/producto/registrar', methods=['POST'])
 def registrarVenta():
     datos = request.get_json();
 
@@ -201,7 +201,6 @@ def registrarVenta():
         datos['total'],
         datos['empleado'],
         datos['fecha'],
-        datos["sucursal"],
         datos["cliente"],
         datos["productos"],
         datos["combo"]

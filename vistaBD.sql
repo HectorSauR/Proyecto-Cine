@@ -152,11 +152,12 @@ FROM
 select * from tarjeta_cine;
 
 
-create view venta_productos as
+alter view venta_productos as
     Select
         v.venta_producto_id  as ID,
         vprd.Nombre_Combo as Nombre,
         vprd.Precio_Combo as Precio,
+        vprd.cantidad as Cantidad,
         total_venta_producto as Total_Venta,
         concat(empleado.nombre_empleado," ",empleado.apellido1_empleado," ",empleado.apellido2_empleado) as Empleado,
         concat(cliente.nombre_cliente," ",cliente.apellido1_cliente," ",cliente.apellido2_cliente) as Cliente,
@@ -172,7 +173,7 @@ create view venta_productos as
         venta_prd vprd ON vprd.ID = v.venta_producto_id
 
 
-create view venta_prd as
+alter view venta_prd as
     select * FROM ventas_productos_combo 
     UNION select * FROM ventas_productos_individual;
 
@@ -182,7 +183,8 @@ alter view ventas_productos_combo as
     Select
         v.venta_producto_id  as ID,
         combo.nombre_combo as Nombre_Combo,
-        combo.precio_combo as Precio_Combo
+        combo.precio_combo as Precio_Combo,
+        dc.cantidad_combos as cantidad
     From
         venta_producto as v
             left JOIN
@@ -199,7 +201,8 @@ alter view ventas_productos_individual as
     Select
         venta_producto.venta_producto_id  as ID,
         concat(producto.nombre_producto," ",tam_producto.nombre_tam) as Nombre_Producto,
-        producto.precio_producto as Precio_Producto
+        producto.precio_producto as Precio_Producto,
+        detalle_venta_individual.cantidad_producto as Cantidad
     From
         venta_producto
             INNER JOIN
