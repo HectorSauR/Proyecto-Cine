@@ -68,11 +68,34 @@ class funcion:
         return lista
 
     def actualizarAsientos(self, asientos:str,sala:int):
+        if(len(asientos) < 3):
+            lista = {
+                "estadoAsiento" : False,
+                "where" : "WHERE sala_id = "+str(sala)+" and asiento = \""+asientos+"\""
+            }
+            self.cnn.ejecutarUpdate("sala",lista)
+            return
+        
         arr = asientos.split(",")
-
+        
 
         for dato in arr:
-            
+            lista = {
+                "estadoAsiento" : False,
+                "where" : "WHERE sala_id = "+str(sala)+" and asiento = \""+dato+"\""
+            }
+            self.cnn.ejecutarUpdate("sala",lista)
+
+    def reiniciarSala(self,sala:int):
+
+        lista = {
+            "estadoAsiento" : True,
+            "where" : "WHERE sala_id = "+str(sala)
+        }
+        self.cnn.ejecutarUpdate("sala",lista)
+
+
+        
 
 
     def registrarAsientos(self):
@@ -91,6 +114,8 @@ class funcion:
                 # print(objeto)   
                 self.cnn.ejecutarInsercion("sala",objeto)
 
-fun = funcion();
+# fun = funcion();
 
-fun.registrarAsientos()
+# fun.actualizarAsientos("1A,2A,3A",2)
+
+# fun.reiniciarSala(2)

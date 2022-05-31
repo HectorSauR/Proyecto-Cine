@@ -250,4 +250,20 @@ ALTER TABLE `db_cine`.`venta_boleto`
 ADD COLUMN `total` decimal(10,2) NOT NULL AFTER `asientos`;
 
 
-SELECT * FROM db_cine.sala order by sala_id,substring(asiento,2);
+SELECT * FROM db_cine.sala where sala_id = 1 order by sala_id,substring(asiento,2),substring(asiento,1,1);
+
+
+/* select * from producto where nombre like '%libro%' */
+
+select * from producto;
+
+update producto 
+    set unidad_medida_id = 3
+    where producto_id = 1
+
+select * from tam_producto;
+
+update sala 
+set estadoAsiento = 1
+where sala_id = 1 and asiento = "1A"
+
