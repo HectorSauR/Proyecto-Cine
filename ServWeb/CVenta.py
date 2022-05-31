@@ -90,30 +90,50 @@ class venta:
         return lista
 
 
-    def setVentaBoleto(self, cantidad:int, funcion:int,empleado:int,cliente:int,fechaHora:str, sucursal:int):
+    def setVentaBoleto(self, cantidad:int, funcion:int,empleado:int,cliente:int,fechaHora:str,asientos:str,total:float):
         self.cantidad = cantidad;
         self.funcion = funcion;
         self.empleado = empleado;
         self.cliente = cliente;
         self.fechaHora = fechaHora;
-        self.sucursal = sucursal;
+        self.sucursal = 1;
+        self.asientos = asientos;
+        self.total = total;
 
     def regVentaBoleto(self):
 
         lista = {
             "id": "default",
-            "funcion" : self.funcion,
             "cantidad": self.cantidad,
+            "funcion" : self.funcion,
             "empleado" : self.empleado,
             "cliente" : self.cliente,
             "fechaHora" : self.fechaHora,
-            "sucursal" : self.sucursal
+            "sucursal" : self.sucursal,
+            "asientos" : self.asientos,
+            "total" : self.total
         }
 
-        self.cnn.ejecutarInsercion("venta_boleto",lista)
+        x = self.cnn.ejecutarInsercion("venta_boleto",lista)
 
-        return "Ejecución realizada con éxito!"
+        if(x == "1"): return "Registrado con éxito!"
+        else : return "Error de insercion"
 
     def getVentasBoletos(self):
-        self.cnn.ejecutarConsulta("venta_boleto")
+        datos =  self.cnn.ejecutarConsulta("mostrar_venta_boletos");
+        lista = [];
 
+        for linea in datos:
+            lista.append({
+                "ID" : linea[0],
+                "cantidad" : linea[1],
+                "pelicula" : linea[2],
+                "sala" : linea[3],
+                "asientos" : linea[4],
+                "total" : linea[5], 
+                "empleado" : linea[6],
+                "cliente" : linea[7],
+                "fecha" : linea[8]
+            })
+            
+        return lista
