@@ -53,11 +53,13 @@ public class funciones_get_put {
 	}
 	
 	
-public static void ventaProductos() {
+public static void ventaProductos(JSONObject venta) {
 		
 		RestClient rc = new RestClient();
-		String res = rc.Get("http://26.77.197.154:8000/venta/productos/mostrar");
+		String res = rc.Put("http://26.77.197.154:8000/venta/producto/registrar", venta);
 		
+		
+
 		
 		System.out.println(res);
 	}

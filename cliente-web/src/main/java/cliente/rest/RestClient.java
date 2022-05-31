@@ -26,7 +26,7 @@ public class RestClient {
 		
 	
 		
-		vo.put("nombre", "chanate");
+		vo.put("nombre", "null");
 		vo.put("categoria", "1");
 		vo.put("precio", "100");
 		vo.put("PRODUCTOS", ja);
@@ -89,10 +89,10 @@ public class RestClient {
 	}
 	
 	
- public static void Post(String path, JSONObject vo) {
+ public static String Put(String path, JSONObject vo) {
 		
-	 String urlRestService = path;
-	 ClientConfig clientConfig = new DefaultClientConfig();
+	 	String urlRestService = path;
+	 	ClientConfig clientConfig = new DefaultClientConfig();
 		clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 		Client client = Client.create(clientConfig);
 		WebResource webResource = client.resource(urlRestService);
@@ -100,6 +100,7 @@ public class RestClient {
 		
 		ClientResponse response = webResource.type("application/json").post(ClientResponse.class, vo.toString());
 		String resp = response.getEntity(String.class);
+		return resp;
 		
 	}
 
