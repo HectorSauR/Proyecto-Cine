@@ -77,9 +77,12 @@ class conexionBD:
 
             arrKey = list(datos.keys());
 
-            print(arrKey)
+            # print(arrKey)
             for dato in datos.values():
                 # print(dato)
+                if(arrKey[i] == "where"):
+                    continue
+
                 if type(dato) == str and dato != "default":
                     dato = "\"" + dato +"\""
 
@@ -92,26 +95,24 @@ class conexionBD:
                     dato = "default" 
                 
                 if i == 0:
-                    cadenaTabla += str(dato)
+                    cadenaTabla +=  arrKey[i] + " = " + str(dato)
                     i += 1
                     continue
                 
 
-                cadenaTabla += ","+str(dato)
-                cadenaTabla+= arrKey[i] + " = " + str(dato)
+                cadenaTabla += ","+arrKey[i] + " = " + str(dato)
                 
                 i+=1
-
                 
             # print(datos.__contains__("where"));
             if(datos.__contains__("where") == True):
-                cadenaTabla += datos["where"]
+                cadenaTabla += " " + datos["where"]
 
-            print(cadenaTabla)
+            # print(cadenaTabla)
 
-            # self.cursor.execute(cadenaTabla)
-            # self.conexion.commit()
-            # return "1"
+            self.cursor.execute(cadenaTabla)
+            self.conexion.commit()
+            return "1"
         except con.Error:
             return "Error al ejecutar insercion";
 
@@ -125,16 +126,17 @@ class conexionBD:
     
 
 #----------------------Pruebas--------------------------
-cnn = conexionBD()
+# cnn = conexionBD()
 
-lista = {
-    "id" : 1,
-    "cosa" : 2
-}
+# lista = {
+#     "id" : 1,
+#     "cosa" : 2,
+#     "where" : "WHERE id_coca = 1"
+# }
 
-datos = cnn.ejecutarUpdate("venta_productos",lista);
+# datos = cnn.ejecutarUpdate("venta_productos",lista);
 
-print(datos)
+# print(datos)
 
 # for fila in datos:
     # print(fila)

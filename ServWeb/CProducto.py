@@ -87,7 +87,7 @@ class producto:
     def getProducto(self):
         datos =  self.cnn.ejecutarConsulta("ver_producto");
         lista = [];
-
+        print(datos)
         for linea in datos:
             lista.append({
                 "id" : linea[0],

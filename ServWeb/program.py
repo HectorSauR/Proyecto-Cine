@@ -232,7 +232,8 @@ def registrarVentaBoleto():
         datos["cliente"],
         datos["fechaHora"],
         datos["asientos"],
-        datos["total"]
+        datos["total"],
+        datos["sala"]
     );
 
     return venta.regVentaBoleto();

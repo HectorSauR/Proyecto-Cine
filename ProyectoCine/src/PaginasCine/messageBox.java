@@ -30,7 +30,7 @@ public class messageBox extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		{
-			//System.out.println(texto);
+//			System.out.println(texto);
 			JLabel lbl_contenido = new JLabel(texto);
 			contentPanel.add(lbl_contenido);
 		}

@@ -1,10 +1,10 @@
-import ConexionBD;
+import ConexionBD,CFuncion;
 
 class venta:
 
     cnn = ConexionBD.conexionBD();
 
-    def setVentaProducto(self, total:float,empleado:int,fechaHora:str,cliente:str,individual:list = None, combo:list = None):
+    def setVentaProducto(self, total:float,empleado:int,fechaHora:str,cliente:str,individual = None, combo = None):
         self.individual = individual
         self.combo = combo
         self.total = total
@@ -16,8 +16,11 @@ class venta:
     def regVentaProducto(self):
         idIndv = 0;
         idcmb = 0;
-    
-        if(self.individual != None):
+        print(self.individual)
+        print(type(self.individual))
+        # if(self.individual != None and self.combo != "default"):
+        if(type(self.individual) == list):
+            print("individual")
             idIndvidual = self.cnn.obtenerSiguienteIDRep("detalle_venta_individual","detalle_venta_individual_id")
             arr = self.individual
             for prd in arr:
@@ -30,11 +33,10 @@ class venta:
                 self.cnn.ejecutarInsercion("detalle_venta_individual",lista)
             
             idIndv = idIndvidual;
-
-
         else: idIndv = None;
 
-        if(self.combo != None):
+        if(type(self.combo) == list):
+            print("combo")
             idCombo = self.cnn.obtenerSiguienteIDRep("detalle_venta_combo","detalle_venta_combo_id")
             arr = self.combo
             for cmb in arr:
@@ -63,7 +65,7 @@ class venta:
             "sucursal" : self.sucursal
         }
 
-        print(lista);
+        # print(lista);
 
         x = self.cnn.ejecutarInsercion("venta_producto",lista)
 
@@ -90,7 +92,7 @@ class venta:
         return lista
 
 
-    def setVentaBoleto(self, cantidad:int, funcion:int,empleado:int,cliente:int,fechaHora:str,asientos:str,total:float):
+    def setVentaBoleto(self, cantidad:int, funcion:int,empleado:int,cliente:int,fechaHora:str,asientos:str,total:float,sala:int):
         self.cantidad = cantidad;
         self.funcion = funcion;
         self.empleado = empleado;
@@ -99,6 +101,7 @@ class venta:
         self.sucursal = 1;
         self.asientos = asientos;
         self.total = total;
+        self.sala = sala;
 
     def regVentaBoleto(self):
 
@@ -113,6 +116,10 @@ class venta:
             "asientos" : self.asientos,
             "total" : self.total
         }
+        
+        func = CFuncion.funcion();
+
+        func.actualizarAsientos(self.asientos, self.sala)
 
         x = self.cnn.ejecutarInsercion("venta_boleto",lista)
 
