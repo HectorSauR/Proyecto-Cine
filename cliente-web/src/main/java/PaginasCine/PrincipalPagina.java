@@ -33,6 +33,7 @@ public class PrincipalPagina {
 	JFrame frmCinema;
 	JSONObject venta = new JSONObject();	
 	JSONArray productos = new JSONArray();
+	JSONArray combos = new JSONArray();
 	
 	
 	//Individual
@@ -144,6 +145,7 @@ public class PrincipalPagina {
 	public PrincipalPagina() {
 		initialize();
 		run();
+		venta.put("total", total);
 	}
 
 	/**
@@ -600,6 +602,49 @@ public class PrincipalPagina {
 		panel_muestras.add(lblCantidad);
 		
 		btn_combo_1 = new JButton("Combo Primos");
+		btn_combo_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				int x = 0;
+				
+				for (int i=0; i<combos.length();i++) {
+				 JSONObject prd = combos.getJSONObject(i);
+				if (Integer.parseInt(prd.get("combo_id").toString())==1) {
+    				System.out.println(prd.get("combo_id"));
+					 x=1;
+					 int cant =  Integer.parseInt(prd.get("cantidad").toString());
+					 prd.put("cantidad", cant+1);
+					 break;
+				}
+				}
+				
+				
+				if (x==0) {
+					JSONObject cmb = new JSONObject();
+				    cmb.put("combo_id", 1);
+				    cmb.put("cantidad", 1);
+				    combos.put(cmb);
+				    venta.put("total",218);
+				}
+				
+				
+			    
+				
+			    
+				if (productos.length()<=0){
+					venta.put("productos", "default");	
+				}
+				
+				
+				 int prec =  Integer.parseInt(venta.get("total").toString());
+				 venta.put("total", prec+218);
+				 
+				 
+				 venta.put("combo",combos);
+				 
+				
+			}
+		});
 		btn_combo_1.setForeground(Color.WHITE);
 		btn_combo_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_combo_1.setBorder(null);
@@ -693,6 +738,13 @@ public class PrincipalPagina {
 		btn_confirmar_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				funciones_get_put usr = new funciones_get_put();
+				venta.put("total", total);
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+				venta.put("fecha", dtf.format(LocalDateTime.now()));
+				venta.put("empleado", 1);
+				venta.put("cliente", "default");
+				
+				System.out.println(venta);
 				funciones_get_put.ventaProductos(venta);
 			}
 		});

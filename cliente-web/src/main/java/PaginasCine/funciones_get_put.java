@@ -9,7 +9,8 @@ public class funciones_get_put {
 
 	}
 	
-	
+//	public static  String ip="26.77.197.154" ;
+	public static  String ip="192.168.43.215";
 	
 	public static boolean inicio_sesion( String us, String cont) {
 		
@@ -20,7 +21,7 @@ public class funciones_get_put {
 //		System.out.println(us);
 //		System.out.println(cont);
 		
-		String res = rc.Get("http://26.77.197.154:8000/empleados/usuarios");
+		String res = rc.Get("http://"+ip+":8000/empleados/usuarios");
 //		System.out.println(res);
 		
 		
@@ -46,7 +47,7 @@ public class funciones_get_put {
 	public static void productos() {
 		
 		RestClient rc = new RestClient();
-		String res = rc.Get("http://26.77.197.154:8000/venta/productos/mostrar");
+		String res = rc.Get("http://"+ip+":8000/venta/productos/mostrar");
 		
 		
 		System.out.println(res);
@@ -56,7 +57,7 @@ public class funciones_get_put {
 	public static void ventaProductos(JSONObject venta) {
 		
 		RestClient rc = new RestClient();
-		String res = rc.Put("http://26.77.197.154:8000/venta/producto/registrar", venta);
+		String res = rc.Put("http://"+ip+":8000/venta/producto/registrar", venta);
 		
 		
 
@@ -67,7 +68,9 @@ public class funciones_get_put {
 
 public static void combo_mostrar() {
 	RestClient rc = new RestClient();
-	String res = rc.Get("http://26.77.197.154:8000/venta/combo/mostrar");
+	String res = rc.Get("http://"+ip+":8000/combo/mostrar");
+	
+	System.out.println(res);
 }
 	
 	
