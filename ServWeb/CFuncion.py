@@ -47,8 +47,16 @@ class funcion:
     def getAsientosDisponibles(self):
         datos =  self.cnn.ejecutarConsulta("ver_asientos_disponibles");
         lista = [];
-
+        
         for linea in datos:
+            x = 0
+            for dato in lista:
+                if(dato["sala"] == linea[4]):
+                    dato["asientos"].append(linea[1])
+                    x = 1
+                    continue
+            if(x == 1): continue
+
             lista.append({
                 "nombre" : linea[0],
                 "asientos" : [linea[1]],
@@ -57,4 +65,32 @@ class funcion:
                 "sala" : linea[4]
             })
             
-        return lista 
+        return lista
+
+    def actualizarAsientos(self, asientos:str,sala:int):
+        arr = asientos.split(",")
+
+
+        for dato in arr:
+            
+
+
+    def registrarAsientos(self):
+        lista = ["A","B","C","D"]
+
+        for a in lista:
+            for b in range(8):
+
+                objeto = {
+                    "sala" : 3,
+                    "asiento" : str(b+1)+a,
+                    "estado" : True,
+                    "sucursal" : 1
+                }
+
+                # print(objeto)   
+                self.cnn.ejecutarInsercion("sala",objeto)
+
+fun = funcion();
+
+fun.registrarAsientos()

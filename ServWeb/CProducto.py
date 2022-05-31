@@ -90,10 +90,11 @@ class producto:
 
         for linea in datos:
             lista.append({
-                "producto": linea[0],
-                "tam" : linea[1],
-                "unidadMedida" : linea[2],
-                "precio" : linea[3]
+                "id" : linea[0],
+                "producto": linea[1],
+                "tam" : linea[2],
+                "unidadMedida" : linea[3],
+                "precio" : linea[4]
             })
 
         return lista

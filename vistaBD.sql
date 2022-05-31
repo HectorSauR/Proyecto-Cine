@@ -9,22 +9,23 @@ select  `empleado`.`empleado_id`,
 FROM `db_cine`.`empleado`;
 
 ALTER VIEW ver_producto AS
-    SELECT 
-        producto.nombre_producto AS producto,
+    SELECT
+        pr.producto_id AS id,
+        pr.nombre_producto AS producto,
         tam_producto.nombre_tam AS tamaño,
         unidad_medida.nombre_unidad_medida AS unidad_medida,
-        producto.precio_producto AS precio
+        pr.precio_producto AS precio
     FROM
-        producto
+        producto pr
             INNER JOIN
-        unidad_medida ON producto.unidad_medida_id = unidad_medida.unidada_medida_id
+        unidad_medida ON pr.unidad_medida_id = unidad_medida.unidada_medida_id
             INNER JOIN
-        tam_producto ON producto.tam_producto_id = tam_producto.tam_producto_id;
+        tam_producto ON pr.tam_producto_id = tam_producto.tam_producto_id;
 
 SELECT 
-    *
+*
 FROM
-    ver_producto;
+ver_producto;
 
 CREATE VIEW ver_usuarios AS
     SELECT 
@@ -125,7 +126,7 @@ select * from ver_funciones;
 ALTER VIEW ver_asientos_disponibles AS
     SELECT 
         pelicula.nombre_pelicula AS nombre,
-        CONCAT(sala.numAsiento,"-",sala.filaAsientos) AS Asiento,
+        sala.asiento AS Asiento,
         DATE_FORMAT(fecha, '%Y/%m/%d') as Fecha,
         convert(hora,char) as Hora,
         funcion.sala_id
@@ -214,3 +215,39 @@ alter view ventas_productos_individual as
     
 
 
+
+alter view mostrar_venta_boletos AS
+    select
+        vb.venta_producto_id as id,
+        vb.cantidad_boletos as cantidad,
+        concat(pelicula.nombre_pelicula,"-",categoria.nombreCategoria) AS pelicula,
+        fn.sala_id as Sala,
+        vb.asientos as Asientos,
+        vb.total as Total,
+        concat(empleado.nombre_empleado," ",empleado.apellido1_empleado," ",empleado.apellido2_empleado) as Empleado,
+        concat(cliente.nombre_cliente," ",cliente.apellido1_cliente," ",cliente.apellido2_cliente) as Cliente,
+        convert(vb.fechaHora,char) as Fecha
+    from
+    venta_boleto vb
+            LEFT JOIN
+        cliente ON vb.cliente_id = cliente.cliente_id
+            INNER JOIN
+        empleado ON vb.empleado_id = empleado.empleado_id
+            INNER JOIN
+        funcion fn ON vb.funcion_id = fn.funcion_id
+            INNER JOIN
+        pelicula ON fn.pelicula_id = pelicula.pelicula_id
+            INNER JOIN
+        sala ON fn.sala_id = sala.sala_id
+            INNER JOIN
+        categoria ON pelicula.categoria_id = categoria.categoria_id
+    group by vb.venta_producto_id
+
+
+select * from mostrar_venta_boletos;
+select * from venta_boleto;
+ALTER TABLE `db_cine`.`venta_boleto` 
+ADD COLUMN `total` decimal(10,2) NOT NULL AFTER `asientos`;
+
+
+SELECT * FROM db_cine.sala order by sala_id,substring(asiento,2);

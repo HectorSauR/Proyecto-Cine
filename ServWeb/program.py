@@ -6,8 +6,8 @@ from flask import Flask,jsonify,request
 # set FLASK_DEV=development
 # set FLASK_DEBUG=1
 
-# flask run
 # flask run -h 26.77.197.154 -p 8000
+# flask run
 
 
 # 
@@ -17,16 +17,13 @@ from flask import Flask,jsonify,request
 # 
 #   FECHA = 2020-12-31 // YY-MM-DD
 #   
-#   HORA = 12:00 // HH:MM:SS
+#   HORA = 12:00:00 // HH:MM:SS
 # 
 # 
 # 
 
 app = Flask(__name__)
 
-empleado = CEmpleado.empleado();
-producto = CProducto.producto();
-combo = CCombo.combo();
 
 # -------------------------------- Pruebas --------------------------------
 @app.route('/')
@@ -35,16 +32,21 @@ def index():
 # lista.append += { "fila": datos[1]};
 @app.route('/empleados/mostrar', methods=['GET'])
 def mostrarEmpleados():
+    empleado = CEmpleado.empleado();
+    
     return jsonify(empleado.mostrarEmpleados());
 
 @app.route('/empleados/usuarios', methods=['GET'])
 def mostrarUsuarios():
+    empleado = CEmpleado.empleado();
     return jsonify(empleado.mostrarUsuarios());
 
 # -------------------------------- Productos --------------------------------
 
 @app.route('/productos/mostrar', methods=['GET'])
 def mostrarProductos():
+    producto = CProducto.producto();
+
     return jsonify(producto.getProducto());
 
 # -------------------------------- Películas --------------------------------
@@ -52,8 +54,7 @@ def mostrarProductos():
 @app.route('/pelicula/registrar', methods=['POST'])
 def registrarPelicula():
     datos = request.get_json();
-    # print(ejemplo['nombre']);
-    # return ejemplo['nombre']
+    
     if(datos == None):
         return "No se encontraron datos en formato JSON";
     peli = CPelicula.pelicula();
@@ -96,6 +97,7 @@ def registrarCombo():
 
 @app.route('/combo/mostrar', methods=['GET'])
 def mostrarCombo():
+    combo = CCombo.combo();
     return jsonify(combo.getCombo());
 
 # -------------------------------- Cliente --------------------------------
@@ -207,3 +209,30 @@ def registrarVenta():
     );
 
     return venta.regVentaProducto();
+
+@app.route('/venta/boleto/mostrar', methods=['GET'])
+def mostrarVentaboleto():
+    venta = CVenta.venta();
+    # print(venta.getVentasProductos());
+    return jsonify(venta.getVentasBoletos());
+
+@app.route('/venta/boleto/registrar', methods=['POST'])
+def registrarVentaBoleto():
+    datos = request.get_json();
+
+    if(datos == None):
+        return "No se encontraron datos en formato JSON";
+    
+    venta = CVenta.venta();
+    
+    venta.setVentaBoleto(
+        datos["cantidad"],
+        datos["funcion"],
+        datos["empleado"],
+        datos["cliente"],
+        datos["fechaHora"],
+        datos["asientos"],
+        datos["total"]
+    );
+
+    return venta.regVentaBoleto();

@@ -22,7 +22,9 @@ class conexionBD:
                     dato = "\"" + dato +"\""
 
                 if type(dato) == bool:
-                    dato = "b\'" + dato + "\'"
+                    if(dato):
+                        dato = "b\'" + str(1) + "\'"
+                    else: dato = "b\'" + str(0) + "\'"
 
                 if(dato == None or dato == 0):
                     dato = "default" 
@@ -67,14 +69,72 @@ class conexionBD:
             return int(self.cursor.fetchone()[0])+1;
         except con.Error:
             print("Error connecting to database");
+
+    def ejecutarUpdate(self,nombreTabla:str,datos:list):
+        try:
+            cadenaTabla = "update "+nombreTabla+" set "
+            i = 0
+
+            arrKey = list(datos.keys());
+
+            print(arrKey)
+            for dato in datos.values():
+                # print(dato)
+                if type(dato) == str and dato != "default":
+                    dato = "\"" + dato +"\""
+
+                if type(dato) == bool:
+                    if(dato):
+                        dato = "b\'" + str(1) + "\'"
+                    else: dato = "b\'" + str(0) + "\'"
+
+                if(dato == None or dato == 0):
+                    dato = "default" 
+                
+                if i == 0:
+                    cadenaTabla += str(dato)
+                    i += 1
+                    continue
+                
+
+                cadenaTabla += ","+str(dato)
+                cadenaTabla+= arrKey[i] + " = " + str(dato)
+                
+                i+=1
+
+                
+            # print(datos.__contains__("where"));
+            if(datos.__contains__("where") == True):
+                cadenaTabla += datos["where"]
+
+            print(cadenaTabla)
+
+            # self.cursor.execute(cadenaTabla)
+            # self.conexion.commit()
+            # return "1"
+        except con.Error:
+            return "Error al ejecutar insercion";
+
+    def ejecutarConsultaCondicional(self,nombreConsulta:str, nombreColumna:str,valor):
+        try:
+            self.cursor.execute("SELECT * FROM "+nombreConsulta+"WHERE "+nombreColumna+" = "+valor);
+            return self.cursor.fetchall();
+
+        except con.Error:
+            print("Error connecting to database");
     
 
 #----------------------Pruebas--------------------------
-# cnn = conexionBD()
+cnn = conexionBD()
 
-# datos = cnn.ejecutarConsulta("venta_productos");
+lista = {
+    "id" : 1,
+    "cosa" : 2
+}
 
-# print(datos)
+datos = cnn.ejecutarUpdate("venta_productos",lista);
+
+print(datos)
 
 # for fila in datos:
     # print(fila)
