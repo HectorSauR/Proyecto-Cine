@@ -63,6 +63,12 @@ public static void ventaProductos(JSONObject venta) {
 		
 		System.out.println(res);
 	}
+
+
+public static void combo_mostrar() {
+	RestClient rc = new RestClient();
+	String res = rc.Get("http://26.77.197.154:8000/venta/combo/mostrar");
+}
 	
 	
 	
