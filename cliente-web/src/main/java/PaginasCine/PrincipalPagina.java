@@ -31,14 +31,49 @@ import org.json.*;
 public class PrincipalPagina {
 
 	JFrame frmCinema;
-	private JTextField txt_cant_palo;
-	private JTextField txt_cant_refre;
 	JSONObject venta = new JSONObject();	
 	JSONArray productos = new JSONArray();
+	
+	
+	//Individual
+	JLabel lbl_palomitas;
+	final JComboBox cb_tamano_palo = new JComboBox();
+	final JComboBox cb_sabor_palo = new JComboBox();
+	JLabel lbl_refresco;
+	final JComboBox cb_tamano_refre = new JComboBox();
+	final JComboBox cb_sabor_refre = new JComboBox();
+	JButton btn_confirmar;
+	JTextField txt_cant_palo;
+	JTextField txt_cant_refre;
+	JLabel lblNewLabel;
+	JLabel lblSabor;
+	JLabel lblCantidad;
+	
+	//Combo
+	static JButton btn_combo_1;
+	static JButton btn_combo_2;
+	static JButton btn_combo_3;
+	static JButton btn_combo_4;
+	
+	
+	
+	//extras
+	static JLabel lbl_dulces;
+	static JLabel lbl_comidas;
+	final static JComboBox comobo_dulces_extra = new JComboBox();
+	final static JComboBox comobo_comida_extra = new JComboBox();
+	static JTextField cant_dulces;
+	static JTextField cant_comida;
+	static JButton btn_confirmar_2_ext;
+	static JLabel lblNewLabel_ext_1;
+	static JLabel lblNewLabel_ext_2;
+	
 	
 	int id = 0;
 	float prec_prd = 0;
 	float total=0;
+	
+	
 
 	/**
 	 * Launch the application.
@@ -49,9 +84,28 @@ public class PrincipalPagina {
 				try {
 					PrincipalPagina window = new PrincipalPagina();
 					window.frmCinema.setVisible(true);
+					 btn_combo_1.setVisible(false);
+					 btn_combo_2.setVisible(false);
+					 btn_combo_3.setVisible(false);
+					 btn_combo_4.setVisible(false);
+					 
+					 
+					 
+					      lbl_dulces.setVisible(false);
+						  lbl_comidas.setVisible(false); 
+						  comobo_dulces_extra.setVisible(false);
+						  comobo_comida_extra.setVisible(false);
+						  cant_dulces.setVisible(false);
+						  cant_comida.setVisible(false);
+						  btn_confirmar_2_ext.setVisible(false);
+						  lblNewLabel_ext_1.setVisible(false);
+						  lblNewLabel_ext_2.setVisible(false);
+						  
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				
+				
 			}
 		});
 	}
@@ -107,6 +161,39 @@ public class PrincipalPagina {
 		panel_general.setLayout(null);
 		
 		JButton btn_individual = new JButton("Individual");
+		btn_individual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lbl_palomitas.setVisible(true); 
+				cb_tamano_palo.setVisible(true) ;
+				cb_sabor_palo.setVisible(true) ;
+				lbl_refresco.setVisible(true);
+				cb_tamano_refre.setVisible(true);
+				cb_sabor_refre.setVisible(true) ;
+				btn_confirmar.setVisible(true);
+				txt_cant_palo.setVisible(true);
+				txt_cant_refre.setVisible(true);
+				lblNewLabel.setVisible(true);
+		        lblSabor.setVisible(true);
+				lblCantidad.setVisible(true);
+				
+				  btn_combo_1.setVisible(false);
+				  btn_combo_2.setVisible(false);
+				  btn_combo_3.setVisible(false);
+				  btn_combo_4.setVisible(false);
+				  
+				  lbl_dulces.setVisible(false);
+				  lbl_comidas.setVisible(false); 
+				  comobo_dulces_extra.setVisible(false);
+				  comobo_comida_extra.setVisible(false);
+				  cant_dulces.setVisible(false);
+				  cant_comida.setVisible(false);
+				  btn_confirmar_2_ext.setVisible(false);
+				  lblNewLabel_ext_1.setVisible(false);
+				  lblNewLabel_ext_2.setVisible(false);
+				
+				
+			}
+		});
 		btn_individual.setForeground(new Color(255, 255, 255));
 		btn_individual.setBorder(null);
 		btn_individual.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -115,6 +202,39 @@ public class PrincipalPagina {
 		panel_general.add(btn_individual);
 		
 		JButton btn_combos = new JButton("Combos");
+		btn_combos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lbl_palomitas.setVisible(false); 
+				cb_tamano_palo.setVisible(false) ;
+				cb_sabor_palo.setVisible(false) ;
+				lbl_refresco.setVisible(false);
+				cb_tamano_refre.setVisible(false);
+				cb_sabor_refre.setVisible(false) ;
+				btn_confirmar.setVisible(false);
+				txt_cant_palo.setVisible(false);
+				txt_cant_refre.setVisible(false);
+				lblNewLabel.setVisible(false);
+		        lblSabor.setVisible(false);
+				lblCantidad.setVisible(false);
+				
+				  btn_combo_1.setVisible(true);
+				  btn_combo_2.setVisible(true);
+				  btn_combo_3.setVisible(true);
+				  btn_combo_4.setVisible(true);
+				  
+				  lbl_dulces.setVisible(false);
+				  lbl_comidas.setVisible(false); 
+				  comobo_dulces_extra.setVisible(false);
+				  comobo_comida_extra.setVisible(false);
+				  cant_dulces.setVisible(false);
+				  cant_comida.setVisible(false);
+				  btn_confirmar_2_ext.setVisible(false);
+				  lblNewLabel_ext_1.setVisible(false);
+				  lblNewLabel_ext_2.setVisible(false);
+				
+				
+			}
+		});
 		btn_combos.setForeground(new Color(255, 255, 255));
 		btn_combos.setBorder(null);
 		btn_combos.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -123,6 +243,40 @@ public class PrincipalPagina {
 		panel_general.add(btn_combos);
 		
 		JButton btn_extras = new JButton("Extras");
+		btn_extras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lbl_palomitas.setVisible(false); 
+				cb_tamano_palo.setVisible(false) ;
+				cb_sabor_palo.setVisible(false) ;
+				lbl_refresco.setVisible(false);
+				cb_tamano_refre.setVisible(false);
+				cb_sabor_refre.setVisible(false) ;
+				btn_confirmar.setVisible(false);
+				txt_cant_palo.setVisible(false);
+				txt_cant_refre.setVisible(false);
+				lblNewLabel.setVisible(false);
+		        lblSabor.setVisible(false);
+				lblCantidad.setVisible(false);
+				
+				  btn_combo_1.setVisible(false);
+				  btn_combo_2.setVisible(false);
+				  btn_combo_3.setVisible(false);
+				  btn_combo_4.setVisible(false);
+				  
+				  
+				  lbl_dulces.setVisible(true);
+				  lbl_comidas.setVisible(true); 
+				  comobo_dulces_extra.setVisible(true);
+				  comobo_comida_extra.setVisible(true);
+				  cant_dulces.setVisible(true);
+				  cant_comida.setVisible(true);
+				  btn_confirmar_2_ext.setVisible(true);
+				  lblNewLabel_ext_1.setVisible(true);
+				  lblNewLabel_ext_2.setVisible(true);
+				
+			}
+		});
 		btn_extras.setForeground(new Color(255, 255, 255));
 		btn_extras.setBorder(null);
 		btn_extras.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -136,57 +290,55 @@ public class PrincipalPagina {
 		panel_muestras.setBackground(new Color(217, 217, 217));
 		panel_muestras.setLayout(null);
 		
-		JLabel lbl_palomitas = new JLabel("Palomitas");
+		lbl_palomitas = new JLabel("Palomitas");
 		lbl_palomitas.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_palomitas.setForeground(Color.BLACK);
-		lbl_palomitas.setBounds(10, 61, 65, 21);
+		lbl_palomitas.setBounds(10, 63, 65, 21);
 		panel_muestras.add(lbl_palomitas);
 		
-		final JComboBox cb_tamano_palo = new JComboBox();
+		
 		cb_tamano_palo.setFont(new Font("Arial", Font.PLAIN, 12));
 		cb_tamano_palo.setMaximumRowCount(3);
 		cb_tamano_palo.setToolTipText("");
 		cb_tamano_palo.setModel(new DefaultComboBoxModel(new String[] {"","Chico", "Mediano", "Grande"}));
 		cb_tamano_palo.setSelectedIndex(0);
-		cb_tamano_palo.setBounds(83, 60, 126, 22);
+		cb_tamano_palo.setBounds(83, 62, 126, 22);
 		panel_muestras.add(cb_tamano_palo);
 		
-		final JComboBox cb_sabor_palo = new JComboBox();
+		
 		cb_sabor_palo.setFont(new Font("Arial", Font.PLAIN, 12));
 		cb_sabor_palo.setToolTipText("");
 		cb_sabor_palo.setModel(new DefaultComboBoxModel(new String[] {"","Mantequilla", "Takis", "Caramelo"}));
 		cb_sabor_palo.setSelectedIndex(0);
 		cb_sabor_palo.setMaximumRowCount(3);
-		cb_sabor_palo.setBounds(219, 60, 126, 22);
+		cb_sabor_palo.setBounds(219, 62, 126, 22);
 		panel_muestras.add(cb_sabor_palo);
 		
-		JLabel lbl_refresco = new JLabel("Refresco");
+		lbl_refresco = new JLabel("Refresco");
 		lbl_refresco.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_refresco.setForeground(Color.BLACK);
-		lbl_refresco.setBounds(10, 156, 65, 21);
+		lbl_refresco.setBounds(10, 158, 65, 21);
 		panel_muestras.add(lbl_refresco);
 		
-		final JComboBox cb_tamano_refre = new JComboBox();
+		
 		cb_tamano_refre.setFont(new Font("Arial", Font.PLAIN, 12));
 		cb_tamano_refre.setToolTipText("");
-		
-		
 		cb_tamano_refre.setModel(new DefaultComboBoxModel(new String[] {"","Chico", "Mediano", "Grande"}));
 		cb_tamano_refre.setSelectedIndex(0);
 		cb_tamano_refre.setMaximumRowCount(3);
-		cb_tamano_refre.setBounds(83, 155, 126, 22);
+		cb_tamano_refre.setBounds(83, 157, 126, 22);
 		panel_muestras.add(cb_tamano_refre);
 		
-		final JComboBox cb_sabor_refre = new JComboBox();
+		
 		cb_sabor_refre.setFont(new Font("Arial", Font.PLAIN, 12));
 		cb_sabor_refre.setToolTipText("");
 		cb_sabor_refre.setModel(new DefaultComboBoxModel(new String[] {"","Coca-Cola", "Pepsi", "Sprite"}));
 		cb_sabor_refre.setSelectedIndex(0);
 		cb_sabor_refre.setMaximumRowCount(3);
-		cb_sabor_refre.setBounds(219, 155, 126, 22);
+		cb_sabor_refre.setBounds(219, 157, 126, 22);
 		panel_muestras.add(cb_sabor_refre);
 		
-		JButton btn_confirmar = new JButton("Confirmar");
+		btn_confirmar = new JButton("Confirmar");
 		btn_confirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -399,27 +551,106 @@ public class PrincipalPagina {
 		
 		txt_cant_palo = new JTextField();
 		txt_cant_palo.setText("0");
-		txt_cant_palo.setBounds(355, 61, 86, 20);
+		txt_cant_palo.setBounds(355, 63, 86, 20);
 		panel_muestras.add(txt_cant_palo);
 		txt_cant_palo.setColumns(10);
 		
 		txt_cant_refre = new JTextField();
 		txt_cant_refre.setText("0");
-		txt_cant_refre.setBounds(355, 157, 86, 20);
+		txt_cant_refre.setBounds(355, 159, 86, 20);
 		panel_muestras.add(txt_cant_refre);
 		txt_cant_refre.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Tamaño");
-		lblNewLabel.setBounds(122, 35, 46, 14);
+		lblNewLabel = new JLabel("Tamaño");
+		lblNewLabel.setBounds(122, 37, 46, 14);
 		panel_muestras.add(lblNewLabel);
 		
-		JLabel lblSabor = new JLabel("Sabor");
-		lblSabor.setBounds(250, 35, 46, 14);
+		lblSabor = new JLabel("Sabor");
+		lblSabor.setBounds(250, 37, 46, 14);
 		panel_muestras.add(lblSabor);
 		
-		JLabel lblCantidad = new JLabel("Cantidad");
-		lblCantidad.setBounds(372, 35, 46, 14);
+		lblCantidad = new JLabel("Cantidad");
+		lblCantidad.setBounds(372, 37, 46, 14);
 		panel_muestras.add(lblCantidad);
+		
+		btn_combo_1 = new JButton("Combo Primos");
+		btn_combo_1.setForeground(Color.WHITE);
+		btn_combo_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_combo_1.setBorder(null);
+		btn_combo_1.setBackground(new Color(53, 53, 53));
+		btn_combo_1.setBounds(47, 76, 162, 92);
+		panel_muestras.add(btn_combo_1);
+		
+		btn_combo_2 = new JButton("Combo 2");
+		btn_combo_2.setForeground(Color.WHITE);
+		btn_combo_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_combo_2.setBorder(null);
+		btn_combo_2.setBackground(new Color(53, 53, 53));
+		btn_combo_2.setBounds(256, 76, 162, 92);
+		panel_muestras.add(btn_combo_2);
+		
+		btn_combo_3 = new JButton("Combo 3");
+		btn_combo_3.setForeground(Color.WHITE);
+		btn_combo_3.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_combo_3.setBorder(null);
+		btn_combo_3.setBackground(new Color(53, 53, 53));
+		btn_combo_3.setBounds(47, 235, 162, 92);
+		panel_muestras.add(btn_combo_3);
+		
+		btn_combo_4 = new JButton("Combo 4");
+		btn_combo_4.setForeground(Color.WHITE);
+		btn_combo_4.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_combo_4.setBorder(null);
+		btn_combo_4.setBackground(new Color(53, 53, 53));
+		btn_combo_4.setBounds(256, 235, 162, 92);
+		panel_muestras.add(btn_combo_4);
+		
+		
+		lbl_dulces = new JLabel("Dulces");
+		lbl_dulces.setBounds(68, 115, 46, 14);
+		panel_muestras.add(lbl_dulces);
+		
+		lbl_comidas = new JLabel("Comidas");
+		lbl_comidas.setBounds(68, 231, 46, 14);
+		panel_muestras.add(lbl_comidas);
+		
+		
+		comobo_dulces_extra.setModel(new DefaultComboBoxModel(new String[] {"", "Tostitos", "Galletas emperador", "Skwinkles"}));
+		comobo_dulces_extra.setBounds(160, 111, 155, 22);
+		panel_muestras.add(comobo_dulces_extra);
+		
+		
+		comobo_comida_extra.setModel(new DefaultComboBoxModel(new String[] {"", "Nachos", "Torta", "Pizza"}));
+		comobo_comida_extra.setBounds(160, 235, 155, 22);
+		panel_muestras.add(comobo_comida_extra);
+		
+		cant_dulces = new JTextField();
+		cant_dulces.setText("0");
+		cant_dulces.setBounds(353, 112, 86, 20);
+		panel_muestras.add(cant_dulces);
+		cant_dulces.setColumns(10);
+		
+		cant_comida = new JTextField();
+		cant_comida.setText("0");
+		cant_comida.setColumns(10);
+		cant_comida.setBounds(355, 235, 86, 20);
+		panel_muestras.add(cant_comida);
+		
+		lblNewLabel_ext_1 = new JLabel("Producto");
+		lblNewLabel_ext_1.setBounds(196, 51, 71, 14);
+		panel_muestras.add(lblNewLabel_ext_1);
+		
+		lblNewLabel_ext_2 = new JLabel("Cantidad");
+		lblNewLabel_ext_2.setBounds(372, 51, 56, 14);
+		panel_muestras.add(lblNewLabel_ext_2);
+		
+		btn_confirmar_2_ext = new JButton("Confirmar");
+		btn_confirmar_2_ext.setForeground(Color.WHITE);
+		btn_confirmar_2_ext.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_confirmar_2_ext.setBorder(null);
+		btn_confirmar_2_ext.setBackground(new Color(53, 53, 53));
+		btn_confirmar_2_ext.setBounds(353, 385, 88, 39);
+		panel_muestras.add(btn_confirmar_2_ext);
 		
 		JPanel panel_resumen = new JPanel();
 		panel_resumen.setBounds(606, 105, 378, 435);
