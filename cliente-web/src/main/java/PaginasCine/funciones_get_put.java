@@ -17,11 +17,11 @@ public class funciones_get_put {
 		boolean resp = false;
 		RestClient rc = new RestClient();
 		
-		System.out.println(us);
-		System.out.println(cont);
+//		System.out.println(us);
+//		System.out.println(cont);
 		
 		String res = rc.Get("http://26.77.197.154:8000/empleados/usuarios");
-		System.out.println(res);
+//		System.out.println(res);
 		
 		
 		JSONArray ja = new JSONArray(res);
@@ -29,8 +29,8 @@ public class funciones_get_put {
 		//System.out.println(ja.length());
 		for (int i=0; i<ja.length();i++) {
 			JSONObject jo = ja.getJSONObject(i);
-			System.out.println(jo.get("usuario"));
-			System.out.println(jo.get("contra"));
+//			System.out.println(jo.get("usuario"));
+//			System.out.println(jo.get("contra"));
 			if(us.equals(jo.get("usuario")) && cont.equals(jo.get("contra"))  ) {
 				 resp = true;
 				 
@@ -53,7 +53,7 @@ public class funciones_get_put {
 	}
 	
 	
-public static void ventaProductos(JSONObject venta) {
+	public static void ventaProductos(JSONObject venta) {
 		
 		RestClient rc = new RestClient();
 		String res = rc.Put("http://26.77.197.154:8000/venta/producto/registrar", venta);

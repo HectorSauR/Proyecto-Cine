@@ -16,11 +16,11 @@ class venta:
     def regVentaProducto(self):
         idIndv = 0;
         idcmb = 0;
-        print(self.individual)
-        print(type(self.individual))
+        # print(self.individual)
+        # print(type(self.individual))
         # if(self.individual != None and self.combo != "default"):
         if(type(self.individual) == list):
-            print("individual")
+            # print("individual")
             idIndvidual = self.cnn.obtenerSiguienteIDRep("detalle_venta_individual","detalle_venta_individual_id")
             arr = self.individual
             for prd in arr:
@@ -75,13 +75,25 @@ class venta:
     def getVentasProductos(self):
         datos =  self.cnn.ejecutarConsulta("venta_productos");
         lista = [];
-
         for linea in datos:
+            x = 0
+            for dato in lista:
+                if(dato["ID"] == linea[0]):
+                    dato["articulo"].append({
+                        "nombre" : linea[1],
+                        "precio" : linea[2],
+                        "cantidad" : linea[3]
+                    })
+                    x = 1
+                    break
+            if(x == 1): continue
             lista.append({
                 "ID" : linea[0],
-                "articulo" : linea[1],
-                "precio" : linea[2],
-                "cantidad" : linea[3],
+                "articulo" : [{
+                    "nombre" : linea[1],
+                    "precio" : linea[2],
+                    "cantidad" : linea[3]
+                    }],
                 "total_venta" : linea[4],
                 "empleado" : linea[5],
                 "cliente" : linea[6],

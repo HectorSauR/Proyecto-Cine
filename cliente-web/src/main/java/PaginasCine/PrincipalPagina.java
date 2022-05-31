@@ -43,18 +43,18 @@ public class PrincipalPagina {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PrincipalPagina window = new PrincipalPagina();
-					window.frmCinema.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					PrincipalPagina window = new PrincipalPagina();
+//					window.frmCinema.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 	/**
 	 REALMENTE ES LA VISTA DE LAS VENTAS, NO ES LA PAGINA PRINCIPAL, HACER RENAME O DEJARLO DE EST� MANERA
 	 */
@@ -194,20 +194,20 @@ public class PrincipalPagina {
 				
 				String tam_palo;
 				tam_palo =	cb_tamano_palo.getSelectedItem().toString();
-				System.out.println(tam_palo);
+//				System.out.println(tam_palo);
 				
 				String sab_palo;
 				sab_palo =	cb_sabor_palo.getSelectedItem().toString();
-				System.out.println(sab_palo);
+//				System.out.println(sab_palo);
 				
 				String tam_refre;
 				tam_refre =	cb_tamano_refre.getSelectedItem().toString();
-				System.out.println(tam_refre);
+//				System.out.println(tam_refre);
 				
 				
 				String sab_refre;
 				sab_refre =	cb_sabor_refre.getSelectedItem().toString();
-				System.out.println(sab_refre);
+//				System.out.println(sab_refre);
 				
 				
 				
@@ -268,7 +268,7 @@ public class PrincipalPagina {
 										JSONObject prd = productos.getJSONObject(i);
 										
 										if (Integer.parseInt(prd.get("producto_id").toString())==id) {
-											System.out.println(prd.get("producto_id"));
+//											System.out.println(prd.get("producto_id"));
 											 x=1;
 											 int cant =  Integer.parseInt(prd.get("cantidad").toString());
 											 prd.put("cantidad", cant+cant_palo);
@@ -344,7 +344,7 @@ public class PrincipalPagina {
 									JSONObject prd = productos.getJSONObject(i);
 									
 									if (Integer.parseInt(prd.get("producto_id").toString())==id) {
-										System.out.println(prd.get("producto_id"));
+//										System.out.println(prd.get("producto_id"));
 										 x=1;
 										 int cant =  Integer.parseInt(prd.get("cantidad").toString());
 										 prd.put("cantidad", cant+cant_refre);
@@ -386,7 +386,7 @@ public class PrincipalPagina {
 			     txt_cant_refre.setText("0");
 			     
 				//usr.productos();
-				System.out.println(venta);
+//				System.out.println(venta);
 				
 			}
 		});

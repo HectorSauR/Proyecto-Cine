@@ -45,7 +45,7 @@ public class InicioSesion {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 245, 238));
 		frame.setBounds(100, 100, 450, 342);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("INICIO DE SESI\u00D3N");
@@ -90,8 +90,8 @@ public class InicioSesion {
 				
 				if(usr.inicio_sesion(usuariotxt.getText(), contrtxt.getText()) == true) {
 					JOptionPane.showMessageDialog(null, "Ingreso de session exitoso","Bienvenido",JOptionPane.INFORMATION_MESSAGE);
-					InicioSesion window = new InicioSesion();
-					window.frame.setVisible(false);
+					
+					frame.dispose();
 					
 					PrincipalPagina window2 = new PrincipalPagina();
 					window2.frmCinema.setVisible(true);
