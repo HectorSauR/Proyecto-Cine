@@ -54,6 +54,7 @@ public class PrincipalPagina {
 	static JButton btn_combo_2;
 	static JButton btn_combo_3;
 	static JButton btn_combo_4;
+    static JTextField txt_cant_combo;
 
 	// extras
 	static JLabel lbl_dulces;
@@ -111,10 +112,7 @@ public class PrincipalPagina {
 	float prec_prd = 0;
 	float total = 0;
 	
-	int cant_c1 = 0;
-	int cant_c2 = 0;
-	int cant_c3 = 0;
-    int cant_c4 = 0;
+
 
 	/**
 	 * Launch the application.
@@ -157,6 +155,7 @@ public class PrincipalPagina {
 			btn_combo_2.setVisible(false);
 			btn_combo_3.setVisible(false);
 			btn_combo_4.setVisible(false);
+			txt_cant_combo.setVisible(false);
 
 			lbl_dulces.setVisible(false);
 			lbl_comidas.setVisible(false);
@@ -247,6 +246,7 @@ public class PrincipalPagina {
 				btn_combo_2.setVisible(false);
 				btn_combo_3.setVisible(false);
 				btn_combo_4.setVisible(false);
+				txt_cant_combo.setVisible(false);
 
 				lbl_dulces.setVisible(false);
 				lbl_comidas.setVisible(false);
@@ -257,6 +257,7 @@ public class PrincipalPagina {
 				btn_confirmar_2_ext.setVisible(false);
 				lblNewLabel_ext_1.setVisible(false);
 				lblNewLabel_ext_2.setVisible(false);
+				
 
 			}
 		});
@@ -287,6 +288,7 @@ public class PrincipalPagina {
 				btn_combo_2.setVisible(true);
 				btn_combo_3.setVisible(true);
 				btn_combo_4.setVisible(true);
+				txt_cant_combo.setVisible(true);
 
 				lbl_dulces.setVisible(false);
 				lbl_comidas.setVisible(false);
@@ -328,6 +330,7 @@ public class PrincipalPagina {
 				btn_combo_2.setVisible(false);
 				btn_combo_3.setVisible(false);
 				btn_combo_4.setVisible(false);
+				txt_cant_combo.setVisible(false);
 
 				lbl_dulces.setVisible(true);
 				lbl_comidas.setVisible(true);
@@ -457,75 +460,47 @@ public class PrincipalPagina {
 							if (tam_palo.equals("Chico")) {
 								
 								if (sab_palo.equals("Mantequilla")) {
-									chicas_cant_1.setText(txt_cant_palo.getText());
+									chicas_cant_1.setText(Integer.toString(Integer.parseInt(chicas_cant_1.getText()) + cant_palo));
 									
 									
 								} else if (sab_palo.equals("Takis")) {
-									chicas_cant_2.setText(txt_cant_palo.getText());
+									chicas_cant_2.setText(Integer.toString(Integer.parseInt(chicas_cant_2.getText()) + cant_palo));
+									
 								} else {
-									chicas_cant_3.setText(txt_cant_palo.getText());
+									chicas_cant_3.setText(Integer.toString(Integer.parseInt(chicas_cant_3.getText()) +cant_palo));
+									
 								}
 								
 							} else if (tam_palo.equals("Mediano")) {
 								if (sab_palo.equals("Mantequilla")) {
-									medianas_cant_1.setText(txt_cant_palo.getText());
+									
+									medianas_cant_1.setText(Integer.toString(Integer.parseInt(medianas_cant_1.getText()) + cant_palo));
 									
 									
 								} else if (sab_palo.equals("Takis")) {
-									medianas_cant_2.setText(txt_cant_palo.getText());
+									medianas_cant_2.setText(Integer.toString(Integer.parseInt(medianas_cant_2.getText()) + cant_palo));
 								} else {
-									medianas_cant_3.setText(txt_cant_palo.getText());
+									medianas_cant_3.setText(Integer.toString(Integer.parseInt(medianas_cant_3.getText()) + cant_palo));
 								}
 							} else {
 								
 								if (sab_palo.equals("Mantequilla")) {
-									grandes_cant_1.setText(txt_cant_palo.getText());
 									
+									grandes_cant_1.setText(Integer.toString(Integer.parseInt(grandes_cant_1.getText()) + cant_palo));
 									
 								} else if (sab_palo.equals("Takis")) {
-									grandes_cant_2.setText(txt_cant_palo.getText());
+									grandes_cant_2.setText(Integer.toString(Integer.parseInt(grandes_cant_2.getText()) + cant_palo));
+									
 								} else {
-									grandes_cant_3.setText(txt_cant_palo.getText());
+									grandes_cant_3.setText(Integer.toString(Integer.parseInt(grandes_cant_3.getText()) + cant_palo));
+									
 								}
 								
 							}
 
 
-							//resumen refrescos
-							if (tam_refre.equals("Chico")) {
-								
-								if (sab_refre.equals("Coca-Cola")) {
-									chicas_cant_1_r.setText(txt_cant_refre.getText());
-									
-									
-								} else if (sab_refre.equals("Pepsi")) {
-									chicas_cant_2_r.setText(txt_cant_refre.getText());
-								} else {
-									chicas_cant_3_r.setText(txt_cant_refre.getText());
-								}
-								
-							} else if (tam_refre.equals("Mediano")) {
-								if (sab_refre.equals("Mantequilla")) {
-									medianas_cant_1_r.setText(txt_cant_refre.getText());
-									
-									
-								} else if (sab_refre.equals("Takis")) {
-									medianas_cant_2_r.setText(txt_cant_refre.getText());
-								} else {
-									medianas_cant_3_r.setText(txt_cant_refre.getText());
-								}
-							} else {
-								
-								if (sab_refre.equals("Mantequilla")) {
-									grandes_cant_1_r.setText(txt_cant_refre.getText());
-									
-								} else if (sab_refre.equals("Takis")) {
-									grandes_cant_2_r.setText(txt_cant_refre.getText());
-								} else {
-									grandes_cant_3_r.setText(txt_cant_refre.getText());
-								}
-								
-							}
+							
+							
 							
 							
 
@@ -565,6 +540,54 @@ public class PrincipalPagina {
 								id = 6;
 								prec_prd = 70;
 							}
+							
+							
+							//resumen refrescos
+							if (tam_refre.equals("Chico")) {
+								
+								if (sab_refre.equals("Coca-Cola")) {
+									
+									chicas_cant_1_r.setText(Integer.toString(Integer.parseInt(chicas_cant_1_r.getText()) + cant_refre));
+									
+									
+								} else if (sab_refre.equals("Pepsi")) {
+									chicas_cant_2_r.setText(Integer.toString(Integer.parseInt(chicas_cant_2_r.getText()) + cant_refre));
+									
+								} else {
+									chicas_cant_3_r.setText(Integer.toString(Integer.parseInt(chicas_cant_3_r.getText()) + cant_refre));
+									
+								}
+								
+							} else if (tam_refre.equals("Mediano")) {
+								if (sab_refre.equals("Mantequilla")) {
+									
+									medianas_cant_1_r.setText(Integer.toString(Integer.parseInt(medianas_cant_1_r.getText()) + cant_refre));
+									
+									
+								} else if (sab_refre.equals("Takis")) {
+									medianas_cant_2_r.setText(Integer.toString(Integer.parseInt(medianas_cant_2_r.getText()) + cant_refre));
+									
+								} else {
+									medianas_cant_3_r.setText(Integer.toString(Integer.parseInt(medianas_cant_3_r.getText()) + cant_refre));
+									
+								}
+							} else {
+								
+								if (sab_refre.equals("Mantequilla")) {
+									
+									grandes_cant_1_r.setText(Integer.toString(Integer.parseInt(grandes_cant_1_r.getText()) + cant_refre));
+									
+									
+								} else if (sab_refre.equals("Takis")) {
+									grandes_cant_2_r.setText(Integer.toString(Integer.parseInt(grandes_cant_2_r.getText()) + cant_refre));
+									
+								} else {
+									grandes_cant_3_r.setText(Integer.toString(Integer.parseInt(grandes_cant_3_r.getText()) + cant_refre));
+									
+								}
+								
+							}
+							
 
 							total += prec_prd * cant_refre;
 							venta.agregarProducto(id, cant_refre);
@@ -623,15 +646,22 @@ public class PrincipalPagina {
 		
 		btn_combo_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				venta.agregarCombo(1, 1);
-				total += 220;
 				
-				cant_c1 += 1;
+				String c =  txt_cant_combo.getText();
 				
-				combo_1.setText(Integer.toString(cant_c1));
+				if(c.equals("0")) {
+					JOptionPane.showMessageDialog(null, "NO HAS INGRESADO UNA CANTIDAD", "error", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				
+				venta.agregarCombo(1, Integer.parseInt( txt_cant_combo.getText()));
+				total += 220 * Integer.parseInt( txt_cant_combo.getText());
+				
+				combo_1.setText( txt_cant_combo.getText());
 				
 				total_ven.setText(Float.toString(total));
 				
+				txt_cant_combo.setText("0");
 			}
 		});
 		btn_combo_1.setForeground(Color.WHITE);
@@ -644,13 +674,18 @@ public class PrincipalPagina {
 		btn_combo_2 = new JButton("Combo Piñata");
 		btn_combo_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				venta.agregarCombo(2, 1);
-				total += 218;
+				String c =  txt_cant_combo.getText();
 				
-				cant_c2 += 1;
+				if(c.equals("0")) {
+					JOptionPane.showMessageDialog(null, "NO HAS INGRESADO UNA CANTIDAD", "error", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				venta.agregarCombo(2, Integer.parseInt( txt_cant_combo.getText()));
+				total += 218 * Integer.parseInt( txt_cant_combo.getText());
 				
-				combo_2.setText(Integer.toString(cant_c2));
+				combo_2.setText( txt_cant_combo.getText());
 				total_ven.setText(Float.toString(total));
+				txt_cant_combo.setText("0");
 			}
 		});
 		btn_combo_2.setForeground(Color.WHITE);
@@ -663,15 +698,20 @@ public class PrincipalPagina {
 		btn_combo_3 = new JButton("Combo Fiesta");
 		btn_combo_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				venta.agregarCombo(3, 1);
-				total += 400;
+				String c =  txt_cant_combo.getText();
+				
+				if(c.equals("0")) {
+					JOptionPane.showMessageDialog(null, "NO HAS INGRESADO UNA CANTIDAD", "error", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				venta.agregarCombo(3, Integer.parseInt( txt_cant_combo.getText()));
+				total += 400 * Integer.parseInt( txt_cant_combo.getText());
 				
 				
-				cant_c3+= 1;
-				
-				combo_3.setText(Integer.toString(cant_c3));
+				combo_3.setText( txt_cant_combo.getText());
 				
 				total_ven.setText(Float.toString(total));
+				txt_cant_combo.setText("0");
 			}
 		});
 		btn_combo_3.setForeground(Color.WHITE);
@@ -684,14 +724,19 @@ public class PrincipalPagina {
 		btn_combo_4 = new JButton("Combo Triston");
 		btn_combo_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				venta.agregarCombo(4, 1);
-				total += 80;
+				String c =  txt_cant_combo.getText();
 				
-				cant_c4 += 1;
+				if(c.equals("0")) {
+					JOptionPane.showMessageDialog(null, "NO HAS INGRESADO UNA CANTIDAD", "error", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				venta.agregarCombo(4, Integer.parseInt( txt_cant_combo.getText()));
+				total += 80 * Integer.parseInt( txt_cant_combo.getText());
 				
-				combo_4.setText(Integer.toString(cant_c4));
+				combo_4.setText( txt_cant_combo.getText());
 				
 				total_ven.setText(Float.toString(total));
+				txt_cant_combo.setText("0");
 			}
 		});
 		btn_combo_4.setForeground(Color.WHITE);
@@ -782,16 +827,16 @@ public class PrincipalPagina {
 						if (dulce.equals("tostitos")) {
 							id = 7;
 							prec_prd = 20;
-							dulce_1.setText(Integer.toString(cant_dulce));
+							dulce_1.setText(Integer.toString(Integer.parseInt(dulce_1.getText()) +  cant_dulce)   );
 							
 						} else if (dulce.equals("galletas")) {
 							id = 8;
 							prec_prd = 15;
-							dulce_2.setText(Integer.toString(cant_dulce));
+							dulce_2.setText(Integer.toString(Integer.parseInt(dulce_2.getText()) +  cant_dulce)   );
 						} else {
 							id = 9;
 							prec_prd = 25;
-							dulce_3.setText(Integer.toString(cant_dulce));
+							dulce_2.setText(Integer.toString(Integer.parseInt(dulce_2.getText()) +  cant_dulce)   );
 						}
 
 						total += prec_prd * cant_dulce;
@@ -816,15 +861,15 @@ public class PrincipalPagina {
 							if (comida.equals("nachos")) {
 								id = 10;
 								prec_prd = 70;
-								comida_1.setText(Integer.toString(cant_c));
+								comida_1.setText(Integer.toString(Integer.parseInt(comida_1.getText()) +  cant_c)   );
 							} else if (comida.equals("torta")) {
 								id = 11;
 								prec_prd = 55;
-								comida_2.setText(Integer.toString(cant_c));
+								comida_2.setText(Integer.toString(Integer.parseInt(comida_2.getText()) +  cant_c)   );
 							} else {
 								id = 12;
 								prec_prd = 120;
-								comida_3.setText(Integer.toString(cant_c));
+								comida_3.setText(Integer.toString(Integer.parseInt(comida_3.getText()) +  cant_c)   );
 							}
 
 							total += prec_prd * cant_c;
@@ -856,6 +901,12 @@ public class PrincipalPagina {
 		btn_confirmar_2_ext.setBackground(new Color(53, 53, 53));
 		btn_confirmar_2_ext.setBounds(353, 385, 88, 39);
 		panel_muestras.add(btn_confirmar_2_ext);
+		
+		txt_cant_combo = new JTextField();
+		txt_cant_combo.setText("0");
+		txt_cant_combo.setBounds(173, 342, 142, 20);
+		panel_muestras.add(txt_cant_combo);
+		txt_cant_combo.setColumns(10);
 
 		JPanel panel_resumen = new JPanel();
 		panel_resumen.setBounds(524, 105, 484, 435);
@@ -1208,19 +1259,19 @@ public class PrincipalPagina {
 		lblNewLabel_r_5_1_1_1.setBounds(362, 131, 73, 14);
 		panel_resumen.add(lblNewLabel_r_5_1_1_1);
 		
-		JLabel combo_1 = new JLabel("0");
+		combo_1 = new JLabel("0");
 		combo_1.setBounds(444, 58, 29, 14);
 		panel_resumen.add(combo_1);
 		
-		JLabel combo_2 = new JLabel("0");
+		combo_2 = new JLabel("0");
 		combo_2.setBounds(444, 83, 29, 14);
 		panel_resumen.add(combo_2);
 		
-		JLabel combo_3 = new JLabel("0");
+		combo_3 = new JLabel("0");
 		combo_3.setBounds(444, 106, 29, 14);
 		panel_resumen.add(combo_3);
 		
-		JLabel combo_4 = new JLabel("0");
+		combo_4 = new JLabel("0");
 		combo_4.setBounds(445, 131, 29, 14);
 		panel_resumen.add(combo_4);
 		
