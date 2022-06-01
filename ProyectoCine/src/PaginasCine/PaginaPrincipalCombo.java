@@ -19,10 +19,11 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.UIManager;
+import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class PrincipalPagina {
+public class PaginaPrincipalCombo {
 
 	public JFrame frmCinema;
 
@@ -33,7 +34,7 @@ public class PrincipalPagina {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PrincipalPagina window = new PrincipalPagina();
+					PaginaPrincipalCombo window = new PaginaPrincipalCombo();
 					window.frmCinema.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +49,7 @@ public class PrincipalPagina {
 	/**
 	 * Create the application.
 	 */
-	public PrincipalPagina() {
+	public PaginaPrincipalCombo() {
 		initialize();
 	}
 
@@ -71,13 +72,6 @@ public class PrincipalPagina {
 		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
-		btn_boletos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VistaBoletos s = new VistaBoletos ();
-				s.frmCinema.setVisible(true);
-				frmCinema.setVisible(false);
-			}
-		});
 		btn_boletos.setBorder(null);
 		btn_boletos.setForeground(Color.white);
 		btn_boletos.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -97,8 +91,10 @@ public class PrincipalPagina {
 		JButton btn_individual = new JButton("Individual");
 		btn_individual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				messageBox mensaje = new messageBox("OK");
-				mensaje.setVisible(true);
+				PrincipalPagina s = new PrincipalPagina ();
+				s.frmCinema.setVisible(true);
+				PaginaPrincipalCombo window = new PaginaPrincipalCombo();
+				window.frmCinema.setVisible(false);
 			}
 		});
 		btn_individual.setForeground(new Color(255, 255, 255));
@@ -109,13 +105,6 @@ public class PrincipalPagina {
 		panel_general.add(btn_individual);
 		
 		JButton btn_combos = new JButton("Combos");
-		btn_combos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				PaginaPrincipalCombo s = new PaginaPrincipalCombo ();
-				s.frmCinema.setVisible(true);
-				frmCinema.setVisible(false);
-			}
-		});
 		btn_combos.setForeground(new Color(255, 255, 255));
 		btn_combos.setBorder(null);
 		btn_combos.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -137,54 +126,6 @@ public class PrincipalPagina {
 		panel_muestras.setBackground(new Color(217, 217, 217));
 		panel_muestras.setLayout(null);
 		
-		JLabel lbl_palomitas = new JLabel("Palomitas");
-		lbl_palomitas.setFont(new Font("Arial", Font.PLAIN, 12));
-		lbl_palomitas.setForeground(Color.BLACK);
-		lbl_palomitas.setBounds(10, 11, 65, 21);
-		panel_muestras.add(lbl_palomitas);
-		
-		JComboBox cb_tamano_palo = new JComboBox();
-		cb_tamano_palo.setFont(new Font("Arial", Font.PLAIN, 12));
-		cb_tamano_palo.setMaximumRowCount(3);
-		cb_tamano_palo.setToolTipText("");
-		cb_tamano_palo.setModel(new DefaultComboBoxModel(new String[] {"Chico", "Mediano", "Grande"}));
-		cb_tamano_palo.setSelectedIndex(0);
-		cb_tamano_palo.setBounds(83, 10, 126, 22);
-		panel_muestras.add(cb_tamano_palo);
-		
-		JComboBox cb_sabor_palo = new JComboBox();
-		cb_sabor_palo.setFont(new Font("Arial", Font.PLAIN, 12));
-		cb_sabor_palo.setToolTipText("");
-		cb_sabor_palo.setModel(new DefaultComboBoxModel(new String[] {"Mantequilla", "Takis", "Caramelo"}));
-		cb_sabor_palo.setSelectedIndex(0);
-		cb_sabor_palo.setMaximumRowCount(3);
-		cb_sabor_palo.setBounds(219, 10, 126, 22);
-		panel_muestras.add(cb_sabor_palo);
-		
-		JLabel lbl_refresco = new JLabel("Refresco");
-		lbl_refresco.setFont(new Font("Arial", Font.PLAIN, 12));
-		lbl_refresco.setForeground(Color.BLACK);
-		lbl_refresco.setBounds(10, 127, 65, 21);
-		panel_muestras.add(lbl_refresco);
-		
-		JComboBox cb_tamano_refre = new JComboBox();
-		cb_tamano_refre.setFont(new Font("Arial", Font.PLAIN, 12));
-		cb_tamano_refre.setToolTipText("");
-		cb_tamano_refre.setModel(new DefaultComboBoxModel(new String[] {"Chico", "Mediano", "Grande"}));
-		cb_tamano_refre.setSelectedIndex(0);
-		cb_tamano_refre.setMaximumRowCount(3);
-		cb_tamano_refre.setBounds(83, 126, 126, 22);
-		panel_muestras.add(cb_tamano_refre);
-		
-		JComboBox cb_sabor_refre = new JComboBox();
-		cb_sabor_refre.setFont(new Font("Arial", Font.PLAIN, 12));
-		cb_sabor_refre.setToolTipText("");
-		cb_sabor_refre.setModel(new DefaultComboBoxModel(new String[] {"Coca-Cola", "Pepsi", "Sprite"}));
-		cb_sabor_refre.setSelectedIndex(0);
-		cb_sabor_refre.setMaximumRowCount(3);
-		cb_sabor_refre.setBounds(219, 126, 126, 22);
-		panel_muestras.add(cb_sabor_refre);
-		
 		JButton btn_confirmar = new JButton("Confirmar");
 		btn_confirmar.setForeground(Color.white);
 		btn_confirmar.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -192,6 +133,111 @@ public class PrincipalPagina {
 		btn_confirmar.setBackground(new Color(53, 53, 53));
 		btn_confirmar.setBounds(266, 385, 88, 39);
 		panel_muestras.add(btn_confirmar);
+		
+		JPanel panel_peli1 = new JPanel();
+		panel_peli1.setLayout(null);
+		panel_peli1.setBackground(SystemColor.activeCaptionBorder);
+		panel_peli1.setBounds(10, 11, 344, 92);
+		panel_muestras.add(panel_peli1);
+		
+		JLabel lbl_pelicula = new JLabel("Combo sencillo");
+		lbl_pelicula.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula.setBounds(130, 0, 110, 20);
+		panel_peli1.add(lbl_pelicula);
+		
+		JComboBox cb_tamano_palo = new JComboBox();
+		cb_tamano_palo.setBounds(208, 60, 126, 22);
+		panel_peli1.add(cb_tamano_palo);
+		cb_tamano_palo.setFont(new Font("Arial", Font.PLAIN, 12));
+		cb_tamano_palo.setMaximumRowCount(3);
+		cb_tamano_palo.setToolTipText("");
+		cb_tamano_palo.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3"}));
+		cb_tamano_palo.setSelectedIndex(0);
+		
+		JLabel lbl_pelicula_1 = new JLabel("Palomitas grandes");
+		lbl_pelicula_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_1.setBounds(10, 21, 110, 20);
+		panel_peli1.add(lbl_pelicula_1);
+		
+		JLabel lbl_pelicula_2 = new JLabel("Refresco grande");
+		lbl_pelicula_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_2.setBounds(10, 42, 110, 20);
+		panel_peli1.add(lbl_pelicula_2);
+		
+		JLabel lbl_pelicula_3 = new JLabel("Chocolate");
+		lbl_pelicula_3.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_3.setBounds(10, 61, 110, 20);
+		panel_peli1.add(lbl_pelicula_3);
+		
+		JPanel panel_peli1_1 = new JPanel();
+		panel_peli1_1.setLayout(null);
+		panel_peli1_1.setBackground(SystemColor.activeCaptionBorder);
+		panel_peli1_1.setBounds(10, 133, 344, 92);
+		panel_muestras.add(panel_peli1_1);
+		
+		JLabel lbl_pelicula_4 = new JLabel("Combo pareja");
+		lbl_pelicula_4.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_4.setBounds(130, 0, 110, 20);
+		panel_peli1_1.add(lbl_pelicula_4);
+		
+		JComboBox cb_tamano_palo_1 = new JComboBox();
+		cb_tamano_palo_1.setToolTipText("");
+		cb_tamano_palo_1.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3"}));
+		cb_tamano_palo_1.setSelectedIndex(0);
+		cb_tamano_palo_1.setMaximumRowCount(3);
+		cb_tamano_palo_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		cb_tamano_palo_1.setBounds(208, 60, 126, 22);
+		panel_peli1_1.add(cb_tamano_palo_1);
+		
+		JLabel lbl_pelicula_1_1 = new JLabel("Palomitas extra-grandes");
+		lbl_pelicula_1_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_1_1.setBounds(10, 21, 148, 20);
+		panel_peli1_1.add(lbl_pelicula_1_1);
+		
+		JLabel lbl_pelicula_2_1 = new JLabel("2 Refrescos grandes");
+		lbl_pelicula_2_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_2_1.setBounds(10, 42, 116, 20);
+		panel_peli1_1.add(lbl_pelicula_2_1);
+		
+		JLabel lbl_pelicula_3_1 = new JLabel("2 Chocolates");
+		lbl_pelicula_3_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_3_1.setBounds(10, 61, 110, 20);
+		panel_peli1_1.add(lbl_pelicula_3_1);
+		
+		JPanel panel_peli1_2 = new JPanel();
+		panel_peli1_2.setLayout(null);
+		panel_peli1_2.setBackground(SystemColor.activeCaptionBorder);
+		panel_peli1_2.setBounds(10, 257, 344, 92);
+		panel_muestras.add(panel_peli1_2);
+		
+		JLabel lbl_pelicula_5 = new JLabel("Combo amigos");
+		lbl_pelicula_5.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_5.setBounds(130, 0, 110, 20);
+		panel_peli1_2.add(lbl_pelicula_5);
+		
+		JComboBox cb_tamano_palo_2 = new JComboBox();
+		cb_tamano_palo_2.setToolTipText("");
+		cb_tamano_palo_2.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3"}));
+		cb_tamano_palo_2.setSelectedIndex(0);
+		cb_tamano_palo_2.setMaximumRowCount(3);
+		cb_tamano_palo_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		cb_tamano_palo_2.setBounds(208, 60, 126, 22);
+		panel_peli1_2.add(cb_tamano_palo_2);
+		
+		JLabel lbl_pelicula_1_2 = new JLabel("2 Palomitas grandes");
+		lbl_pelicula_1_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_1_2.setBounds(10, 21, 126, 20);
+		panel_peli1_2.add(lbl_pelicula_1_2);
+		
+		JLabel lbl_pelicula_2_2 = new JLabel("2 Refresco grandes");
+		lbl_pelicula_2_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_2_2.setBounds(10, 42, 110, 20);
+		panel_peli1_2.add(lbl_pelicula_2_2);
+		
+		JLabel lbl_pelicula_3_2 = new JLabel("2 Chocolates");
+		lbl_pelicula_3_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_3_2.setBounds(10, 61, 110, 20);
+		panel_peli1_2.add(lbl_pelicula_3_2);
 		
 		JPanel panel_resumen = new JPanel();
 		panel_resumen.setBounds(606, 105, 378, 435);
@@ -205,13 +251,6 @@ public class PrincipalPagina {
 		panel_resumen.add(lbl_total);
 		
 		JButton btn_clientes = new JButton("Clientes");
-		btn_clientes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Clientes s = new Clientes ();
-				s.frmCinema.setVisible(true);
-				frmCinema.setVisible(false);
-			}
-		});
 		btn_clientes.setForeground(Color.WHITE);
 		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes.setBorder(null);

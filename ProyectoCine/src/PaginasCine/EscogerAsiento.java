@@ -20,7 +20,7 @@ import javax.swing.SwingConstants;
 
 public class EscogerAsiento {
 
-	private JFrame frame;
+	public JFrame frame;
 
 	/**
 	 * Launch the application.

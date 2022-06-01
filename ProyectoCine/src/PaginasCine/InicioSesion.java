@@ -1,18 +1,21 @@
 package PaginasCine;
 
 import java.awt.EventQueue;
+import javax.swing.JPanel;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JButton;
 
-public class InicioSesion {
+public class InicioSesion extends JFrame{
 
 	private JFrame frame;
 	private JTextField textField;
@@ -87,9 +90,20 @@ public class InicioSesion {
 		JButton btnNewButton = new JButton("INGRESAR");
 		btnNewButton.setBounds(335, 261, 89, 23);
 		frame.getContentPane().add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VistaBoletos s = new VistaBoletos();
+				s.frmCinema.setVisible(true);
+				InicioSesion window = new InicioSesion();
+				window.frame.setVisible(false);
+			}
+		});
+		
+		
 		
 		JButton btnNewButton_1 = new JButton("REGISTRARSE");
 		btnNewButton_1.setBounds(216, 261, 105, 23);
 		frame.getContentPane().add(btnNewButton_1);
 	}
+	
 }
