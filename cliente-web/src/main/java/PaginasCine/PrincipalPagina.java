@@ -424,7 +424,10 @@ public class PrincipalPagina {
 							}else {
 								
 								
-								venta.put("combo", "default");
+								if (combos.length()<=0) {
+									venta.put("combo", "default");
+								}
+								
 								
 								
 									
@@ -500,7 +503,10 @@ public class PrincipalPagina {
 								
 								
 								
-								venta.put("combo", "default");
+								if (combos.length()<=0) {
+									venta.put("combo", "default");
+								}
+								
 								
 								
 								
@@ -574,7 +580,7 @@ public class PrincipalPagina {
 		btn_confirmar.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_confirmar.setBorder(null);
 		btn_confirmar.setBackground(new Color(53, 53, 53));
-		btn_confirmar.setBounds(353, 385, 88, 39);
+		btn_confirmar.setBounds(257, 385, 88, 39);
 		panel_muestras.add(btn_confirmar);
 		
 		txt_cant_palo = new JTextField();
@@ -686,12 +692,12 @@ public class PrincipalPagina {
 		panel_muestras.add(lbl_comidas);
 		
 		
-		comobo_dulces_extra.setModel(new DefaultComboBoxModel(new String[] {"", "Tostitos", "Galletas emperador", "Skwinkles"}));
+		comobo_dulces_extra.setModel(new DefaultComboBoxModel(new String[] {"", "tostitos", "galletas", "skwinkles"}));
 		comobo_dulces_extra.setBounds(160, 111, 155, 22);
 		panel_muestras.add(comobo_dulces_extra);
 		
 		
-		comobo_comida_extra.setModel(new DefaultComboBoxModel(new String[] {"", "Nachos", "Torta", "Pizza"}));
+		comobo_comida_extra.setModel(new DefaultComboBoxModel(new String[] {"", "nachos", "torta", "pizza"}));
 		comobo_comida_extra.setBounds(160, 235, 155, 22);
 		panel_muestras.add(comobo_comida_extra);
 		
@@ -716,6 +722,210 @@ public class PrincipalPagina {
 		panel_muestras.add(lblNewLabel_ext_2);
 		
 		btn_confirmar_2_ext = new JButton("Confirmar");
+		btn_confirmar_2_ext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String dulce;
+				dulce =	comobo_dulces_extra.getSelectedItem().toString();
+//				System.out.println(tam_palo);
+				
+				
+				
+				String comida;
+				comida =	comobo_comida_extra.getSelectedItem().toString();
+//				System.out.println(tam_refre);
+				
+				
+				
+				
+				//if(txt_cant_palo.getClass().getSimpleName()=="String") {
+				//	JOptionPane.showMessageDialog(null, "ERROR CANTIDAD","error",JOptionPane.ERROR_MESSAGE);
+				//}
+				// String cant_palo2 = txt_cant_palo.getText();
+				// String cant_refre2 = txt_cant_refre.getText();
+				// System.out.println(cant_palo2.getClass().getSimpleName());
+				//if(cant_palo2.inde = true ) {
+				//	JOptionPane.showMessageDialog(null, "ERROR CANTIDAD","error",JOptionPane.ERROR_MESSAGE);
+				//	return;
+				//}
+				
+				
+			     int cant_dulce = Integer.parseInt(cant_dulces.getText());
+			     int cant_c = Integer.parseInt(cant_comida.getText());
+			     
+			     if (cant_dulce<0) {
+			    	 JOptionPane.showMessageDialog(null, "NUMERO ERRONEO","error",JOptionPane.ERROR_MESSAGE);
+			    	 return;
+			     }else if (cant_dulce==0) {
+			    	 
+			     }else {
+			    	 
+			    		if (dulce.equals("")) {
+							JOptionPane.showMessageDialog(null, "No ingresaste el dulce","error",JOptionPane.ERROR_MESSAGE);
+							return;
+						}else {
+							
+							
+								
+								if (combos.length()<=0) {
+									venta.put("combo", "default");
+								}
+								
+								
+								
+									
+									
+									if (dulce.equals("tostitos")) {
+										id = 7;
+										prec_prd = 20;
+									}else if (dulce.equals("galletas")) {
+										id = 8;
+										prec_prd = 15;
+									}else {
+										id = 9;
+										prec_prd = 25;
+									}
+									int x = 0;
+									
+									
+									for (int i=0; i<productos.length();i++) {
+										
+										
+										JSONObject prd = productos.getJSONObject(i);
+										
+										if (Integer.parseInt(prd.get("producto_id").toString())==id) {
+//											System.out.println(prd.get("producto_id"));
+											 x=1;
+											 int cant =  Integer.parseInt(prd.get("cantidad").toString());
+											 prd.put("cantidad", cant+cant_dulce);
+											 break;
+										}
+									}
+									
+									if (x==0) {
+										JSONObject producto = new JSONObject();	
+										producto.put("producto_id", id);
+										producto.put("cantidad", cant_dulce);
+										productos.put(producto);
+									}
+									
+									
+								
+								total = prec_prd * cant_dulce;
+								
+								DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+						       
+								
+								venta.put("productos", productos);
+								venta.put("total", total);
+								venta.put("fecha", dtf.format(LocalDateTime.now()));
+								venta.put("empleado", 1);
+								venta.put("cliente", "default");
+								
+								
+								
+							
+						}
+			    	 
+			    	 
+			     
+			     
+			     
+			     if (cant_c<0) {
+			    	 JOptionPane.showMessageDialog(null, "NUMERO ERRONEO","error",JOptionPane.ERROR_MESSAGE);
+			    	 return;
+			     }else if (cant_c==0) {
+			    	 
+			     }else {
+			    	 
+			    		if (comida.equals("")) {
+							JOptionPane.showMessageDialog(null, "No ingresaste la comida","error",JOptionPane.ERROR_MESSAGE);
+							return;
+						}else {
+							
+							
+								
+							if (combos.length()<=0) {
+								venta.put("combo", "default");
+							}
+							
+								
+								
+								
+								if (comida.equals("nachos")) {
+									id = 10;
+									prec_prd = 70;
+								}else if (comida.equals("torta")) {
+									id = 11;
+									prec_prd = 55;
+								}else {
+									id = 12;
+									prec_prd = 120;
+								}
+								int x = 0;
+								
+								
+								for (int i=0; i<productos.length();i++) {
+									
+									
+									JSONObject prd = productos.getJSONObject(i);
+									
+									if (Integer.parseInt(prd.get("producto_id").toString())==id) {
+//										System.out.println(prd.get("producto_id"));
+										 x=1;
+										 int cant =  Integer.parseInt(prd.get("cantidad").toString());
+										 prd.put("cantidad", cant+cant_c);
+										 break;
+									}
+								}
+								
+								if (x==0) {
+									JSONObject producto = new JSONObject();	
+									producto.put("producto_id", id);
+									producto.put("cantidad", cant_c);
+									productos.put(producto);
+								}
+								
+								
+							
+							total = prec_prd * cant_c;
+							
+							DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+					       
+							
+							venta.put("productos", productos);
+							venta.put("total", total);
+							venta.put("fecha", dtf.format(LocalDateTime.now()));
+							venta.put("empleado", 1);
+							venta.put("cliente", "default");
+								
+							
+						}
+			    	 
+			    	 
+			     }
+				
+			     }     
+			     
+			     
+			     System.out.println(venta);
+			     
+			     
+				  
+				  
+				  comobo_dulces_extra.setSelectedIndex(0);
+				  comobo_comida_extra.setSelectedIndex(0);
+				  cant_dulces.setText("0");
+				  cant_comida.setText("0");
+				  
+
+			}
+			
+			
+			
+		});
+		
+		
 		btn_confirmar_2_ext.setForeground(Color.WHITE);
 		btn_confirmar_2_ext.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_confirmar_2_ext.setBorder(null);
@@ -737,6 +947,12 @@ public class PrincipalPagina {
 		JButton btn_confirmar_1 = new JButton("Realizar venta");
 		btn_confirmar_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if (productos.length()<=0 && combos.length()<=0) {
+					 JOptionPane.showMessageDialog(null, "No has ingresado nada","error",JOptionPane.ERROR_MESSAGE);
+			    	 return;
+				}
+				
 				funciones_get_put usr = new funciones_get_put();
 				venta.put("total", total);
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -744,8 +960,39 @@ public class PrincipalPagina {
 				venta.put("empleado", 1);
 				venta.put("cliente", "default");
 				
+				
 				System.out.println(venta);
 				funciones_get_put.ventaProductos(venta);
+				
+				total = 0;
+				prec_prd = 0;
+//				venta.put("combo", "");
+//				venta.put("productos", "");
+//				venta.put("total", 0);
+//				venta.put("fecha", "");
+//				venta.put("empleado", "");
+//				venta.put("cliente", "");
+				
+				
+//				for (int i=0; i<productos.length();i++) {
+//					
+//					JSONObject prd = productos.getJSONObject(i);
+//					
+//					prd.put("producto_id", "");
+//					prd.put("cantidad", "");
+//				}
+				
+				
+                   for (int i=0; i<combos.length();i++) {
+					
+					JSONObject prd = combos.getJSONObject(i);
+					
+					prd.put("combo_id", "");
+					prd.put("cantidad", "");
+				}
+				
+				
+				
 			}
 		});
 		btn_confirmar_1.setForeground(Color.WHITE);
