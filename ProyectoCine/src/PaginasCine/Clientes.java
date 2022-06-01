@@ -68,8 +68,7 @@ public class Clientes extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				PrincipalPagina s = new PrincipalPagina ();
 				s.frmCinema.setVisible(true);
-				Clientes window = new Clientes();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_ventas.setBounds(100, 0, 100, 38);
@@ -83,8 +82,7 @@ public class Clientes extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				VistaBoletos s = new VistaBoletos ();
 				s.frmCinema.setVisible(true);
-				Clientes window = new Clientes();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_boletos.setBounds(0, 0, 100, 38);

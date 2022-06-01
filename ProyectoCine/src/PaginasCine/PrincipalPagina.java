@@ -75,8 +75,7 @@ public class PrincipalPagina {
 			public void actionPerformed(ActionEvent e) {
 				VistaBoletos s = new VistaBoletos ();
 				s.frmCinema.setVisible(true);
-				PrincipalPagina window = new PrincipalPagina();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_boletos.setBorder(null);
@@ -108,8 +107,7 @@ public class PrincipalPagina {
 			public void actionPerformed(ActionEvent e) {
 				PaginaPrincipalCombo s = new PaginaPrincipalCombo ();
 				s.frmCinema.setVisible(true);
-				PrincipalPagina window = new PrincipalPagina();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_combos.setForeground(new Color(255, 255, 255));
@@ -205,8 +203,7 @@ public class PrincipalPagina {
 			public void actionPerformed(ActionEvent e) {
 				Clientes s = new Clientes ();
 				s.frmCinema.setVisible(true);
-				PrincipalPagina window = new PrincipalPagina();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_clientes.setForeground(Color.WHITE);

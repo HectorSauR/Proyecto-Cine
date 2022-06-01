@@ -1,19 +1,24 @@
 package PaginasCine;
 
 import java.awt.EventQueue;
-
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 
 import javax.swing.JLabel;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+
 
 
 public class VistaBoletos extends JFrame{
@@ -64,8 +69,7 @@ public class VistaBoletos extends JFrame{
 				
 				PrincipalPagina s = new PrincipalPagina();
 				s.frmCinema.setVisible(true);
-				VistaBoletos window = new VistaBoletos();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 				
 			}
 		});
@@ -97,33 +101,6 @@ public class VistaBoletos extends JFrame{
 		panel_general.add(panel_muestras);
 		panel_muestras.setBackground(new Color(217, 217, 217));
 		panel_muestras.setLayout(null);
-		
-		JPanel panel_peli1 = new JPanel();
-		panel_peli1.setBounds(10, 11, 344, 92);
-		panel_peli1.setBackground(new Color(180, 180, 180));
-		panel_muestras.add(panel_peli1);
-		panel_peli1.setLayout(null);
-		
-		JLabel lbl_pelicula = new JLabel("Spiderman");
-		lbl_pelicula.setBounds(92, 11, 80, 20);
-		panel_peli1.add(lbl_pelicula);
-		
-		JLabel lbl_idioma = new JLabel("Idioma");
-		lbl_idioma.setBounds(92, 32, 46, 14);
-		panel_peli1.add(lbl_idioma);
-		
-		JLabel lbl_sala = new JLabel("Sala");
-		lbl_sala.setBounds(92, 51, 46, 14);
-		panel_peli1.add(lbl_sala);
-		
-		JLabel lbl_horario = new JLabel("Horario");
-		lbl_horario.setHorizontalAlignment(SwingConstants.LEFT);
-		lbl_horario.setBounds(92, 67, 46, 14);
-		panel_peli1.add(lbl_horario);
-		
-		JLabel lbl_clasifi = new JLabel("Clasificacion");
-		lbl_clasifi.setBounds(239, 14, 80, 14);
-		panel_peli1.add(lbl_clasifi);
 		
 		JPanel panel_peli1_1 = new JPanel();
 		panel_peli1_1.setBackground(SystemColor.activeCaptionBorder);
@@ -206,6 +183,48 @@ public class VistaBoletos extends JFrame{
 		lbl_clasifi_3.setBounds(243, 14, 80, 14);
 		panel_peli1_3.add(lbl_clasifi_3);
 		
+		JPanel panel_peli1_1_1 = new JPanel();
+		panel_peli1_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		panel_peli1_1_1.setLayout(null);
+		panel_peli1_1_1.setBackground(SystemColor.activeCaptionBorder);
+		panel_peli1_1_1.setBounds(10, 11, 344, 92);
+		panel_muestras.add(panel_peli1_1_1);
+		
+		
+		JLabel lbl_pelicula_1_1 = new JLabel("Spiderman");
+		lbl_pelicula_1_1.setBounds(95, 11, 85, 20);
+		panel_peli1_1_1.add(lbl_pelicula_1_1);
+		
+		JLabel lbl_idioma_1_1 = new JLabel("Idioma");
+		lbl_idioma_1_1.setBounds(95, 30, 46, 14);
+		panel_peli1_1_1.add(lbl_idioma_1_1);
+		
+		JLabel lbl_sala_1_1 = new JLabel("Sala");
+		lbl_sala_1_1.setBounds(95, 42, 46, 14);
+		panel_peli1_1_1.add(lbl_sala_1_1);
+		
+		JLabel lbl_horario_1_1 = new JLabel("Horario");
+		lbl_horario_1_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lbl_horario_1_1.setBounds(95, 55, 46, 14);
+		panel_peli1_1_1.add(lbl_horario_1_1);
+		
+		JLabel lbl_clasifi_1_1 = new JLabel("Clasificacion");
+		lbl_clasifi_1_1.setBounds(239, 14, 80, 14);
+		panel_peli1_1_1.add(lbl_clasifi_1_1);
+		
+		JLabel lbl_poster = new JLabel("");
+		//ImageIcon ico = new ImageIcon(this.getClass().getResource("poster_spiderman.jpg"));
+		//ImageIcon img = new ImageIcon(ico.getImage().getScaledInstance(lbl_poster.getWidth(), lbl_poster.getHeight(), Image.SCALE_SMOOTH));
+		lbl_poster.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\poster_spider.jpg"));
+	
+		lbl_poster.setBounds(10, 14, 75, 67);
+		panel_peli1_1_1.add(lbl_poster);
+		
 		JPanel panel_resumen = new JPanel();
 		panel_resumen.setBounds(606, 49, 364, 426);
 		panel_resumen.setBackground(new Color(217, 217, 217));
@@ -241,8 +260,7 @@ public class VistaBoletos extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				Clientes s = new Clientes();
 				s.frmCinema.setVisible(true);
-				VistaBoletos window = new VistaBoletos();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_clientes.setForeground(Color.WHITE);
