@@ -36,7 +36,7 @@ class conexionBD:
                 cadenaTabla += ","+str(dato)
             cadenaTabla+=")"
 
-            print(cadenaTabla)
+            # print(cadenaTabla)
 
             self.cursor.execute(cadenaTabla)
             self.conexion.commit()

@@ -36,12 +36,11 @@ class venta:
         else: idIndv = None;
 
         if(type(self.combo) == list):
-            # print("combo")
+            print("combo")
             idCombo = self.cnn.obtenerSiguienteIDRep("detalle_venta_combo","detalle_venta_combo_id")
             arr = self.combo
             for cmb in arr:
 
-                # print(cmb)
                 lista = {
                     "id" : idCombo,
                     "producto" : cmb["combo_id"],

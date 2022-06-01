@@ -198,7 +198,7 @@ def registrarVenta():
         return "No se encontraron datos en formato JSON";
     
     venta = CVenta.venta();
-    print(datos)
+    
     venta.setVentaProducto(
         datos['total'],
         datos['empleado'],
