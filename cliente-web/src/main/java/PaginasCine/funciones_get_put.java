@@ -10,11 +10,8 @@ public class funciones_get_put {
 	}
 	
 	public static  String ip="26.77.197.154" ;
-<<<<<<< HEAD
-	//public static  String ip="192.168.43.215";
-=======
-//	public static  String ip="192.168.43.215";
->>>>>>> 47e391edae7b679230391cc9916069a81e15cd74
+
+
 	
 	public static boolean inicio_sesion( String us, String cont) {
 		
