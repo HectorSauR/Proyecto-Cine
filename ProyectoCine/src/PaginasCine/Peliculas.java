@@ -63,8 +63,7 @@ public class Peliculas {
 			public void actionPerformed(ActionEvent e) {
 				PrincipalPagina s = new PrincipalPagina ();
 				s.frmCinema.setVisible(true);
-				Peliculas window = new Peliculas();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_ventas.setBounds(100, 0, 100, 38);
@@ -78,8 +77,7 @@ public class Peliculas {
 			public void actionPerformed(ActionEvent e) {
 				VistaBoletos s = new VistaBoletos ();
 				s.frmCinema.setVisible(true);
-				Peliculas window = new Peliculas();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_boletos.setBounds(0, 0, 100, 38);
@@ -255,8 +253,7 @@ public class Peliculas {
 			public void actionPerformed(ActionEvent e) {
 				Clientes s = new Clientes ();
 				s.frmCinema.setVisible(true);
-				Peliculas window = new Peliculas();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 			
 		});
@@ -272,8 +269,7 @@ public class Peliculas {
 			public void actionPerformed(ActionEvent e) {
 				Almacen s = new Almacen();
 				s.frmCinema.setVisible(true);
-				Peliculas window = new Peliculas();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_clientes_1.setForeground(Color.WHITE);
@@ -296,8 +292,7 @@ public class Peliculas {
 			public void actionPerformed(ActionEvent e) {
 				Reportes s = new Reportes ();
 				s.frmCinema.setVisible(true);
-				Peliculas window = new Peliculas();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_clientes_3.setForeground(Color.WHITE);
