@@ -60,6 +60,7 @@ public class VistaBoletos {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		final VistaBoletos vb = this;
 		frmCinema = new JFrame();
 		frmCinema.getContentPane().setBackground(new Color(240, 255, 240));
 		frmCinema.setBackground(new Color(40, 75, 99));
@@ -102,7 +103,9 @@ public class VistaBoletos {
 		panel_peli1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("aosihdlakshdklasd");
+				EscogerAsiento asiento = new EscogerAsiento(vb);
+				frmCinema.setVisible(false);
+				asiento.frame.setVisible(true);
 			}
 		});
 		panel_peli1.setBounds(10, 11, 344, 92);
@@ -269,6 +272,10 @@ public class VistaBoletos {
 		panel_peli1_r.add(lbl_asientos);
 		
 		JButton btn_registrar_venta = new JButton("REGISTRAR");
+		btn_registrar_venta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_registrar_venta.setBounds(849, 525, 121, 23);
 		panel_general.add(btn_registrar_venta);
 		
@@ -282,10 +289,4 @@ public class VistaBoletos {
 		
 	}
 	
-	
-	public void boletos( String cant, String boletos ) {
-		
-		
-		
-	}
 }

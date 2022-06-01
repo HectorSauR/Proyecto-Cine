@@ -267,3 +267,4 @@ update sala
 set estadoAsiento = 1
 where sala_id = 1 and asiento = "1A"
 
+select * from venta_producto order by venta_producto_id desc;

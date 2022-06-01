@@ -23,7 +23,8 @@ import java.awt.event.ActionEvent;
 
 public class EscogerAsiento {
 
-	private JFrame frame;
+	public JFrame frame;
+	private VistaBoletos anterior;
     public int cont_a = 0;
     public String asientos_cadena ="";
 	/**
@@ -33,7 +34,8 @@ public class EscogerAsiento {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EscogerAsiento window = new EscogerAsiento();
+					VistaBoletos blt = new VistaBoletos();
+					EscogerAsiento window = new EscogerAsiento(blt);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,8 +47,9 @@ public class EscogerAsiento {
 	/**
 	 * Create the application.
 	 */
-	public EscogerAsiento() {
+	public EscogerAsiento(VistaBoletos ventana) {
 		initialize();
+		anterior = ventana;
 	}
 
 	/**
@@ -873,11 +876,9 @@ public class EscogerAsiento {
 		JButton btn_confirmar = new JButton("Confirmar");
 		btn_confirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VistaBoletos blt = new VistaBoletos();
 				String cant_a;
 				cant_a =cb_cant_asiento.getSelectedItem().toString();
 				int cant_asientos = Integer.parseInt(   cb_cant_asiento.getSelectedItem().toString());
-				blt.boletos( cant_a,asientos_cadena);
 				
 				
 				if (cont_a < cant_asientos ) {
@@ -886,17 +887,15 @@ public class EscogerAsiento {
 					
 				
 				}else {
-					blt.frmCinema.setVisible(true);
-					EscogerAsiento escas = new EscogerAsiento ();
+					anterior.frmCinema.setVisible(true);
+					frame.dispose();
 					
 					asientos_cadena = asientos_cadena.substring(0, asientos_cadena.length()-1);
 					
-					
 					//enviar asientos_cadena--------
 					
-					blt.lbl_cantidad.setText(cant_a);
-					blt.lbl_asientos.setText(asientos_cadena);
-					escas.frame.dispose();
+					anterior.lbl_cantidad.setText(cant_a);
+					anterior.lbl_asientos.setText(asientos_cadena);
 				}
 				
 			}
