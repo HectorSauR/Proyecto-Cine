@@ -66,9 +66,55 @@ public class PrincipalPagina {
 	static JLabel lblNewLabel_ext_1;
 	static JLabel lblNewLabel_ext_2;
 
+	
+	//Resumen
+	JLabel chicas_cant_1;
+	JLabel chicas_cant_2;
+	JLabel chicas_cant_3;
+	
+	JLabel medianas_cant_1;
+	JLabel medianas_cant_2;
+	JLabel medianas_cant_3;
+	
+	JLabel grandes_cant_1;
+	JLabel grandes_cant_2;
+	JLabel grandes_cant_3;
+	
+	JLabel chicas_cant_3_r;
+	JLabel chicas_cant_2_r;
+	JLabel chicas_cant_1_r;
+	
+	JLabel medianas_cant_1_r;
+	JLabel medianas_cant_2_r;
+	JLabel medianas_cant_3_r;
+	
+	JLabel grandes_cant_1_r; 
+	JLabel grandes_cant_2_r; 
+	JLabel grandes_cant_3_r; 
+	
+	JLabel dulce_1;
+	JLabel dulce_2;
+	JLabel dulce_3;
+	
+	JLabel comida_1;
+	JLabel comida_2;
+	JLabel comida_3;
+	
+	JLabel combo_1;
+	JLabel combo_2;
+	JLabel combo_3;
+	JLabel combo_4;
+	
+	JLabel total_ven;
+	
 	int id = 0;
 	float prec_prd = 0;
 	float total = 0;
+	
+	int cant_c1 = 0;
+	int cant_c2 = 0;
+	int cant_c3 = 0;
+    int cant_c4 = 0;
 
 	/**
 	 * Launch the application.
@@ -396,6 +442,8 @@ public class PrincipalPagina {
 							if (tam_palo.equals("Chico")) {
 								id = 1;
 								prec_prd = 40;
+								
+								
 							} else if (tam_palo.equals("Mediano")) {
 								id = 2;
 								prec_prd = 50;
@@ -404,6 +452,82 @@ public class PrincipalPagina {
 								prec_prd = 70;
 							}
 
+							
+						//resumen palomitas	
+							if (tam_palo.equals("Chico")) {
+								
+								if (sab_palo.equals("Mantequilla")) {
+									chicas_cant_1.setText(txt_cant_palo.getText());
+									
+									
+								} else if (sab_palo.equals("Takis")) {
+									chicas_cant_2.setText(txt_cant_palo.getText());
+								} else {
+									chicas_cant_3.setText(txt_cant_palo.getText());
+								}
+								
+							} else if (tam_palo.equals("Mediano")) {
+								if (sab_palo.equals("Mantequilla")) {
+									medianas_cant_1.setText(txt_cant_palo.getText());
+									
+									
+								} else if (sab_palo.equals("Takis")) {
+									medianas_cant_2.setText(txt_cant_palo.getText());
+								} else {
+									medianas_cant_3.setText(txt_cant_palo.getText());
+								}
+							} else {
+								
+								if (sab_palo.equals("Mantequilla")) {
+									grandes_cant_1.setText(txt_cant_palo.getText());
+									
+									
+								} else if (sab_palo.equals("Takis")) {
+									grandes_cant_2.setText(txt_cant_palo.getText());
+								} else {
+									grandes_cant_3.setText(txt_cant_palo.getText());
+								}
+								
+							}
+
+
+							//resumen refrescos
+							if (tam_refre.equals("Chico")) {
+								
+								if (sab_refre.equals("Coca-Cola")) {
+									chicas_cant_1_r.setText(txt_cant_refre.getText());
+									
+									
+								} else if (sab_refre.equals("Pepsi")) {
+									chicas_cant_2_r.setText(txt_cant_refre.getText());
+								} else {
+									chicas_cant_3_r.setText(txt_cant_refre.getText());
+								}
+								
+							} else if (tam_refre.equals("Mediano")) {
+								if (sab_refre.equals("Mantequilla")) {
+									medianas_cant_1_r.setText(txt_cant_refre.getText());
+									
+									
+								} else if (sab_refre.equals("Takis")) {
+									medianas_cant_2_r.setText(txt_cant_refre.getText());
+								} else {
+									medianas_cant_3_r.setText(txt_cant_refre.getText());
+								}
+							} else {
+								
+								if (sab_refre.equals("Mantequilla")) {
+									grandes_cant_1_r.setText(txt_cant_refre.getText());
+									
+								} else if (sab_refre.equals("Takis")) {
+									grandes_cant_2_r.setText(txt_cant_refre.getText());
+								} else {
+									grandes_cant_3_r.setText(txt_cant_refre.getText());
+								}
+								
+							}
+							
+							
 
 							total += prec_prd * cant_palo;
 							venta.agregarProducto(id, cant_palo);
@@ -459,6 +583,8 @@ public class PrincipalPagina {
 
 				// usr.productos();
 				// System.out.println(venta);
+				
+				total_ven.setText(Float.toString(total));
 
 			}
 		});
@@ -493,11 +619,19 @@ public class PrincipalPagina {
 		lblCantidad.setBounds(372, 37, 46, 14);
 		panel_muestras.add(lblCantidad);
 
-		btn_combo_1 = new JButton("Combo Primos");
+		btn_combo_1 = new JButton("Combo cuates");
+		
 		btn_combo_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				venta.agregarCombo(1, 1);
 				total += 220;
+				
+				cant_c1 += 1;
+				
+				combo_1.setText(Integer.toString(cant_c1));
+				
+				total_ven.setText(Float.toString(total));
+				
 			}
 		});
 		btn_combo_1.setForeground(Color.WHITE);
@@ -507,7 +641,18 @@ public class PrincipalPagina {
 		btn_combo_1.setBounds(47, 76, 162, 92);
 		panel_muestras.add(btn_combo_1);
 
-		btn_combo_2 = new JButton("Combo 2");
+		btn_combo_2 = new JButton("Combo Piñata");
+		btn_combo_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				venta.agregarCombo(2, 1);
+				total += 218;
+				
+				cant_c2 += 1;
+				
+				combo_2.setText(Integer.toString(cant_c2));
+				total_ven.setText(Float.toString(total));
+			}
+		});
 		btn_combo_2.setForeground(Color.WHITE);
 		btn_combo_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_combo_2.setBorder(null);
@@ -515,7 +660,20 @@ public class PrincipalPagina {
 		btn_combo_2.setBounds(256, 76, 162, 92);
 		panel_muestras.add(btn_combo_2);
 
-		btn_combo_3 = new JButton("Combo 3");
+		btn_combo_3 = new JButton("Combo Fiesta");
+		btn_combo_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				venta.agregarCombo(3, 1);
+				total += 400;
+				
+				
+				cant_c3+= 1;
+				
+				combo_3.setText(Integer.toString(cant_c3));
+				
+				total_ven.setText(Float.toString(total));
+			}
+		});
 		btn_combo_3.setForeground(Color.WHITE);
 		btn_combo_3.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_combo_3.setBorder(null);
@@ -523,7 +681,19 @@ public class PrincipalPagina {
 		btn_combo_3.setBounds(47, 235, 162, 92);
 		panel_muestras.add(btn_combo_3);
 
-		btn_combo_4 = new JButton("Combo 4");
+		btn_combo_4 = new JButton("Combo Triston");
+		btn_combo_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				venta.agregarCombo(4, 1);
+				total += 80;
+				
+				cant_c4 += 1;
+				
+				combo_4.setText(Integer.toString(cant_c4));
+				
+				total_ven.setText(Float.toString(total));
+			}
+		});
 		btn_combo_4.setForeground(Color.WHITE);
 		btn_combo_4.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_combo_4.setBorder(null);
@@ -612,12 +782,16 @@ public class PrincipalPagina {
 						if (dulce.equals("tostitos")) {
 							id = 7;
 							prec_prd = 20;
+							dulce_1.setText(Integer.toString(cant_dulce));
+							
 						} else if (dulce.equals("galletas")) {
 							id = 8;
 							prec_prd = 15;
+							dulce_2.setText(Integer.toString(cant_dulce));
 						} else {
 							id = 9;
 							prec_prd = 25;
+							dulce_3.setText(Integer.toString(cant_dulce));
 						}
 
 						total += prec_prd * cant_dulce;
@@ -642,17 +816,21 @@ public class PrincipalPagina {
 							if (comida.equals("nachos")) {
 								id = 10;
 								prec_prd = 70;
+								comida_1.setText(Integer.toString(cant_c));
 							} else if (comida.equals("torta")) {
 								id = 11;
 								prec_prd = 55;
+								comida_2.setText(Integer.toString(cant_c));
 							} else {
 								id = 12;
 								prec_prd = 120;
+								comida_3.setText(Integer.toString(cant_c));
 							}
 
 							total += prec_prd * cant_c;
 							venta.agregarProducto(id, cant_c);
 
+							
 						}
 
 					}
@@ -666,6 +844,8 @@ public class PrincipalPagina {
 				cant_dulces.setText("0");
 				cant_comida.setText("0");
 
+				
+				total_ven.setText(Float.toString(total));
 			}
 
 		});
@@ -678,14 +858,14 @@ public class PrincipalPagina {
 		panel_muestras.add(btn_confirmar_2_ext);
 
 		JPanel panel_resumen = new JPanel();
-		panel_resumen.setBounds(606, 105, 378, 435);
+		panel_resumen.setBounds(524, 105, 484, 435);
 		panel_resumen.setBackground(new Color(217, 217, 217));
 		panel_general.add(panel_resumen);
 		panel_resumen.setLayout(null);
 
 		JLabel lbl_total = new JLabel("Total: $");
 		lbl_total.setFont(new Font("Arial", Font.PLAIN, 12));
-		lbl_total.setBounds(22, 410, 59, 14);
+		lbl_total.setBounds(22, 410, 50, 14);
 		panel_resumen.add(lbl_total);
 
 		JButton btn_confirmar_1 = new JButton("Realizar venta");
@@ -698,6 +878,45 @@ public class PrincipalPagina {
 				
 				venta = new CVentasProducto();
 				total = 0;
+				
+				chicas_cant_1.setText("0");
+				chicas_cant_2.setText("0");
+				chicas_cant_3.setText("0");
+				
+				medianas_cant_1.setText("0");
+				medianas_cant_2.setText("0");
+				medianas_cant_3.setText("0");
+				
+				grandes_cant_1.setText("0");
+				grandes_cant_2.setText("0");
+				grandes_cant_3.setText("0");
+				
+				chicas_cant_3_r.setText("0");
+				chicas_cant_2_r.setText("0");
+				chicas_cant_1_r.setText("0");
+				
+				medianas_cant_1_r.setText("0");
+				medianas_cant_2_r.setText("0");
+				medianas_cant_3_r.setText("0");
+				
+				grandes_cant_1_r.setText("0"); 
+				grandes_cant_2_r.setText("0"); 
+				grandes_cant_3_r.setText("0"); 
+				
+				dulce_1.setText("0");
+				dulce_2.setText("0");
+				dulce_3.setText("0");
+				
+				comida_1.setText("0");
+				comida_2.setText("0");
+				comida_3.setText("0");
+				
+				combo_1.setText("0");
+				combo_2.setText("0");
+				combo_3.setText("0");
+				combo_4.setText("0");
+				
+				total_ven.setText("0");
 
 
 			}
@@ -706,8 +925,308 @@ public class PrincipalPagina {
 		btn_confirmar_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_confirmar_1.setBorder(null);
 		btn_confirmar_1.setBackground(new Color(53, 53, 53));
-		btn_confirmar_1.setBounds(280, 385, 88, 39);
+		btn_confirmar_1.setBounds(369, 385, 88, 39);
 		panel_resumen.add(btn_confirmar_1);
+		
+		JLabel lblNewLabel_r = new JLabel("Mantequilla");
+		lblNewLabel_r.setBounds(22, 58, 73, 14);
+		panel_resumen.add(lblNewLabel_r);
+		
+		JLabel lblNewLabel_r_1 = new JLabel("Taquis");
+		lblNewLabel_r_1.setBounds(32, 81, 59, 14);
+		panel_resumen.add(lblNewLabel_r_1);
+		
+		JLabel lblNewLabel_r_2 = new JLabel("Caramelo");
+		lblNewLabel_r_2.setBounds(22, 106, 73, 14);
+		panel_resumen.add(lblNewLabel_r_2);
+		
+		JLabel lblNewLabel_r_9 = new JLabel("PALOMITAS ");
+		lblNewLabel_r_9.setForeground(Color.YELLOW);
+		lblNewLabel_r_9.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_r_9.setBounds(22, 11, 107, 14);
+		panel_resumen.add(lblNewLabel_r_9);
+		
+		JLabel lblNewLabel_r_10 = new JLabel("Chicas");
+		lblNewLabel_r_10.setForeground(new Color(30, 144, 255));
+		lblNewLabel_r_10.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_r_10.setBounds(37, 33, 107, 14);
+		panel_resumen.add(lblNewLabel_r_10);
+		
+		JLabel lblNewLabel_r_10_1 = new JLabel("Medianas");
+		lblNewLabel_r_10_1.setForeground(new Color(30, 144, 255));
+		lblNewLabel_r_10_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_r_10_1.setBounds(37, 131, 107, 14);
+		panel_resumen.add(lblNewLabel_r_10_1);
+		
+		JLabel lblNewLabel_r_11 = new JLabel("Grandes");
+		lblNewLabel_r_11.setForeground(new Color(30, 144, 255));
+		lblNewLabel_r_11.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_r_11.setBounds(32, 233, 107, 14);
+		panel_resumen.add(lblNewLabel_r_11);
+		
+		JLabel lblNewLabel_r_2_1 = new JLabel("Caramelo");
+		lblNewLabel_r_2_1.setBounds(22, 208, 72, 14);
+		panel_resumen.add(lblNewLabel_r_2_1);
+		
+		JLabel lblNewLabel_r_1_1 = new JLabel("Taquis");
+		lblNewLabel_r_1_1.setBounds(22, 183, 72, 14);
+		panel_resumen.add(lblNewLabel_r_1_1);
+		
+		JLabel lblNewLabel_r_3 = new JLabel("Mantequilla");
+		lblNewLabel_r_3.setBounds(22, 160, 72, 14);
+		panel_resumen.add(lblNewLabel_r_3);
+		
+		JLabel lblNewLabel_r_2_2 = new JLabel("Caramelo");
+		lblNewLabel_r_2_2.setBounds(22, 306, 72, 14);
+		panel_resumen.add(lblNewLabel_r_2_2);
+		
+		JLabel lblNewLabel_r_1_2 = new JLabel("Taquis");
+		lblNewLabel_r_1_2.setBounds(22, 281, 72, 14);
+		panel_resumen.add(lblNewLabel_r_1_2);
+		
+		JLabel lblNewLabel_r_4 = new JLabel("Mantequilla");
+		lblNewLabel_r_4.setBounds(22, 258, 72, 14);
+		panel_resumen.add(lblNewLabel_r_4);
+		
+		chicas_cant_1 = new JLabel("0");
+		chicas_cant_1.setBounds(104, 58, 29, 14);
+		panel_resumen.add(chicas_cant_1);
+		
+		chicas_cant_2 = new JLabel("0");
+		chicas_cant_2.setBounds(104, 83, 29, 14);
+		panel_resumen.add(chicas_cant_2);
+		
+		chicas_cant_3 = new JLabel("0");
+		chicas_cant_3.setBounds(104, 106, 29, 14);
+		panel_resumen.add(chicas_cant_3);
+		
+		medianas_cant_3 = new JLabel("0");
+		medianas_cant_3.setBounds(104, 204, 29, 14);
+		panel_resumen.add(medianas_cant_3);
+		
+		medianas_cant_2 = new JLabel("0");
+		medianas_cant_2.setBounds(104, 181, 29, 14);
+		panel_resumen.add(medianas_cant_2);
+		
+		 medianas_cant_1 = new JLabel("0");
+		medianas_cant_1.setBounds(104, 156, 29, 14);
+		panel_resumen.add(medianas_cant_1);
+		
+		grandes_cant_3 = new JLabel("0");
+		grandes_cant_3.setBounds(104, 306, 29, 14);
+		panel_resumen.add(grandes_cant_3);
+		
+		grandes_cant_2 = new JLabel("0");
+		grandes_cant_2.setBounds(104, 283, 29, 14);
+		panel_resumen.add(grandes_cant_2);
+		
+		grandes_cant_1 = new JLabel("0");
+		grandes_cant_1.setBounds(104, 258, 29, 14);
+		panel_resumen.add(grandes_cant_1);
+		
+		JLabel lblNewLabel_r_10_2 = new JLabel("Chicas");
+		lblNewLabel_r_10_2.setForeground(new Color(30, 144, 255));
+		lblNewLabel_r_10_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_r_10_2.setBounds(145, 33, 107, 14);
+		panel_resumen.add(lblNewLabel_r_10_2);
+		
+		JLabel lblNewLabel_r_5 = new JLabel("Coca-Cola");
+		lblNewLabel_r_5.setBounds(130, 58, 73, 14);
+		panel_resumen.add(lblNewLabel_r_5);
+		
+		JLabel lblNewLabel_r_1_3 = new JLabel("Pepsi");
+		lblNewLabel_r_1_3.setBounds(130, 81, 59, 14);
+		panel_resumen.add(lblNewLabel_r_1_3);
+		
+		JLabel lblNewLabel_r_2_3 = new JLabel("Sprite");
+		lblNewLabel_r_2_3.setBounds(130, 106, 73, 14);
+		panel_resumen.add(lblNewLabel_r_2_3);
+		
+		JLabel lblNewLabel_r_10_1_1 = new JLabel("Medianas");
+		lblNewLabel_r_10_1_1.setForeground(new Color(30, 144, 255));
+		lblNewLabel_r_10_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_r_10_1_1.setBounds(145, 131, 107, 14);
+		panel_resumen.add(lblNewLabel_r_10_1_1);
+		
+		JLabel lblNewLabel_r_11_1 = new JLabel("Grandes");
+		lblNewLabel_r_11_1.setForeground(new Color(30, 144, 255));
+		lblNewLabel_r_11_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_r_11_1.setBounds(140, 233, 107, 14);
+		panel_resumen.add(lblNewLabel_r_11_1);
+		
+		chicas_cant_1_r = new JLabel("0");
+		chicas_cant_1_r.setBounds(212, 58, 29, 14);
+		panel_resumen.add(chicas_cant_1_r);
+		
+		chicas_cant_2_r = new JLabel("0");
+		chicas_cant_2_r.setBounds(212, 83, 29, 14);
+		panel_resumen.add(chicas_cant_2_r);
+		
+		chicas_cant_3_r = new JLabel("0");
+		chicas_cant_3_r.setBounds(212, 106, 29, 14);
+		panel_resumen.add(chicas_cant_3_r);
+		
+		medianas_cant_1_r = new JLabel("0");
+		medianas_cant_1_r.setBounds(212, 156, 29, 14);
+		panel_resumen.add(medianas_cant_1_r);
+		
+		medianas_cant_2_r = new JLabel("0");
+		medianas_cant_2_r.setBounds(212, 181, 29, 14);
+		panel_resumen.add(medianas_cant_2_r);
+		
+		medianas_cant_3_r = new JLabel("0");
+		medianas_cant_3_r.setBounds(212, 204, 29, 14);
+		panel_resumen.add(medianas_cant_3_r);
+		
+		grandes_cant_1_r = new JLabel("0");
+		grandes_cant_1_r.setBounds(212, 258, 29, 14);
+		panel_resumen.add(grandes_cant_1_r);
+		
+		grandes_cant_2_r = new JLabel("0");
+		grandes_cant_2_r.setBounds(212, 283, 29, 14);
+		panel_resumen.add(grandes_cant_2_r);
+		
+		grandes_cant_3_r = new JLabel("0");
+		grandes_cant_3_r.setBounds(212, 306, 29, 14);
+		panel_resumen.add(grandes_cant_3_r);
+		
+		JLabel lblNewLabel_r_9_1 = new JLabel("REFRESCO");
+		lblNewLabel_r_9_1.setForeground(new Color(255, 0, 0));
+		lblNewLabel_r_9_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_r_9_1.setBounds(130, 13, 107, 14);
+		panel_resumen.add(lblNewLabel_r_9_1);
+		
+		JLabel lblNewLabel_r_5_1 = new JLabel("Coca-Cola");
+		lblNewLabel_r_5_1.setBounds(130, 156, 73, 14);
+		panel_resumen.add(lblNewLabel_r_5_1);
+		
+		JLabel lblNewLabel_r_1_3_1 = new JLabel("Pepsi");
+		lblNewLabel_r_1_3_1.setBounds(130, 179, 59, 14);
+		panel_resumen.add(lblNewLabel_r_1_3_1);
+		
+		JLabel lblNewLabel_r_2_3_1 = new JLabel("Sprite");
+		lblNewLabel_r_2_3_1.setBounds(130, 204, 73, 14);
+		panel_resumen.add(lblNewLabel_r_2_3_1);
+		
+		JLabel lblNewLabel_r_5_2 = new JLabel("Coca-Cola");
+		lblNewLabel_r_5_2.setBounds(130, 258, 73, 14);
+		panel_resumen.add(lblNewLabel_r_5_2);
+		
+		JLabel lblNewLabel_r_1_3_2 = new JLabel("Pepsi");
+		lblNewLabel_r_1_3_2.setBounds(130, 281, 59, 14);
+		panel_resumen.add(lblNewLabel_r_1_3_2);
+		
+		JLabel lblNewLabel_r_2_3_2 = new JLabel("Sprite");
+		lblNewLabel_r_2_3_2.setBounds(130, 306, 73, 14);
+		panel_resumen.add(lblNewLabel_r_2_3_2);
+		
+		JLabel lblNewLabel_r_9_1_1 = new JLabel("EXTRAS");
+		lblNewLabel_r_9_1_1.setForeground(new Color(255, 69, 0));
+		lblNewLabel_r_9_1_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_r_9_1_1.setBounds(248, 11, 107, 14);
+		panel_resumen.add(lblNewLabel_r_9_1_1);
+		
+		JLabel lblNewLabel_r_10_2_1 = new JLabel("Dulces");
+		lblNewLabel_r_10_2_1.setForeground(new Color(30, 144, 255));
+		lblNewLabel_r_10_2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_r_10_2_1.setBounds(263, 31, 107, 14);
+		panel_resumen.add(lblNewLabel_r_10_2_1);
+		
+		JLabel lblNewLabel_r_5_3 = new JLabel("Tostitos");
+		lblNewLabel_r_5_3.setBounds(248, 56, 73, 14);
+		panel_resumen.add(lblNewLabel_r_5_3);
+		
+		JLabel lblNewLabel_r_1_3_3 = new JLabel("Galletas");
+		lblNewLabel_r_1_3_3.setBounds(248, 79, 59, 14);
+		panel_resumen.add(lblNewLabel_r_1_3_3);
+		
+		JLabel lblNewLabel_r_2_3_3 = new JLabel("skwinkles");
+		lblNewLabel_r_2_3_3.setBounds(248, 104, 73, 14);
+		panel_resumen.add(lblNewLabel_r_2_3_3);
+		
+		dulce_1 = new JLabel("0");
+		dulce_1.setBounds(330, 56, 29, 14);
+		panel_resumen.add(dulce_1);
+		
+		dulce_2 = new JLabel("0");
+		dulce_2.setBounds(330, 81, 29, 14);
+		panel_resumen.add(dulce_2);
+		
+		dulce_3 = new JLabel("0");
+		dulce_3.setBounds(330, 104, 29, 14);
+		panel_resumen.add(dulce_3);
+		
+		JLabel lblNewLabel_r_10_1_1_1 = new JLabel("Comidas");
+		lblNewLabel_r_10_1_1_1.setForeground(new Color(30, 144, 255));
+		lblNewLabel_r_10_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_r_10_1_1_1.setBounds(263, 129, 107, 14);
+		panel_resumen.add(lblNewLabel_r_10_1_1_1);
+		
+		JLabel lblNewLabel_r_5_1_1 = new JLabel("Nachos");
+		lblNewLabel_r_5_1_1.setBounds(248, 154, 73, 14);
+		panel_resumen.add(lblNewLabel_r_5_1_1);
+		
+		JLabel lblNewLabel_r_1_3_1_1 = new JLabel("Torta");
+		lblNewLabel_r_1_3_1_1.setBounds(248, 177, 59, 14);
+		panel_resumen.add(lblNewLabel_r_1_3_1_1);
+		
+		JLabel lblNewLabel_r_2_3_1_1 = new JLabel("Pizza");
+		lblNewLabel_r_2_3_1_1.setBounds(248, 202, 73, 14);
+		panel_resumen.add(lblNewLabel_r_2_3_1_1);
+		
+		comida_1 = new JLabel("0");
+		comida_1.setBounds(330, 154, 29, 14);
+		panel_resumen.add(comida_1);
+		
+		comida_2 = new JLabel("0");
+		comida_2.setBounds(330, 179, 29, 14);
+		panel_resumen.add(comida_2);
+		
+		comida_3 = new JLabel("0");
+		comida_3.setBounds(330, 202, 29, 14);
+		panel_resumen.add(comida_3);
+		
+		JLabel lblNewLabel_r_9_1_1_1 = new JLabel("COMBOS");
+		lblNewLabel_r_9_1_1_1.setForeground(new Color(128, 0, 0));
+		lblNewLabel_r_9_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_r_9_1_1_1.setBounds(362, 11, 107, 14);
+		panel_resumen.add(lblNewLabel_r_9_1_1_1);
+		
+		JLabel lblNewLabel_r_5_3_1 = new JLabel("Cuates");
+		lblNewLabel_r_5_3_1.setBounds(362, 58, 73, 14);
+		panel_resumen.add(lblNewLabel_r_5_3_1);
+		
+		JLabel lblNewLabel_r_1_3_3_1 = new JLabel("Piñata");
+		lblNewLabel_r_1_3_3_1.setBounds(362, 81, 59, 14);
+		panel_resumen.add(lblNewLabel_r_1_3_3_1);
+		
+		JLabel lblNewLabel_r_2_3_3_1 = new JLabel("Fiesta");
+		lblNewLabel_r_2_3_3_1.setBounds(362, 106, 73, 14);
+		panel_resumen.add(lblNewLabel_r_2_3_3_1);
+		
+		JLabel lblNewLabel_r_5_1_1_1 = new JLabel("Triston");
+		lblNewLabel_r_5_1_1_1.setBounds(362, 131, 73, 14);
+		panel_resumen.add(lblNewLabel_r_5_1_1_1);
+		
+		JLabel combo_1 = new JLabel("0");
+		combo_1.setBounds(444, 58, 29, 14);
+		panel_resumen.add(combo_1);
+		
+		JLabel combo_2 = new JLabel("0");
+		combo_2.setBounds(444, 83, 29, 14);
+		panel_resumen.add(combo_2);
+		
+		JLabel combo_3 = new JLabel("0");
+		combo_3.setBounds(444, 106, 29, 14);
+		panel_resumen.add(combo_3);
+		
+		JLabel combo_4 = new JLabel("0");
+		combo_4.setBounds(445, 131, 29, 14);
+		panel_resumen.add(combo_4);
+		
+		total_ven = new JLabel("");
+		total_ven.setBounds(83, 410, 50, 14);
+		panel_resumen.add(total_ven);
 
 		JButton btn_clientes = new JButton("Clientes");
 		btn_clientes.setForeground(Color.WHITE);

@@ -106,6 +106,8 @@ public class VistaBoletos {
 				EscogerAsiento asiento = new EscogerAsiento(vb);
 				frmCinema.setVisible(false);
 				asiento.frame.setVisible(true);
+				
+				
 			}
 		});
 		panel_peli1.setBounds(10, 11, 344, 92);
