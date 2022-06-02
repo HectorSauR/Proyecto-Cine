@@ -27,7 +27,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="net.sf.jasperreports.JR_CONTAINER"/>
 	<classpathentry kind="con" path="net.sf.jasperreports.JR_DEPENDENCIES_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Hp/Desktop/jcalendar-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Hp/Desktop/barcode4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Usuario de Windows/Desktop/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Usuario de Windows/Desktop/barcode4j.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
