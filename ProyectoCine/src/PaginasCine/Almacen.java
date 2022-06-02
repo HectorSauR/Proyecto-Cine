@@ -79,8 +79,7 @@ public class Almacen {
 			public void actionPerformed(ActionEvent e) {
 				VistaBoletos s = new VistaBoletos ();
 				s.frmCinema.setVisible(true);
-				Almacen window = new Almacen();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_boletos.setBounds(0, 0, 100, 38);
