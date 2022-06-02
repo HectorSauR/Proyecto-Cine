@@ -27,6 +27,7 @@ public class EscogerAsiento {
 	private VistaBoletos anterior;
     public int cont_a = 0;
     public String asientos_cadena ="";
+    public int npa;
 	/**
 	 * Launch the application.
 	 */
@@ -51,6 +52,13 @@ public class EscogerAsiento {
 		initialize();
 		anterior = ventana;
 	}
+	
+	
+//	public EscogerAsiento(int np, String nps) {
+//		
+//	 this.npa = np;
+//	}
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -894,8 +902,21 @@ public class EscogerAsiento {
 					
 					//enviar asientos_cadena--------
 					
-					anterior.lbl_cantidad.setText(cant_a);
-					anterior.lbl_asientos.setText(asientos_cadena);
+					System.out.println(npa);
+					if (npa == 1) {
+						anterior.lbl_cantidad.setText(cant_a);
+						anterior.lbl_asientos.setText(asientos_cadena);
+					}else if (npa == 2) {
+						anterior.lbl_cantidad_1.setText(cant_a);
+						anterior.lbl_asientos_1.setText(asientos_cadena);
+					}else if (npa == 3) {
+						anterior.lbl_cantidad_2.setText(cant_a);
+						anterior.lbl_asientos_2.setText(asientos_cadena);
+					}else {
+						anterior.lbl_cantidad_3.setText(cant_a);
+						anterior.lbl_asientos_3.setText(asientos_cadena);
+					}
+					
 				}
 				
 			}
@@ -908,6 +929,24 @@ public class EscogerAsiento {
 		panel_general.add(btn_confirmar);
 		
 		JButton btn_confirmar_1 = new JButton("Cancelar");
+		btn_confirmar_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				anterior.frmCinema.setVisible(true);
+				frame.dispose();
+				
+				if (npa == 1) {
+					anterior.panel_peli_r.setVisible(false);
+				}else if (npa == 2) {
+					anterior.panel_peli_r_1.setVisible(false);
+				}else if (npa == 3) {
+					anterior.panel_peli_r_2.setVisible(false);
+				}else {
+					anterior.panel_peli_r_3.setVisible(false);
+				}
+					
+			}
+		});
 		btn_confirmar_1.setForeground(Color.WHITE);
 		btn_confirmar_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_confirmar_1.setBorder(null);

@@ -41,6 +41,20 @@ public class VistaBoletos extends JFrame{
 	JLabel lblpelicula_r_1;
 	JLabel lblpelicula_r_2;
 	JLabel lblpelicula_r_3;
+	
+	
+	JLabel lbl_pelicula_4;
+	JLabel lbl_pelicula_1;
+	JLabel lbl_pelicula_2;
+	JLabel lbl_pelicula_3;
+	
+	
+	JLabel lbl_cantidad_1;
+	JLabel lbl_asientos_1;
+	JLabel lbl_cantidad_2;
+	JLabel lbl_asientos_2;
+	JLabel lbl_cantidad_3;
+	JLabel lbl_asientos_3;
 	/**
 	 * Launch the application.
 	 */
@@ -140,7 +154,14 @@ public class VistaBoletos extends JFrame{
 		panel_peli1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				EscogerAsiento asiento = new EscogerAsiento(vb);
+				frmCinema.setVisible(false);
+				asiento.npa = 2;
+				asiento.frame.setVisible(true);
+				
 				panel_peli_r_1.setVisible(true);
+				lblpelicula_r_1.setText(lbl_pelicula_1.getText());
+				
 			}
 		});
 		panel_peli1.setBackground(SystemColor.activeCaptionBorder);
@@ -148,7 +169,7 @@ public class VistaBoletos extends JFrame{
 		panel_muestras.add(panel_peli1);
 		panel_peli1.setLayout(null);
 		
-		JLabel lbl_pelicula_1 = new JLabel("Jurassic World");
+		lbl_pelicula_1 = new JLabel("Jurassic World");
 		lbl_pelicula_1.setBounds(95, 11, 110, 20);
 		panel_peli1.add(lbl_pelicula_1);
 		
@@ -178,7 +199,17 @@ public class VistaBoletos extends JFrame{
 		panel_peli2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				EscogerAsiento asiento = new EscogerAsiento(vb);
+				frmCinema.setVisible(false);
+				asiento.npa = 3;
+				asiento.frame.setVisible(true);
+				
+				
+				
 				panel_peli_r_2.setVisible(true);
+				lblpelicula_r_2.setText(lbl_pelicula_2.getText());
+				
 			}
 		});
 		panel_peli2.setBackground(SystemColor.activeCaptionBorder);
@@ -186,7 +217,7 @@ public class VistaBoletos extends JFrame{
 		panel_muestras.add(panel_peli2);
 		panel_peli2.setLayout(null);
 		
-		JLabel lbl_pelicula_2 = new JLabel("Increibles 2");
+		lbl_pelicula_2 = new JLabel("Increibles 2");
 		lbl_pelicula_2.setBounds(101, 11, 89, 20);
 		panel_peli2.add(lbl_pelicula_2);
 		
@@ -216,7 +247,16 @@ public class VistaBoletos extends JFrame{
 		panel_peli3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				
+				EscogerAsiento asiento = new EscogerAsiento(vb);
+				frmCinema.setVisible(false);
+				asiento.npa = 4;
+				asiento.frame.setVisible(true);
+				
 				panel_peli_r_3.setVisible(true);
+				
+				lblpelicula_r_3.setText(lbl_pelicula_3.getText());
 			}
 		});
 		panel_peli3.setBackground(SystemColor.activeCaptionBorder);
@@ -224,7 +264,7 @@ public class VistaBoletos extends JFrame{
 		panel_muestras.add(panel_peli3);
 		panel_peli3.setLayout(null);
 		
-		JLabel lbl_pelicula_3 = new JLabel("Megamente");
+		lbl_pelicula_3 = new JLabel("Megamente");
 		lbl_pelicula_3.setBounds(105, 11, 80, 20);
 		panel_peli3.add(lbl_pelicula_3);
 		
@@ -260,13 +300,13 @@ public class VistaBoletos extends JFrame{
 			public void mouseClicked(MouseEvent e) {
 				EscogerAsiento asiento = new EscogerAsiento(vb);
 				frmCinema.setVisible(false);
+				asiento.npa = 1;
 				asiento.frame.setVisible(true);
-		
+		        
+				
 				panel_peli_r.setVisible(true);
-				
 				//datos
-				
-				
+				lblpelicula_r.setText(lbl_pelicula_4.getText());
 				
 			}
 		});
@@ -276,7 +316,7 @@ public class VistaBoletos extends JFrame{
 		panel_muestras.add(panel_peli4);
 		
 		
-		JLabel lbl_pelicula_4 = new JLabel("Spiderman: sin camino a casa");
+		lbl_pelicula_4 = new JLabel("Spiderman: sin camino a casa");
 		lbl_pelicula_4.setBounds(95, 11, 189, 20);
 		panel_peli4.add(lbl_pelicula_4);
 		
@@ -344,11 +384,11 @@ public class VistaBoletos extends JFrame{
 		lblpelicula_r_1.setBounds(92, 11, 82, 20);
 		panel_peli_r_1.add(lblpelicula_r_1);
 		
-		JLabel lbl_cantidad_1 = new JLabel("Cantidad");
+		lbl_cantidad_1 = new JLabel("Cantidad");
 		lbl_cantidad_1.setBounds(92, 32, 71, 14);
 		panel_peli_r_1.add(lbl_cantidad_1);
 		
-		JLabel lbl_asientos_1 = new JLabel("Asientos");
+	    lbl_asientos_1 = new JLabel("Asientos");
 		lbl_asientos_1.setBounds(92, 51, 82, 14);
 		panel_peli_r_1.add(lbl_asientos_1);
 		
@@ -362,11 +402,11 @@ public class VistaBoletos extends JFrame{
 		lblpelicula_r_2.setBounds(92, 11, 82, 20);
 		panel_peli_r_2.add(lblpelicula_r_2);
 		
-		JLabel lbl_cantidad_2 = new JLabel("Cantidad");
+		lbl_cantidad_2 = new JLabel("Cantidad");
 		lbl_cantidad_2.setBounds(92, 32, 71, 14);
 		panel_peli_r_2.add(lbl_cantidad_2);
 		
-		JLabel lbl_asientos_2 = new JLabel("Asientos");
+		 lbl_asientos_2 = new JLabel("Asientos");
 		lbl_asientos_2.setBounds(92, 51, 82, 14);
 		panel_peli_r_2.add(lbl_asientos_2);
 		
@@ -380,11 +420,11 @@ public class VistaBoletos extends JFrame{
 		lblpelicula_r_3.setBounds(92, 11, 82, 20);
 		panel_peli_r_3.add(lblpelicula_r_3);
 		
-		JLabel lbl_cantidad_3 = new JLabel("Cantidad");
+		 lbl_cantidad_3 = new JLabel("Cantidad");
 		lbl_cantidad_3.setBounds(92, 32, 71, 14);
 		panel_peli_r_3.add(lbl_cantidad_3);
 		
-		JLabel lbl_asientos_3 = new JLabel("Asientos");
+		 lbl_asientos_3 = new JLabel("Asientos");
 		lbl_asientos_3.setBounds(92, 51, 82, 14);
 		panel_peli_r_3.add(lbl_asientos_3);
 		
@@ -426,6 +466,10 @@ public class VistaBoletos extends JFrame{
 	    lbl_id_c = new JLabel("ID");
 		lbl_id_c.setBounds(30, 76, 33, 14);
 		panel.add(lbl_id_c);
+		
+		JButton btnNewButton = new JButton("REGISTAR VENTA ");
+		btnNewButton.setBounds(839, 503, 131, 59);
+		panel_general.add(btnNewButton);
 		
 		//ir al frame de clientes
 		JButton btn_clientes = new JButton("Clientes");
