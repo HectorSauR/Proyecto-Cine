@@ -103,85 +103,115 @@ public class VistaBoletos extends JFrame{
 		panel_muestras.setLayout(null);
 		
 		JPanel panel_peli1_1 = new JPanel();
+		panel_peli1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		panel_peli1_1.setBackground(SystemColor.activeCaptionBorder);
 		panel_peli1_1.setBounds(10, 114, 344, 92);
 		panel_muestras.add(panel_peli1_1);
 		panel_peli1_1.setLayout(null);
 		
-		JLabel lbl_pelicula_1 = new JLabel("Spiderman");
-		lbl_pelicula_1.setBounds(95, 11, 85, 20);
+		JLabel lbl_pelicula_1 = new JLabel("Jurassic World");
+		lbl_pelicula_1.setBounds(95, 11, 110, 20);
 		panel_peli1_1.add(lbl_pelicula_1);
 		
-		JLabel lbl_idioma_1 = new JLabel("Idioma");
+		JLabel lbl_idioma_1 = new JLabel("Espa\u00F1ol");
 		lbl_idioma_1.setBounds(95, 30, 46, 14);
 		panel_peli1_1.add(lbl_idioma_1);
 		
-		JLabel lbl_sala_1 = new JLabel("Sala");
+		JLabel lbl_sala_1 = new JLabel("Sala 2");
 		lbl_sala_1.setBounds(95, 42, 46, 14);
 		panel_peli1_1.add(lbl_sala_1);
 		
-		JLabel lbl_horario_1 = new JLabel("Horario");
+		JLabel lbl_horario_1 = new JLabel("Horario 2:00 PM");
 		lbl_horario_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lbl_horario_1.setBounds(95, 55, 46, 14);
+		lbl_horario_1.setBounds(95, 55, 97, 14);
 		panel_peli1_1.add(lbl_horario_1);
 		
-		JLabel lbl_clasifi_1 = new JLabel("Clasificacion");
-		lbl_clasifi_1.setBounds(239, 14, 80, 14);
+		JLabel lbl_clasifi_1 = new JLabel("B15");
+		lbl_clasifi_1.setBounds(294, 14, 40, 14);
 		panel_peli1_1.add(lbl_clasifi_1);
 		
+		JLabel lbl_poster_1 = new JLabel("");
+		lbl_poster_1.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\jurassic_world_re.jpg"));
+		lbl_poster_1.setBounds(10, 0, 70, 92);
+		panel_peli1_1.add(lbl_poster_1);
+		
 		JPanel panel_peli1_2 = new JPanel();
+		panel_peli1_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		panel_peli1_2.setBackground(SystemColor.activeCaptionBorder);
 		panel_peli1_2.setBounds(10, 217, 344, 92);
 		panel_muestras.add(panel_peli1_2);
 		panel_peli1_2.setLayout(null);
 		
-		JLabel lbl_pelicula_2 = new JLabel("Spiderman");
+		JLabel lbl_pelicula_2 = new JLabel("Increibles 2");
 		lbl_pelicula_2.setBounds(101, 11, 89, 20);
 		panel_peli1_2.add(lbl_pelicula_2);
 		
-		JLabel lbl_idioma_2 = new JLabel("Idioma");
+		JLabel lbl_idioma_2 = new JLabel("Espa\u00F1ol\r\n");
 		lbl_idioma_2.setBounds(101, 31, 46, 14);
 		panel_peli1_2.add(lbl_idioma_2);
 		
-		JLabel lbl_sala_2 = new JLabel("Sala");
+		JLabel lbl_sala_2 = new JLabel("Sala 1");
 		lbl_sala_2.setBounds(101, 49, 46, 14);
 		panel_peli1_2.add(lbl_sala_2);
 		
-		JLabel lbl_horario_2 = new JLabel("Horario");
+		JLabel lbl_horario_2 = new JLabel("Horario 3:30 PM");
 		lbl_horario_2.setHorizontalAlignment(SwingConstants.LEFT);
-		lbl_horario_2.setBounds(101, 67, 46, 14);
+		lbl_horario_2.setBounds(101, 67, 103, 14);
 		panel_peli1_2.add(lbl_horario_2);
 		
-		JLabel lbl_clasifi_2 = new JLabel("Clasificacion");
-		lbl_clasifi_2.setBounds(242, 14, 80, 14);
+		JLabel lbl_clasifi_2 = new JLabel("B15");
+		lbl_clasifi_2.setBounds(294, 14, 40, 14);
 		panel_peli1_2.add(lbl_clasifi_2);
 		
+		JLabel lbl_poster_2 = new JLabel("");
+		lbl_poster_2.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\increibles_re.jpg"));
+		lbl_poster_2.setBounds(10, 0, 70, 92);
+		panel_peli1_2.add(lbl_poster_2);
+		
 		JPanel panel_peli1_3 = new JPanel();
+		panel_peli1_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		panel_peli1_3.setBackground(SystemColor.activeCaptionBorder);
 		panel_peli1_3.setBounds(10, 320, 344, 92);
 		panel_muestras.add(panel_peli1_3);
 		panel_peli1_3.setLayout(null);
 		
-		JLabel lbl_pelicula_3 = new JLabel("Spiderman");
+		JLabel lbl_pelicula_3 = new JLabel("Megamente");
 		lbl_pelicula_3.setBounds(105, 11, 80, 20);
 		panel_peli1_3.add(lbl_pelicula_3);
 		
-		JLabel lbl_idioma_3 = new JLabel("Idioma");
+		JLabel lbl_idioma_3 = new JLabel("Espa\u00F1ol");
 		lbl_idioma_3.setBounds(105, 30, 46, 14);
 		panel_peli1_3.add(lbl_idioma_3);
 		
-		JLabel lbl_sala_3 = new JLabel("Sala");
+		JLabel lbl_sala_3 = new JLabel("Sala 3");
 		lbl_sala_3.setBounds(105, 51, 46, 14);
 		panel_peli1_3.add(lbl_sala_3);
 		
-		JLabel lbl_horario_3 = new JLabel("Horario");
+		JLabel lbl_horario_3 = new JLabel("Horario 4:00 PM");
 		lbl_horario_3.setHorizontalAlignment(SwingConstants.LEFT);
-		lbl_horario_3.setBounds(105, 67, 46, 14);
+		lbl_horario_3.setBounds(105, 67, 98, 14);
 		panel_peli1_3.add(lbl_horario_3);
 		
-		JLabel lbl_clasifi_3 = new JLabel("Clasificacion");
-		lbl_clasifi_3.setBounds(243, 14, 80, 14);
+		JLabel lbl_clasifi_3 = new JLabel("B15");
+		lbl_clasifi_3.setBounds(294, 14, 40, 14);
 		panel_peli1_3.add(lbl_clasifi_3);
+		
+		JLabel lbl_poster_3 = new JLabel("");
+		lbl_poster_3.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\megamente_re.jpg"));
+		lbl_poster_3.setBounds(10, 0, 70, 92);
+		panel_peli1_3.add(lbl_poster_3);
 		
 		JPanel panel_peli1_1_1 = new JPanel();
 		panel_peli1_1_1.addMouseListener(new MouseAdapter() {
@@ -196,33 +226,33 @@ public class VistaBoletos extends JFrame{
 		panel_muestras.add(panel_peli1_1_1);
 		
 		
-		JLabel lbl_pelicula_1_1 = new JLabel("Spiderman");
-		lbl_pelicula_1_1.setBounds(95, 11, 85, 20);
+		JLabel lbl_pelicula_1_1 = new JLabel("Spiderman: sin camino a casa");
+		lbl_pelicula_1_1.setBounds(95, 11, 189, 20);
 		panel_peli1_1_1.add(lbl_pelicula_1_1);
 		
-		JLabel lbl_idioma_1_1 = new JLabel("Idioma");
+		JLabel lbl_idioma_1_1 = new JLabel("Espa\u00F1ol");
 		lbl_idioma_1_1.setBounds(95, 30, 46, 14);
 		panel_peli1_1_1.add(lbl_idioma_1_1);
 		
-		JLabel lbl_sala_1_1 = new JLabel("Sala");
+		JLabel lbl_sala_1_1 = new JLabel("Sala 1");
 		lbl_sala_1_1.setBounds(95, 42, 46, 14);
 		panel_peli1_1_1.add(lbl_sala_1_1);
 		
-		JLabel lbl_horario_1_1 = new JLabel("Horario");
+		JLabel lbl_horario_1_1 = new JLabel("Horario 1:00 PM");
 		lbl_horario_1_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lbl_horario_1_1.setBounds(95, 55, 46, 14);
+		lbl_horario_1_1.setBounds(95, 55, 100, 14);
 		panel_peli1_1_1.add(lbl_horario_1_1);
 		
-		JLabel lbl_clasifi_1_1 = new JLabel("Clasificacion");
-		lbl_clasifi_1_1.setBounds(239, 14, 80, 14);
+		JLabel lbl_clasifi_1_1 = new JLabel("B15");
+		lbl_clasifi_1_1.setBounds(294, 14, 40, 14);
 		panel_peli1_1_1.add(lbl_clasifi_1_1);
 		
 		JLabel lbl_poster = new JLabel("");
 		//ImageIcon ico = new ImageIcon(this.getClass().getResource("poster_spiderman.jpg"));
 		//ImageIcon img = new ImageIcon(ico.getImage().getScaledInstance(lbl_poster.getWidth(), lbl_poster.getHeight(), Image.SCALE_SMOOTH));
-		lbl_poster.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\poster_spider.jpg"));
+		lbl_poster.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\poster_spiderman_70.jpg"));
 	
-		lbl_poster.setBounds(10, 14, 75, 67);
+		lbl_poster.setBounds(10, 0, 70, 92);
 		panel_peli1_1_1.add(lbl_poster);
 		
 		JPanel panel_resumen = new JPanel();
@@ -269,6 +299,51 @@ public class VistaBoletos extends JFrame{
 		btn_clientes.setBackground(new Color(40, 75, 99));
 		btn_clientes.setBounds(199, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes);
+		
+		JButton btn_clientes_1 = new JButton("Almacen");
+		btn_clientes_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Almacen s = new Almacen ();
+				s.frmCinema.setVisible(true);
+				frmCinema.setVisible(false);
+			}
+		});
+		btn_clientes_1.setForeground(Color.WHITE);
+		btn_clientes_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_clientes_1.setBorder(null);
+		btn_clientes_1.setBackground(new Color(40, 75, 99));
+		btn_clientes_1.setBounds(299, 0, 100, 38);
+		frmCinema.getContentPane().add(btn_clientes_1);
+		
+		JButton btn_clientes_2 = new JButton("Peliculas");
+		btn_clientes_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Peliculas s = new Peliculas ();
+				s.frmCinema.setVisible(true);
+				frmCinema.setVisible(false);
+			}
+		});
+		btn_clientes_2.setForeground(Color.WHITE);
+		btn_clientes_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_clientes_2.setBorder(null);
+		btn_clientes_2.setBackground(new Color(40, 75, 99));
+		btn_clientes_2.setBounds(399, 0, 100, 38);
+		frmCinema.getContentPane().add(btn_clientes_2);
+		
+		JButton btn_clientes_3 = new JButton("Reportes");
+		btn_clientes_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reportes s = new Reportes ();
+				s.frmCinema.setVisible(true);
+				frmCinema.setVisible(false);
+			}
+		});
+		btn_clientes_3.setForeground(Color.WHITE);
+		btn_clientes_3.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_clientes_3.setBorder(null);
+		btn_clientes_3.setBackground(new Color(40, 75, 99));
+		btn_clientes_3.setBounds(499, 0, 100, 38);
+		frmCinema.getContentPane().add(btn_clientes_3);
 		
 	}
 }

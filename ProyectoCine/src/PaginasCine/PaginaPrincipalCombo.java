@@ -65,6 +65,13 @@ public class PaginaPrincipalCombo {
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btn_ventas = new JButton("Ventas");
+		btn_ventas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PrincipalPagina s = new PrincipalPagina ();
+				s.frmCinema.setVisible(true);
+				frmCinema.setVisible(false);
+			}
+		});
 		btn_ventas.setBorder(null);
 		btn_ventas.setForeground(Color.white);
 		btn_ventas.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -72,6 +79,13 @@ public class PaginaPrincipalCombo {
 		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
+		btn_boletos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VistaBoletos s = new VistaBoletos ();
+				s.frmCinema.setVisible(true);
+				frmCinema.setVisible(false);
+			}
+		});
 		btn_boletos.setBorder(null);
 		btn_boletos.setForeground(Color.white);
 		btn_boletos.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -93,8 +107,7 @@ public class PaginaPrincipalCombo {
 			public void actionPerformed(ActionEvent e) {
 				PrincipalPagina s = new PrincipalPagina ();
 				s.frmCinema.setVisible(true);
-				PaginaPrincipalCombo window = new PaginaPrincipalCombo();
-				window.frmCinema.setVisible(false);
+				frmCinema.setVisible(false);
 			}
 		});
 		btn_individual.setForeground(new Color(255, 255, 255));
@@ -251,12 +264,64 @@ public class PaginaPrincipalCombo {
 		panel_resumen.add(lbl_total);
 		
 		JButton btn_clientes = new JButton("Clientes");
+		btn_clientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Clientes s = new Clientes ();
+				s.frmCinema.setVisible(true);
+				frmCinema.setVisible(false);
+			}
+		});
 		btn_clientes.setForeground(Color.WHITE);
 		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes.setBorder(null);
 		btn_clientes.setBackground(new Color(40, 75, 99));
 		btn_clientes.setBounds(199, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes);
+		
+		JButton btn_clientes_1 = new JButton("Almacen");
+		btn_clientes_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Almacen s = new Almacen ();
+				s.frmCinema.setVisible(true);
+				frmCinema.setVisible(false);
+			}
+		});
+		btn_clientes_1.setForeground(Color.WHITE);
+		btn_clientes_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_clientes_1.setBorder(null);
+		btn_clientes_1.setBackground(new Color(40, 75, 99));
+		btn_clientes_1.setBounds(298, 0, 100, 38);
+		frmCinema.getContentPane().add(btn_clientes_1);
+		
+		JButton btn_clientes_2 = new JButton("Peliculas");
+		btn_clientes_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Peliculas s = new Peliculas ();
+				s.frmCinema.setVisible(true);
+				frmCinema.setVisible(false);
+			}
+		});
+		btn_clientes_2.setForeground(Color.WHITE);
+		btn_clientes_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_clientes_2.setBorder(null);
+		btn_clientes_2.setBackground(new Color(40, 75, 99));
+		btn_clientes_2.setBounds(398, 0, 100, 38);
+		frmCinema.getContentPane().add(btn_clientes_2);
+		
+		JButton btn_clientes_3 = new JButton("Reportes");
+		btn_clientes_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reportes s = new Reportes ();
+				s.frmCinema.setVisible(true);
+				frmCinema.setVisible(false);
+			}
+		});
+		btn_clientes_3.setForeground(Color.WHITE);
+		btn_clientes_3.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_clientes_3.setBorder(null);
+		btn_clientes_3.setBackground(new Color(40, 75, 99));
+		btn_clientes_3.setBounds(498, 0, 100, 38);
+		frmCinema.getContentPane().add(btn_clientes_3);
 		
 	}
 }
