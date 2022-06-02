@@ -75,12 +75,37 @@ public static void combo_mostrar() {
 }
 
 
-public static void cliente_mostrar() {
+public static int cliente_mostrar() {
 	RestClient rc = new RestClient();
 	String res = rc.Get("http://"+ip+":8000/cliente/mostrar");
 	
 	System.out.println(res);
+	
+	JSONArray ja = new JSONArray(res);
+	
+	return ja.length() + 1;
 }
+
+
+public static void cliente_registrar(JSONObject cliente) {
+	RestClient rc = new RestClient();
+	String res = rc.Put("http://"+ip+":8000/cliente/registrar",cliente);
+	
+	System.out.println(res);
+}
+
+
+public static JSONArray cliente_buscar() {
+	RestClient rc = new RestClient();
+	String res = rc.Get("http://"+ip+":8000/cliente/mostrar");
+	
+	System.out.println(res);
+	
+	JSONArray ja = new JSONArray(res);
+	
+	return ja;
+}
+
 	
 	
 	
