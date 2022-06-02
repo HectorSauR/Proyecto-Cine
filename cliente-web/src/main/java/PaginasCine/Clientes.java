@@ -12,6 +12,8 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 
@@ -188,6 +190,12 @@ public class Clientes {
 		panel_resumen.add(textField_4);
 		
 		JButton btn_confirmar = new JButton("Registrar");
+		btn_confirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				funciones_get_put.cliente_mostrar();
+			}
+		});
 		btn_confirmar.setBounds(266, 376, 88, 39);
 		panel_resumen.add(btn_confirmar);
 		btn_confirmar.setForeground(Color.WHITE);

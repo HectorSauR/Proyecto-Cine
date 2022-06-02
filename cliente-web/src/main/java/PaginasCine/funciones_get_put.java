@@ -73,6 +73,14 @@ public static void combo_mostrar() {
 	
 	System.out.println(res);
 }
+
+
+public static void cliente_mostrar() {
+	RestClient rc = new RestClient();
+	String res = rc.Get("http://"+ip+":8000/cliente/mostrar");
+	
+	System.out.println(res);
+}
 	
 	
 	
