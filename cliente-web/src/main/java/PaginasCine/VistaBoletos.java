@@ -31,6 +31,16 @@ public class VistaBoletos extends JFrame{
 	JLabel lbl_asientos;
 	private JTextField txt_id_c;
 	JLabel lbl_id_c;
+	JPanel panel_peli_r;
+	JPanel panel_peli_r_1;
+	JPanel panel_peli_r_2;
+	JPanel panel_peli_r_3;
+	
+	
+	JLabel lblpelicula_r;
+	JLabel lblpelicula_r_1;
+	JLabel lblpelicula_r_2;
+	JLabel lblpelicula_r_3;
 	/**
 	 * Launch the application.
 	 */
@@ -63,6 +73,11 @@ public class VistaBoletos extends JFrame{
 	 */
 	
 	private void run() {
+		
+		panel_peli_r.setVisible(false);
+		panel_peli_r_1.setVisible(false);
+		panel_peli_r_2.setVisible(false);
+		panel_peli_r_3.setVisible(false);
 		txt_id_c.setVisible(false);
 		 lbl_id_c.setVisible(false);
 	}
@@ -125,6 +140,7 @@ public class VistaBoletos extends JFrame{
 		panel_peli1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				panel_peli_r_1.setVisible(true);
 			}
 		});
 		panel_peli1.setBackground(SystemColor.activeCaptionBorder);
@@ -162,6 +178,7 @@ public class VistaBoletos extends JFrame{
 		panel_peli2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				panel_peli_r_2.setVisible(true);
 			}
 		});
 		panel_peli2.setBackground(SystemColor.activeCaptionBorder);
@@ -199,6 +216,7 @@ public class VistaBoletos extends JFrame{
 		panel_peli3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				panel_peli_r_3.setVisible(true);
 			}
 		});
 		panel_peli3.setBackground(SystemColor.activeCaptionBorder);
@@ -243,6 +261,12 @@ public class VistaBoletos extends JFrame{
 				EscogerAsiento asiento = new EscogerAsiento(vb);
 				frmCinema.setVisible(false);
 				asiento.frame.setVisible(true);
+		
+				panel_peli_r.setVisible(true);
+				
+				//datos
+				
+				
 				
 			}
 		});
@@ -282,25 +306,25 @@ public class VistaBoletos extends JFrame{
 		panel_peli4.add(lbl_poster_4);
 		
 		JPanel panel_resumen = new JPanel();
-		panel_resumen.setBounds(606, 49, 364, 426);
+		panel_resumen.setBounds(606, 49, 364, 443);
 		panel_resumen.setBackground(new Color(217, 217, 217));
 		panel_general.add(panel_resumen);
 		panel_resumen.setLayout(null);
 		
 		JLabel lbl_total = new JLabel("Total: $");
-		lbl_total.setBounds(238, 410, 59, 14);
+		lbl_total.setBounds(20, 418, 59, 14);
 		lbl_total.setFont(new Font("Arial", Font.PLAIN, 12));
 		panel_resumen.add(lbl_total);
 		
-		JPanel panel_peli_r = new JPanel();
+		panel_peli_r = new JPanel();
 		panel_peli_r.setLayout(null);
 		panel_peli_r.setBackground(SystemColor.activeCaptionBorder);
 		panel_peli_r.setBounds(10, 11, 344, 92);
 		panel_resumen.add(panel_peli_r);
 		
-		JLabel lbl_pelicula_r = new JLabel("Spiderman");
-		lbl_pelicula_r.setBounds(92, 11, 82, 20);
-		panel_peli_r.add(lbl_pelicula_r);
+		lblpelicula_r = new JLabel("Spiderman");
+		lblpelicula_r.setBounds(92, 11, 82, 20);
+		panel_peli_r.add(lblpelicula_r);
 		
 		lbl_cantidad = new JLabel("Cantidad");
 		lbl_cantidad.setBounds(92, 32, 71, 14);
@@ -309,6 +333,60 @@ public class VistaBoletos extends JFrame{
 		lbl_asientos = new JLabel("Asientos");
 		lbl_asientos.setBounds(92, 51, 82, 14);
 		panel_peli_r.add(lbl_asientos);
+		
+	    panel_peli_r_1 = new JPanel();
+		panel_peli_r_1.setLayout(null);
+		panel_peli_r_1.setBackground(SystemColor.activeCaptionBorder);
+		panel_peli_r_1.setBounds(10, 114, 344, 92);
+		panel_resumen.add(panel_peli_r_1);
+		
+		lblpelicula_r_1 = new JLabel("Spiderman");
+		lblpelicula_r_1.setBounds(92, 11, 82, 20);
+		panel_peli_r_1.add(lblpelicula_r_1);
+		
+		JLabel lbl_cantidad_1 = new JLabel("Cantidad");
+		lbl_cantidad_1.setBounds(92, 32, 71, 14);
+		panel_peli_r_1.add(lbl_cantidad_1);
+		
+		JLabel lbl_asientos_1 = new JLabel("Asientos");
+		lbl_asientos_1.setBounds(92, 51, 82, 14);
+		panel_peli_r_1.add(lbl_asientos_1);
+		
+		 panel_peli_r_2 = new JPanel();
+		panel_peli_r_2.setLayout(null);
+		panel_peli_r_2.setBackground(SystemColor.activeCaptionBorder);
+		panel_peli_r_2.setBounds(10, 217, 344, 92);
+		panel_resumen.add(panel_peli_r_2);
+		
+		lblpelicula_r_2 = new JLabel("Spiderman");
+		lblpelicula_r_2.setBounds(92, 11, 82, 20);
+		panel_peli_r_2.add(lblpelicula_r_2);
+		
+		JLabel lbl_cantidad_2 = new JLabel("Cantidad");
+		lbl_cantidad_2.setBounds(92, 32, 71, 14);
+		panel_peli_r_2.add(lbl_cantidad_2);
+		
+		JLabel lbl_asientos_2 = new JLabel("Asientos");
+		lbl_asientos_2.setBounds(92, 51, 82, 14);
+		panel_peli_r_2.add(lbl_asientos_2);
+		
+		panel_peli_r_3 = new JPanel();
+		panel_peli_r_3.setLayout(null);
+		panel_peli_r_3.setBackground(SystemColor.activeCaptionBorder);
+		panel_peli_r_3.setBounds(10, 320, 344, 92);
+		panel_resumen.add(panel_peli_r_3);
+		
+		lblpelicula_r_3 = new JLabel("Spiderman");
+		lblpelicula_r_3.setBounds(92, 11, 82, 20);
+		panel_peli_r_3.add(lblpelicula_r_3);
+		
+		JLabel lbl_cantidad_3 = new JLabel("Cantidad");
+		lbl_cantidad_3.setBounds(92, 32, 71, 14);
+		panel_peli_r_3.add(lbl_cantidad_3);
+		
+		JLabel lbl_asientos_3 = new JLabel("Asientos");
+		lbl_asientos_3.setBounds(92, 51, 82, 14);
+		panel_peli_r_3.add(lbl_asientos_3);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color( 217, 217, 217));
