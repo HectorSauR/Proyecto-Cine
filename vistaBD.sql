@@ -48,7 +48,21 @@ Alter VIEW ver_clientes AS
             INNER JOIN
         tarjeta_cine ON tarjeta_cliente.tarjeta_cine_id = tarjeta_cine.tarjeta_cine_id;
 
+
+alter VIEW reporte_clientes AS
+    SELECT 
+        concat(nombre_cliente," ",apellido1_cliente," ",apellido2_cliente) as nombre,
+        convert(DATE_FORMAT(fecha_cumple, '%Y/%m/%d'),char) as cumple, 
+        tarjeta_cine.nombre_tarjeta as tarjeta
+    FROM
+        cliente
+            INNER JOIN
+        tarjeta_cliente ON cliente.tarjeta_cliente_id = tarjeta_cliente.tarjeta_cliente_id
+            INNER JOIN
+        tarjeta_cine ON tarjeta_cliente.tarjeta_cine_id = tarjeta_cine.tarjeta_cine_id;
+
 select * from ver_clientes;
+select * from reporte_clientes;
 select * from cliente;
 select * from tarjeta_cliente;
 select * from tarjeta_cine;
