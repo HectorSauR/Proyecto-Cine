@@ -115,7 +115,8 @@ def registrarCliente():
         datos['nombre'],
         datos['apellido1'],
         datos['apellido2'],
-        datos['cumple']);
+        datos['cumple'],
+        datos['tarjeta']);
 
     return cliente.regCliente();
 

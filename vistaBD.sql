@@ -35,6 +35,7 @@ CREATE VIEW ver_usuarios AS
 
 Alter VIEW ver_clientes AS
     SELECT 
+        cliente.cliente_id as ID,
         nombre_cliente as Nombre,
         apellido1_cliente as Apellido_1,
         apellido2_cliente as Apellido_2,
@@ -268,3 +269,12 @@ set estadoAsiento = 1
 where sala_id = 1 and asiento = "1A"
 
 select * from venta_producto order by venta_producto_id desc;
+
+select * from tarjeta_cine;
+select * from tarjeta_cliente;
+select * from cliente;
+
+delete from tarjeta_cliente where tarjeta_cliente_id > 2;
+delete from cliente where cliente_id > 2;
+
+insert into tarjeta_cine values(3, "vip", "Muchos beneficios",10000)

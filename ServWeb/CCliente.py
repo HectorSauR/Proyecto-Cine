@@ -5,11 +5,12 @@ class cliente:
 
     cnn = ConexionBD.conexionBD()
 
-    def setCliente(self,nombre:str = None,apellido1:str = None,apellido2:str = None,cumple:str = None):
+    def setCliente(self,nombre:str = None,apellido1:str = None,apellido2:str = None,cumple:str = None,tarjeta:int = None):
         self.name = nombre;
         self.apellido1 =apellido1;
         self.apellido2 =apellido2;
         self.cumple = cumple;
+        self.tarjeta = tarjeta;
 
     def regCliente(self):
         idCliente = self.cnn.obtenerSiguienteID("cliente");
@@ -17,8 +18,8 @@ class cliente:
 
         lista = {
             "id" : idTarjeta,
-            "puntos" : 0,
-            "tarjeta_cine" : 1
+            "puntos" : 1,
+            "tarjeta_cine" : self.tarjeta
         }
         self.cnn.ejecutarInsercion("tarjeta_cliente",lista);
         
@@ -32,7 +33,7 @@ class cliente:
         }
         x = self.cnn.ejecutarInsercion("cliente",lista);
         
-        if(x == 1): return "Registrado con éxito!"
+        if(x == "1"): return "Registrado con éxito!"
         else: return "Error al registrar"
 
     def getCliente(self):
@@ -41,11 +42,12 @@ class cliente:
 
         for linea in datos:
             lista.append({
-                "nombre" : linea[0],
-                "apellido1" : linea[1],
-                "apellido2" : linea[2],
-                "cumple" : linea[3],
-                "tajeta" : linea[4]
+                "id" : linea[0],
+                "nombre" : linea[1],
+                "apellido1" : linea[2],
+                "apellido2" : linea[3],
+                "cumple" : linea[4],
+                "tajeta" : linea[5]
             })
             
         return lista
