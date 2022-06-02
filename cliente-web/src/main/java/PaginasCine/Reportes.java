@@ -18,7 +18,7 @@ import javax.swing.JComboBox;
 
 public class Reportes {
 
-	private JFrame frmCinema;
+	JFrame frmCinema;
 
 	/**
 	 * Launch the application.

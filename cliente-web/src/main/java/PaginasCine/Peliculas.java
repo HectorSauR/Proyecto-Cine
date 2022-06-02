@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 
 public class Peliculas {
 
-	private JFrame frmCinema;
+	JFrame frmCinema;
 
 	/**
 	 * Launch the application.

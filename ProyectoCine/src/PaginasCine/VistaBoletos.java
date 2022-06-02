@@ -135,7 +135,7 @@ public class VistaBoletos extends JFrame{
 		panel_peli1_1.add(lbl_clasifi_1);
 		
 		JLabel lbl_poster_1 = new JLabel("");
-		lbl_poster_1.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\jurassic_world_re.jpg"));
+		lbl_poster_1.setIcon(new ImageIcon("C:\\Users\\Hp\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\jurassic_world_re.jpg"));
 		lbl_poster_1.setBounds(10, 0, 70, 92);
 		panel_peli1_1.add(lbl_poster_1);
 		
@@ -172,7 +172,7 @@ public class VistaBoletos extends JFrame{
 		panel_peli1_2.add(lbl_clasifi_2);
 		
 		JLabel lbl_poster_2 = new JLabel("");
-		lbl_poster_2.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\increibles_re.jpg"));
+		lbl_poster_2.setIcon(new ImageIcon("C:\\Users\\Hp\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\increibles_re.jpg"));
 		lbl_poster_2.setBounds(10, 0, 70, 92);
 		panel_peli1_2.add(lbl_poster_2);
 		
@@ -209,7 +209,7 @@ public class VistaBoletos extends JFrame{
 		panel_peli1_3.add(lbl_clasifi_3);
 		
 		JLabel lbl_poster_3 = new JLabel("");
-		lbl_poster_3.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\megamente_re.jpg"));
+		lbl_poster_3.setIcon(new ImageIcon("C:\\Users\\Hp\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\megamente_re.jpg"));
 		lbl_poster_3.setBounds(10, 0, 70, 92);
 		panel_peli1_3.add(lbl_poster_3);
 		
@@ -250,7 +250,7 @@ public class VistaBoletos extends JFrame{
 		JLabel lbl_poster = new JLabel("");
 		//ImageIcon ico = new ImageIcon(this.getClass().getResource("poster_spiderman.jpg"));
 		//ImageIcon img = new ImageIcon(ico.getImage().getScaledInstance(lbl_poster.getWidth(), lbl_poster.getHeight(), Image.SCALE_SMOOTH));
-		lbl_poster.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\poster_spiderman_70.jpg"));
+		lbl_poster.setIcon(new ImageIcon("C:\\Users\\Hp\\Documents\\GitHub\\Proyecto-Cine\\ProyectoCine\\IMG\\poster_spiderman_70.jpg"));
 	
 		lbl_poster.setBounds(10, 0, 70, 92);
 		panel_peli1_1_1.add(lbl_poster);

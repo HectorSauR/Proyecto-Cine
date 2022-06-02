@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 
 public class Almacen {
 
-	private JFrame frmCinema;
+	JFrame frmCinema;
 	private JTextField textField;
 	private JTextField textField_1;
 

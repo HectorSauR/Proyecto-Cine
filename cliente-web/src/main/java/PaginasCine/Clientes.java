@@ -34,7 +34,7 @@ import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
 
 public class Clientes {
 
-	private JFrame frmCinema;
+	JFrame frmCinema;
 	private JTextField txt_nombre_c;
 	private JTextField txt_ape_1_c;
 	private JTextField txt_ape_2_c;
