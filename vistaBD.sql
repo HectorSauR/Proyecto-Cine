@@ -285,3 +285,12 @@ delete from tarjeta_cliente where tarjeta_cliente_id > 2;
 delete from cliente where cliente_id > 2;
 
 insert into tarjeta_cine values(3, "vip", "Muchos beneficios",10000)
+
+select *from venta_productos where ID = 25
+
+
+select * from empleado
+
+update empleado
+set puesto_id = 2
+where puesto_id = 3

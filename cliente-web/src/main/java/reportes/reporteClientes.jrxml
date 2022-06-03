@@ -77,7 +77,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Open Sans" size="10" isBold="true"/>
+					<font fontName="Arial" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Empresa:]]></text>
 			</staticText>
@@ -87,7 +87,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Open Sans" size="10" isBold="true"/>
+					<font fontName="Arial" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Direccion:]]></text>
 			</staticText>
@@ -97,7 +97,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Open Sans" size="10" isBold="true"/>
+					<font fontName="Arial" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Correo Electrónico:]]></text>
 			</staticText>
@@ -107,7 +107,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Open Sans" size="10" isBold="true"/>
+					<font fontName="Arial" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Teléfono:]]></text>
 			</staticText>
@@ -117,7 +117,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Open Sans" size="10" isBold="true"/>
+					<font fontName="Arial" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Fecha y hora 
 impresion:]]></text>
@@ -125,42 +125,42 @@ impresion:]]></text>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="380" y="10" width="100" height="20" uuid="bd9add2e-8f74-4eda-9078-d3b1f8ddcf2f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Open Sans"/>
+					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="HH:mm">
 				<reportElement x="490" y="10" width="40" height="20" uuid="50854ac9-7c18-4a6a-bb7c-cf42acd101da"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Open Sans"/>
+					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="180" y="10" width="100" height="20" uuid="952b33d5-718f-47eb-8813-0b2a33274dc1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Open Sans"/>
+					<font fontName="Arial"/>
 				</textElement>
 				<text><![CDATA[ENVIPROPMENT]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="180" y="40" width="100" height="20" uuid="ccaa64d9-9f75-412d-892e-b1512054462a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Open Sans"/>
+					<font fontName="Arial"/>
 				</textElement>
 				<text><![CDATA[Zaragoza #3344]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="295" y="70" width="210" height="20" uuid="4ca6b163-ec08-41f8-89e3-56a12b0e993a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Open Sans"/>
+					<font fontName="Arial"/>
 				</textElement>
 				<text><![CDATA[envipropment.atencion.clientes@gmail.com]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="380" y="40" width="100" height="20" uuid="cdb04450-6e34-4467-8991-1863bb71fc4a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Open Sans"/>
+					<font fontName="Arial"/>
 				</textElement>
 				<text><![CDATA[6682345672]]></text>
 			</staticText>
@@ -206,7 +206,7 @@ impresion:]]></text>
 							<staticText>
 								<reportElement x="0" y="0" width="160" height="30" uuid="fc973dde-7efc-4dba-9e02-af86cbf0868e"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Open Sans" size="14"/>
+									<font fontName="Times New Roman" size="14"/>
 								</textElement>
 								<text><![CDATA[NOMBRE]]></text>
 							</staticText>
@@ -215,7 +215,7 @@ impresion:]]></text>
 							<textField>
 								<reportElement x="0" y="0" width="160" height="30" uuid="279f215d-eaa6-4198-af9e-c3890b8ae64b"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Open Sans" size="12"/>
+									<font fontName="Times New Roman" size="12"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 							</textField>
@@ -227,7 +227,7 @@ impresion:]]></text>
 							<staticText>
 								<reportElement x="0" y="0" width="150" height="30" uuid="146fee39-09b4-4dc1-8200-b6e8c3c7814c"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Open Sans" size="14"/>
+									<font fontName="Times New Roman" size="14"/>
 								</textElement>
 								<text><![CDATA[TARJETA]]></text>
 							</staticText>
@@ -236,7 +236,7 @@ impresion:]]></text>
 							<textField>
 								<reportElement x="0" y="0" width="150" height="30" uuid="96db0e52-06bf-4be1-8695-ed437f712c6a"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Open Sans" size="12"/>
+									<font fontName="Times New Roman" size="12"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{tarjeta}]]></textFieldExpression>
 							</textField>
@@ -248,7 +248,7 @@ impresion:]]></text>
 							<staticText>
 								<reportElement x="0" y="0" width="125" height="30" uuid="75027baa-5d98-4eb7-8f72-f804f39ef4d1"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Open Sans" size="14"/>
+									<font fontName="Times New Roman" size="14"/>
 								</textElement>
 								<text><![CDATA[CUMPLEAÑOS]]></text>
 							</staticText>
@@ -257,7 +257,7 @@ impresion:]]></text>
 							<textField>
 								<reportElement x="0" y="0" width="125" height="30" uuid="2f465349-499c-4f86-a669-f331fedf42c1"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Open Sans" size="12"/>
+									<font fontName="Times New Roman" size="12"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{cumple}]]></textFieldExpression>
 							</textField>
@@ -275,7 +275,7 @@ impresion:]]></text>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Open Sans" size="8"/>
+					<font fontName="Arial" size="8"/>
 				</textElement>
 				<text><![CDATA[Representacion impresa de reportes de clientes del cine ENVIPROPMENT]]></text>
 			</staticText>

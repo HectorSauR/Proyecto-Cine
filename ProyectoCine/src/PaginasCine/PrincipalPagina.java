@@ -97,8 +97,7 @@ public class PrincipalPagina {
 		JButton btn_individual = new JButton("Individual");
 		btn_individual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				messageBox mensaje = new messageBox("OK");
-				mensaje.setVisible(true);
+				
 			}
 		});
 		btn_individual.setForeground(new Color(255, 255, 255));
