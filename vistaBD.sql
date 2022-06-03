@@ -118,7 +118,8 @@ CREATE VIEW ver_pelicula AS
         idioma ON pelicula.idoma_pelicula_id = idioma.idioma_id;
 
 ALTER VIEW ver_funciones AS
-    SELECT 
+    SELECT
+        funcion.funcion_id as ID,
         pelicula.nombre_pelicula AS nombre,
         categoria.nombreCategoria AS categoria,
         pelicula.duracion_pelicula AS duracion,
@@ -294,3 +295,29 @@ select * from empleado
 update empleado
 set puesto_id = 2
 where puesto_id = 3
+
+
+
+
+select * from venta_productos 
+where ID =(
+	SELECT ID
+	FROM venta_productos
+	ORDER BY ID DESC
+	LIMIT 1
+)
+
+
+SELECT *
+	FROM venta_productos
+	ORDER BY ID DESC
+	LIMIT 1
+
+select * from funcion
+
+select * from venta_productos 
+
+select nombre, sum(cantidad) as cantidad_ventas,sum(precio*cantidad) as total_ventas
+from venta_productos 
+group by nombre 
+order by total_ventas desc limit 5

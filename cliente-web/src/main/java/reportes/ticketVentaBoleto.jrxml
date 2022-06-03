@@ -3,9 +3,15 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticketVentaProducto" pageWidth="300" pageHeight="430" columnWidth="260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d95ca38-2a2a-48f6-92aa-2d508a68f7db">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="db_cine"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<parameter name="idVenta" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[select * from mostrar_venta_boletos where id = $P{idVenta}]]>
+		<![CDATA[select * 
+from mostrar_venta_boletos 
+where id =(
+	SELECT id
+	FROM mostrar_venta_boletos
+	ORDER BY id DESC
+	LIMIT 1
+)]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -224,7 +230,7 @@ impresion:]]></text>
 				<reportElement x="155" y="30" width="105" height="15" uuid="f14543d4-3a14-4a02-9a5c-00907e7ed090">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a41805c0-808e-4715-8bec-129fb8460fd5"/>
 				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{Asientos}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -244,14 +250,14 @@ impresion:]]></text>
 	<pageFooter>
 		<band height="90" splitType="Stretch">
 			<staticText>
-				<reportElement x="135" y="12" width="55" height="17" uuid="a549f47e-de51-4135-a851-779355549f61"/>
+				<reportElement x="53" y="36" width="55" height="17" uuid="a549f47e-de51-4135-a851-779355549f61"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Total Venta:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="60" y="50" width="55" height="17" uuid="a503e4e2-80f8-4561-8526-fc43a9a3562d"/>
+				<reportElement x="53" y="58" width="55" height="17" uuid="a503e4e2-80f8-4561-8526-fc43a9a3562d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Te atiende:]]></text>
+				<text><![CDATA[Te atendió:]]></text>
 			</staticText>
 			<line>
 				<reportElement x="0" y="0" width="260" height="1" uuid="f18d6878-4f74-4a98-bcb7-81741fea78b0">
@@ -261,20 +267,25 @@ impresion:]]></text>
 				</reportElement>
 			</line>
 			<textField>
-				<reportElement x="125" y="48" width="74" height="20" uuid="362167a3-4a3f-446c-bbbb-7d0671af6c56"/>
+				<reportElement x="118" y="56" width="74" height="20" uuid="362167a3-4a3f-446c-bbbb-7d0671af6c56"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{Empleado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="196" y="9" width="51" height="22" uuid="3b9607b1-3fe0-4116-a5dd-7a34c46d49bb"/>
+				<reportElement x="118" y="33" width="51" height="22" uuid="3b9607b1-3fe0-4116-a5dd-7a34c46d49bb"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="11" width="125" height="18" uuid="606fb9c7-7b21-4a61-8fcc-3cdbf0b6e379"/>
+			<textField isBlankWhenNull="false">
+				<reportElement x="118" y="15" width="125" height="18" uuid="606fb9c7-7b21-4a61-8fcc-3cdbf0b6e379"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{Cliente}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{Cliente} == null ? "Publico en General" : $F{Cliente})]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="53" y="16" width="55" height="17" uuid="8983c288-ab48-4b6c-a379-a57c3a09fce9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
 		</band>
 	</pageFooter>
 </jasperReport>

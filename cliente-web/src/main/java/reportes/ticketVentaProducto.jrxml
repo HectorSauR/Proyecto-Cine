@@ -59,9 +59,14 @@ WHERE
 			<property name="com.jaspersoft.studio.field.tree.path" value="venta_productos"/>
 		</field>
 	</subDataset>
-	<parameter name="idVenta" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[select * from venta_productos where ID = $P{idVenta}]]>
+		<![CDATA[select * from venta_productos 
+where ID =(
+	SELECT ID
+	FROM venta_productos
+	ORDER BY ID DESC
+	LIMIT 1
+)]]>
 	</queryString>
 	<field name="ID" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="ID"/>

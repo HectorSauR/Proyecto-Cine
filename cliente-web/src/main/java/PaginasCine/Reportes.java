@@ -3,6 +3,7 @@ package PaginasCine;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
 import javax.swing.JPanel;
@@ -13,15 +14,26 @@ import javax.swing.JLabel;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 import javax.swing.JTextField;
+
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
+
 import javax.swing.JComboBox;
+
 
 
 
 public class Reportes {
 
 	JFrame frmCinema;
+
 
 	/**
 	 * Launch the application.
@@ -98,33 +110,54 @@ public class Reportes {
 		frmCinema.getContentPane().add(panel_general);
 		panel_general.setLayout(null);
 		
-		JPanel panel_muestras = new JPanel();
-		panel_muestras.setBounds(290, 61, 706, 481);
-		panel_general.add(panel_muestras);
-		panel_muestras.setBackground(new Color(217, 217, 217));
-		panel_muestras.setLayout(null);
-		
-		JLabel lblNombre_reporte = new JLabel("Nombre del reporte");
-		lblNombre_reporte.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblNombre_reporte.setBounds(10, 11, 114, 14);
-		panel_muestras.add(lblNombre_reporte);
-		
 		JLabel lblReportes = new JLabel("Reportes:");
 		lblReportes.setForeground(Color.WHITE);
 		lblReportes.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblReportes.setBounds(24, 65, 57, 14);
+		lblReportes.setBounds(413, 191, 57, 14);
 		panel_general.add(lblReportes);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(91, 61, 189, 22);
+		final JComboBox comboBox = new JComboBox();
+		
+		comboBox.setFont(new Font("Arial", Font.PLAIN, 12));
+		comboBox.setMaximumRowCount(3);
+		comboBox.setToolTipText("");
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "", "Reporte Clientes","Reporte Productos Mayor Ganancia" ,"Ultimo Ticket Venta Producto", "Ultimo Ticket Venta Boleto" }));
+		comboBox.setSelectedIndex(0);
+		comboBox.setBounds(480, 187, 189, 22);
 		panel_general.add(comboBox);
 		
 		JButton btn_buscar = new JButton("Buscar");
+		btn_buscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				int seleccionado = comboBox.getSelectedIndex();
+				
+				switch(seleccionado) {
+					case 1:{
+						generaReporte("reporteClientes");
+						break;
+					}
+					case 2:{
+						generaReporte("reporteVentasProductos");
+						break;
+					}
+					case 3:{
+						generaReporte("ticketVentaProducto");
+						break;
+					}
+					case 4:{
+						generaReporte("ticketVentaBoleto");
+						break;
+					}
+				}
+				
+			}
+		});
 		btn_buscar.setForeground(Color.WHITE);
 		btn_buscar.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_buscar.setBorder(null);
 		btn_buscar.setBackground(new Color(60, 110, 113));
-		btn_buscar.setBounds(179, 94, 101, 46);
+		btn_buscar.setBounds(473, 283, 101, 46);
 		panel_general.add(btn_buscar);
 		
 		JButton btn_clientes = new JButton("Clientes");
@@ -179,6 +212,27 @@ public class Reportes {
 		btn_clientes_3.setBackground(new Color(40, 75, 99));
 		btn_clientes_3.setBounds(499, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes_3);
+		
+	}
+	
+	
+	public void generaReporte(String nombre) {
+
+		Connection con;
+		JasperReport reporte;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://26.77.197.154:3306/db_cine","ado3","123");
+			
+			reporte = JasperCompileManager.compileReport("src/main/java/reportes/"+nombre+".jrxml");
+			JasperPrint print = JasperFillManager.fillReport(reporte,null,con);
+			JasperViewer visualiza = new JasperViewer(print,false);
+			visualiza.setVisible(true);
+			
+		}catch(Exception e1) {
+			System.out.println(e1.toString());
+		}
 		
 	}
 }

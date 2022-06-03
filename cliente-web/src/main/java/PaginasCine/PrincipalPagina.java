@@ -1,6 +1,11 @@
 package PaginasCine;
 
 import clases.CVentasProducto;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.awt.EventQueue;
 
@@ -24,6 +29,8 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.UIManager;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.awt.event.ActionEvent;
@@ -984,7 +991,22 @@ public class PrincipalPagina {
 				combo_4.setText("0");
 				
 				total_ven.setText("0");
-
+				
+				Connection con;
+				JasperReport reporte;
+				
+				try {
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					con = DriverManager.getConnection("jdbc:mysql://26.77.197.154:3306/db_cine","ado3","123");
+					
+					reporte = JasperCompileManager.compileReport("src/main/java/reportes/ticketVentaProducto.jrxml");
+					JasperPrint print = JasperFillManager.fillReport(reporte,null,con);
+					JasperViewer visualiza = new JasperViewer(print,false);
+					visualiza.setVisible(true);
+					
+				}catch(Exception e1) {
+					System.out.println(e1.toString());
+				}
 
 			}
 		});
