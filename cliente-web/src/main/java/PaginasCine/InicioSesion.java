@@ -48,7 +48,7 @@ public class InicioSesion {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 245, 238));
 		frame.setBounds(100, 100, 509, 427);
-		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("INICIO DE SESI\u00D3N");
