@@ -172,7 +172,7 @@ float total;
 		panel_peli1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				EscogerAsiento asiento = new EscogerAsiento(vb);
+				EscogerAsiento asiento = new EscogerAsiento(vb,2);
 				frmCinema.setVisible(false);
 				asiento.npa = 2;
 				asiento.frame.setVisible(true);
@@ -220,7 +220,7 @@ float total;
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-				EscogerAsiento asiento = new EscogerAsiento(vb);
+				EscogerAsiento asiento = new EscogerAsiento(vb,3);
 				frmCinema.setVisible(false);
 				asiento.npa = 3;
 				asiento.frame.setVisible(true);
@@ -271,7 +271,7 @@ float total;
 			public void mouseClicked(MouseEvent e) {
 				
 				
-				EscogerAsiento asiento = new EscogerAsiento(vb);
+				EscogerAsiento asiento = new EscogerAsiento(vb,4);
 				frmCinema.setVisible(false);
 				asiento.npa = 4;
 				asiento.frame.setVisible(true);
@@ -323,7 +323,7 @@ float total;
 		panel_peli4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				EscogerAsiento asiento = new EscogerAsiento(vb);
+				EscogerAsiento asiento = new EscogerAsiento(vb,1);
 				frmCinema.setVisible(false);
 				asiento.npa = 1;
 				asiento.frame.setVisible(true);
@@ -551,7 +551,7 @@ float total;
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//funciones_get_put.vent_boleto_mostar();
-				funciones_get_put.asiento_ocupados();
+				
 				float desc;
 				
 				if (pelicula==1) {
@@ -665,7 +665,7 @@ float total;
 					
 				}
 				
-				
+				funciones_get_put.asiento_ocupados();
 				clientee = false;
 				total = 0;
 				

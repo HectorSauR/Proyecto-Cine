@@ -25,7 +25,7 @@ public class CPruebaReportes {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://26.77.197.154:3306/db_cine","ado3","123");
 			
-			reporte = JasperCompileManager.compileReport("C:/Users/hecto/Documents/Universidad/6.Sexto semestre/Practicas/3.Administracion de proyectos de software 1/Proyecto-Cine/cliente-web/src/main/java/PaginasCine/reportes/Blank_A4.jrxml");
+			reporte = JasperCompileManager.compileReport("C:\\Users\\Hp\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\src\\main\\java\\PaginasCine\\reportes\\Blank_A4.jrxml");
 //			JasperPrint print = JasperFillManager.fillReport(reporte,(Map<String,Object>)parameters,con);
 			JasperPrint print = JasperFillManager.fillReport(reporte,null,con);
 			JasperViewer visualiza = new JasperViewer(print,true);
