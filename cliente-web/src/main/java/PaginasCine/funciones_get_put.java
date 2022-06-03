@@ -40,7 +40,7 @@ public class funciones_get_put {
 		}
 		
 	 
-		
+		System.out.println(ja);
 		return resp;
 	}
 	
@@ -135,8 +135,43 @@ public static JSONArray asiento_ocupados() {
 }
 
 
+public static JSONArray  unidad_med_mostrar() {
+	RestClient rc = new RestClient();
+	String res = rc.Get("http://"+ip+":8000/productos/mostrar");
+	
+	JSONArray ja = new JSONArray(res);
+	System.out.println(res);
+	
+	return ja;
+	
+}
+
+	
+
+public static JSONObject puesto(String us,String cont) {
 	
 	
+
+	RestClient rc = new RestClient();
+	JSONObject jog = new JSONObject();
+
+	
+	String res = rc.Get("http://"+ip+":8000/empleados/usuarios");
+	JSONArray ja = new JSONArray(res);
+	for (int i=0; i<ja.length();i++) {
+		JSONObject jo = ja.getJSONObject(i);
+//		System.out.println(jo.get("usuario"));
+//		System.out.println(jo.get("contra"));
+		
+		if(us.equals(jo.get("usuario")) && cont.equals(jo.get("contra"))  ) {
+			jog = jo;
+			 break;
+		}
+	}
+	
+	System.out.println(jog);
+	return jog;
+}
 	
 
 }

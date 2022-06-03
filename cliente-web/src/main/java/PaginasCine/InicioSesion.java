@@ -6,6 +6,9 @@ import java.awt.Image;
 import java.awt.Color;
 
 import javax.swing.*;
+
+import org.json.*;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -89,6 +92,22 @@ public class InicioSesion {
 				
 				
 				if(usr.inicio_sesion(usuariotxt.getText(), contrtxt.getText()) == true) {
+					
+					
+					JSONObject jo  =  funciones_get_put.puesto (usuariotxt.getText(),contrtxt.getText());
+					
+					System.out.println(jo);
+					if (jo.getInt("puesto_id")==1) {
+						PrincipalPagina.puesto =1;
+						VistaBoletos.puesto=1;
+						Clientes.puesto=1;
+					}else {
+						PrincipalPagina.puesto =2;
+						VistaBoletos.puesto=2;
+						Clientes.puesto=2;
+					}
+					
+					
 					JOptionPane.showMessageDialog(null, "Ingreso de session exitoso","Bienvenido",JOptionPane.INFORMATION_MESSAGE);
 					
 					frame.dispose();
@@ -99,6 +118,9 @@ public class InicioSesion {
 				}else {
 					JOptionPane.showMessageDialog(null, "REVISA USUARIO O CONTRASEÑA INVALIDOS","ERROR",JOptionPane.ERROR_MESSAGE);
 				}
+				
+				
+				
 				
 			}
 		});

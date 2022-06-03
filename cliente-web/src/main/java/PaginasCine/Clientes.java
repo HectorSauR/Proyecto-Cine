@@ -41,6 +41,10 @@ public class Clientes {
 	static JComboBox cmb_tarj_c;
 	static JDateChooser calendario;
 	private JTextField txt_id_cliente;
+	static int puesto;
+	JButton btn_clientes_1;
+	JButton btn_clientes_2;
+	JButton btn_clientes_3;
 
 	/**
 	 * Launch the application.
@@ -66,6 +70,20 @@ public class Clientes {
 	 */
 	public Clientes() {
 		initialize();
+		run();
+	}
+	
+	
+	public void run() {
+		if(puesto==1) {
+			btn_clientes_1.setVisible(true);
+			btn_clientes_2.setVisible(true);
+			btn_clientes_3.setVisible(true);
+		}else {
+			btn_clientes_1.setVisible(false);
+			btn_clientes_2.setVisible(false);
+			btn_clientes_3.setVisible(false);
+		}
 	}
 
 	/**
@@ -381,7 +399,7 @@ public class Clientes {
 		btn_clientes.setBounds(199, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes);
 		
-		JButton btn_clientes_1 = new JButton("Almacen");
+		btn_clientes_1 = new JButton("Almacen");
 		btn_clientes_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Almacen s = new Almacen ();
@@ -396,7 +414,7 @@ public class Clientes {
 		btn_clientes_1.setBounds(293, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes_1);
 		
-		JButton btn_clientes_2 = new JButton("Peliculas");
+		btn_clientes_2 = new JButton("Peliculas");
 		btn_clientes_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Peliculas s = new Peliculas ();
@@ -411,7 +429,7 @@ public class Clientes {
 		btn_clientes_2.setBounds(393, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes_2);
 		
-		JButton btn_clientes_3 = new JButton("Reportes");
+		btn_clientes_3 = new JButton("Reportes");
 		btn_clientes_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Reportes s = new Reportes ();

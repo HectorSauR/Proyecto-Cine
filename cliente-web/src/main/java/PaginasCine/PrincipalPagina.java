@@ -107,10 +107,14 @@ public class PrincipalPagina {
 	JLabel combo_4;
 	
 	JLabel total_ven;
+	JButton btn_clientes_1;
+	JButton btn_clientes_2;
+	JButton btn_clientes_3;
 	
 	int id = 0;
 	float prec_prd = 0;
 	float total = 0;
+	static int puesto;
 	
 
 
@@ -150,6 +154,16 @@ public class PrincipalPagina {
 	// }
 
 	public void run() {
+		
+		if(puesto==1) {
+			btn_clientes_1.setVisible(true);
+			btn_clientes_2.setVisible(true);
+			btn_clientes_3.setVisible(true);
+		}else {
+			btn_clientes_1.setVisible(false);
+			btn_clientes_2.setVisible(false);
+			btn_clientes_3.setVisible(false);
+		}
 		try {
 			btn_combo_1.setVisible(false);
 			btn_combo_2.setVisible(false);
@@ -1296,7 +1310,7 @@ public class PrincipalPagina {
 		btn_clientes.setBounds(199, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes);
 		
-		JButton btn_clientes_1 = new JButton("Almacen");
+		btn_clientes_1 = new JButton("Almacen");
 		btn_clientes_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Almacen s = new Almacen ();
@@ -1311,7 +1325,7 @@ public class PrincipalPagina {
 		btn_clientes_1.setBounds(299, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes_1);
 		
-		JButton btn_clientes_2 = new JButton("Peliculas");
+		btn_clientes_2 = new JButton("Peliculas");
 		btn_clientes_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Peliculas s = new Peliculas ();
@@ -1326,7 +1340,7 @@ public class PrincipalPagina {
 		btn_clientes_2.setBounds(399, 0, 100, 38);
 		frmCinema.getContentPane().add(btn_clientes_2);
 		
-		JButton btn_clientes_3 = new JButton("Reportes");
+		btn_clientes_3 = new JButton("Reportes");
 		btn_clientes_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Reportes s = new Reportes ();
