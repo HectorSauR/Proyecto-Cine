@@ -235,7 +235,7 @@ float total;
 		panel_peli1.add(lbl_clasifi_1);
 		
 		JLabel lbl_poster_1 = new JLabel("");
-		lbl_poster_1.setIcon(new ImageIcon("IMG\\jurassic_world_re.jpg"));
+		lbl_poster_1.setIcon(new ImageIcon("IMG/jurassic_world_re.jpg"));
 		lbl_poster_1.setBounds(10, 0, 70, 92);
 		panel_peli1.add(lbl_poster_1);
 		
@@ -285,7 +285,7 @@ float total;
 		panel_peli2.add(lbl_clasifi_2);
 		
 		JLabel lbl_poster_2 = new JLabel("");
-		lbl_poster_2.setIcon(new ImageIcon("IMG\\increibles_re.jpg"));
+		lbl_poster_2.setIcon(new ImageIcon("IMG/increibles_re.jpg"));
 		lbl_poster_2.setBounds(10, 0, 70, 92);
 		panel_peli2.add(lbl_poster_2);
 		
@@ -335,7 +335,7 @@ float total;
 		panel_peli3.add(lbl_clasifi_3);
 		
 		JLabel lbl_poster_3 = new JLabel("");
-		lbl_poster_3.setIcon(new ImageIcon("IMG\\megamente_re.jpg"));
+		lbl_poster_3.setIcon(new ImageIcon("IMG/megamente_re.jpg"));
 		lbl_poster_3.setBounds(10, 0, 70, 92);
 		panel_peli3.add(lbl_poster_3);
 		
@@ -394,8 +394,8 @@ float total;
 		JLabel lbl_poster_4 = new JLabel("");
 		//ImageIcon ico = new ImageIcon(this.getClass().getResource("poster_spiderman.jpg"));
 		//ImageIcon img = new ImageIcon(ico.getImage().getScaledInstance(lbl_poster.getWidth(), lbl_poster.getHeight(), Image.SCALE_SMOOTH));
-		lbl_poster_4.setIcon(new ImageIcon("IMG\\poster_spiderman_70.jpg"));
-	
+		lbl_poster_4.setIcon(new ImageIcon("IMG/poster_spiderman_70.jpg"));
+
 		lbl_poster_4.setBounds(10, 0, 70, 92);
 		panel_peli4.add(lbl_poster_4);
 		
@@ -529,7 +529,7 @@ float total;
 				
 				JSONArray ja =  funciones_get_put.cliente_buscar();
 				if (txt_id_c.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "IMGRESA UN ID", "error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "INGRESA UN ID", "error", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				
@@ -698,7 +698,7 @@ float total;
 				
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					con = DriverManager.getConnection("jdbc:mysql://26.77.197.154:3306/db_cine","ado3","123");
+					con = DriverManager.getConnection("jdbc:mysql://192.168.43.215:3306/db_cine","ado3","123");
 					
 					reporte = JasperCompileManager.compileReport("src/main/java/reportes/ticketVentaBoleto.jrxml");
 					JasperPrint print = JasperFillManager.fillReport(reporte,null,con);

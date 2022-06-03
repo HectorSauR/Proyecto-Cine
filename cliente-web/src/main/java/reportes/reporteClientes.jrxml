@@ -181,7 +181,7 @@ impresion:]]></text>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Open Sans" size="14"/>
+					<font fontName="Times New Roman" size="14"/>
 				</textElement>
 				<text><![CDATA[REPORTE CLIENTES]]></text>
 			</staticText>

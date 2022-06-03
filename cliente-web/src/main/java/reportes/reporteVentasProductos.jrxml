@@ -57,8 +57,6 @@ order by total_ventas desc limit 5]]>
 	</subDataset>
 	<parameter name="logoEmpresa" class="java.io.InputStream"/>
 	<parameter name="imgAlternativa" class="java.io.InputStream"/>
-	<parameter name="ds" class="net.sf.jasperreports.engine.data.JRBeanArrayDataSource"/>
-	<parameter name="variable" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select nombre, sum(cantidad) as cantidad_ventas,sum(precio*cantidad) as total_ventas
 from venta_productos 
@@ -198,7 +196,7 @@ impresion:]]></text>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Open Sans" size="14"/>
+					<font fontName="Times New Roman" size="14"/>
 				</textElement>
 				<text><![CDATA[REPORTE PRODUCTOS MAYOR GANANCIAS]]></text>
 			</staticText>

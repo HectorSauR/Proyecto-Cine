@@ -460,7 +460,7 @@ public class Clientes {
 		code128.generateBarcode(canvas, myString);
 		canvas.finish();
 		//write to png file
-		FileOutputStream fos = new FileOutputStream("C:\\Users\\Hp\\Desktop\\CB\\"+image_name);
+		FileOutputStream fos = new FileOutputStream("/home/hectorsaur/Documentos/"+image_name);
 		fos.write(baos.toByteArray());
 		fos.flush();
 		fos.close();

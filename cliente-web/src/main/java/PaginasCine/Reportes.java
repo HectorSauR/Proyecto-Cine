@@ -223,9 +223,8 @@ public class Reportes {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://26.77.197.154:3306/db_cine","ado3","123");
-			
-			reporte = JasperCompileManager.compileReport("src/main/java/reportes/"+nombre+".jrxml");
+			con = DriverManager.getConnection("jdbc:mysql://192.168.43.215:3306/db_cine","ado3","123");
+			reporte = JasperCompileManager.compileReport("C:\\Users\\hecto\\Documents\\Universidad\\6.Sexto semestre\\Practicas\\3.Administracion de proyectos de software 1\\Proyecto-Cine\\cliente-web\\src\\main\\java\\reportes/"+nombre+".jrxml");
 			JasperPrint print = JasperFillManager.fillReport(reporte,null,con);
 			JasperViewer visualiza = new JasperViewer(print,false);
 			visualiza.setVisible(true);
