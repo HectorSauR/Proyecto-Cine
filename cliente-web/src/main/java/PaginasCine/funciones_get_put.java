@@ -125,11 +125,13 @@ public static void boleto_registrar_venta(JSONObject cliente) {
 }
 
 
-public static void asiento_ocupados() {
+public static JSONArray asiento_ocupados() {
 	RestClient rc = new RestClient();
 	String res = rc.Get("http://"+ip+":8000/funcion/asientosDisponibles");
 	
+	JSONArray ja = new JSONArray(res);
 	System.out.println(res);
+	return ja;
 }
 
 
