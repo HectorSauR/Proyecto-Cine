@@ -54,7 +54,7 @@ class producto:
                 "nombre" : linea[1],
                 "abreviación" : linea[2]
             })
-
+        print(lista)
         return lista
 
     def setTamProducto(self,size:str, abrv:str = "default"):
@@ -81,6 +81,7 @@ class producto:
                 "nombre" : linea[1],
                 "abreviación" : linea[2]
             })
+        print(lista)
 
         return lista
 

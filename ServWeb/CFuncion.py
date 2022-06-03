@@ -2,7 +2,6 @@ import ConexionBD;
 
 class funcion:
 
-    cnn = ConexionBD.conexionBD()
 
     def setFuncion(self, sala:int, pelicula:int, fecha:str,hora:str):
         self.sala = sala
@@ -11,7 +10,9 @@ class funcion:
         self.hora = hora
 
     def regFuncion(self):
-        ident = self.cnn.obtenerSiguienteID("funcion");
+        cnn = ConexionBD.conexionBD()
+
+        ident = cnn.obtenerSiguienteID("funcion");
 
         lista = {
             "id" : ident,
@@ -21,13 +22,14 @@ class funcion:
             "hora" : self.hora
         }
         # print(lista);
-        x = self.cnn.ejecutarInsercion("funcion",lista);
+        x = cnn.ejecutarInsercion("funcion",lista);
 
         if(x == "1"): return "Registrado con éxito!"
         else : return "Error"
 
     def getFuncion(self):
-        datos =  self.cnn.ejecutarConsulta("ver_funciones");
+        cnn = ConexionBD.conexionBD()
+        datos =  cnn.ejecutarConsulta("ver_funciones");
         lista = [];
 
         for linea in datos:
@@ -45,60 +47,95 @@ class funcion:
         return lista 
 
     def getAsientosDisponibles(self):
-        datos =  self.cnn.ejecutarConsulta("ver_asientos_disponibles");
-        lista = [];
-        
+        cnn = ConexionBD.conexionBD()
+        # me devuelve la seleccion de los asientos ocupados funcion/fecha/asientos
+        datos =  cnn.ejecutarConsulta("ver_asientos_disponibles");
+
+        # SEPARAR POR FUNCION Y ASIENTOS
+        funciones = []
+
         for linea in datos:
             x = 0
-            for dato in lista:
-                if(dato["sala"] == linea[4]):
-                    dato["asientos"].append(linea[1])
+            for funcion in funciones:
+
+                if(funcion["funcion"] == linea[0]):
+                    funcion["asientos"] += ","+linea[2];
                     x = 1
-                    continue
+                    break
             if(x == 1): continue
-
-            lista.append({
-                "nombre" : linea[0],
-                "asientos" : [linea[1]],
-                "fecha" : linea[2],
-                "hora" : linea[3],
-                "sala" : linea[4]
-            })
             
-        return lista
+            funciones.append({
+                "funcion" : linea[0],
+                "fechaHora" :linea[1],
+                "asientos" : linea[2]
+            })
+        
+        # print(funciones)
 
-    def actualizarAsientos(self, asientos:str,sala:int):
+        return funciones
+
+    def actualizarAsientos(self, asientos:str,funcion:int):
+        cnn = ConexionBD.conexionBD()
+
+        where = "where funcion_id = "+str(funcion)
+        
+
+        datos =  cnn.ejecutarConsulta("venta_boleto",where);
+        
+        # print(datos[0][7])
+
+
+        x = 0
+        ocupados = ""
+
+        for dato in datos:
+            x+=1
+            if(x == 1): 
+                ocupados += dato[7] 
+                continue
+
+            ocupados += ","+dato[7]
+
+        arrOcupados = ocupados.split(",")
+
+        # print(arrOcupados)
+
+
         if(len(asientos) < 3):
-            lista = {
-                "estadoAsiento" : False,
-                "where" : "WHERE sala_id = "+str(sala)+" and asiento = \""+asientos+"\""
-            }
-            self.cnn.ejecutarUpdate("sala",lista)
-            return
-        
-        arr = asientos.split(",")
-        
+            for x in arrOcupados:
+                if(x == asientos): return 0
 
-        for dato in arr:
-            lista = {
-                "estadoAsiento" : False,
-                "where" : "WHERE sala_id = "+str(sala)+" and asiento = \""+dato+"\""
-            }
-            self.cnn.ejecutarUpdate("sala",lista)
+            # print("xd")
+            return 1
+
+        arrVenta = asientos.split(",")
+
+        # print(arrOcupados,arrVenta)
+        for x in arrVenta:
+            for y in arrOcupados:
+                print(x,y)
+                if(x == y): return 0
+        # print("gg")
+        return 1
 
     def reiniciarSala(self,sala:int):
+        cnn = ConexionBD.conexionBD()
+        cnn.reiniciarConexion();
 
         lista = {
             "estadoAsiento" : True,
             "where" : "WHERE sala_id = "+str(sala)
         }
-        self.cnn.ejecutarUpdate("sala",lista)
+        x = cnn.ejecutarUpdate("sala",lista)
 
+        if(x == "1"): return "Accion realizada con éxito!"
+        else : return "Error"
 
         
 
 
     def registrarAsientos(self):
+        cnn = ConexionBD.conexionBD()
         lista = ["A","B","C","D"]
 
         for a in lista:
@@ -112,10 +149,12 @@ class funcion:
                 }
 
                 # print(objeto)   
-                self.cnn.ejecutarInsercion("sala",objeto)
+                cnn.ejecutarInsercion("sala",objeto)
 
 # fun = funcion();
 
-# fun.actualizarAsientos("1A,2A,3A",2)
+# print(fun.getAsientosDisponibles())
 
-# fun.reiniciarSala(2)
+
+# print(fun.actualizarAsientos("3A,4A,5A,2A","2000-08-25 09:00:00",1))
+
