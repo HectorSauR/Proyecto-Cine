@@ -97,6 +97,8 @@ public class EscogerAsiento {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
+				
+				
 				int cant;
 				cant = Integer.parseInt(cb_cant_asiento.getSelectedItem().toString()) ;
 

@@ -106,6 +106,33 @@ public static JSONArray cliente_buscar() {
 	return ja;
 }
 
+
+public static void  vent_boleto_mostar() {
+	RestClient rc = new RestClient();
+	String res = rc.Get("http://"+ip+":8000/venta/boleto/mostrar");
+	
+	System.out.println(res);
+	
+	
+}
+
+
+public static void boleto_registrar_venta(JSONObject cliente) {
+	RestClient rc = new RestClient();
+	String res = rc.Put("http://"+ip+":8000/venta/boleto/registrar",cliente);
+	
+	System.out.println(res);
+}
+
+
+public static void asiento_ocupados() {
+	RestClient rc = new RestClient();
+	String res = rc.Get("http://"+ip+":8000/funcion/asientosDisponibles");
+	
+	System.out.println(res);
+}
+
+
 	
 	
 	

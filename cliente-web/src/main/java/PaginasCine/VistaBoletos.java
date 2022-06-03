@@ -10,8 +10,16 @@ import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import clases.CVentaBoletos;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
@@ -55,6 +63,15 @@ public class VistaBoletos extends JFrame{
 	JLabel lbl_asientos_2;
 	JLabel lbl_cantidad_3;
 	JLabel lbl_asientos_3;
+	JButton btn_b_c;
+	
+	
+	
+	JSONObject jog =  new JSONObject();
+	boolean clientee  = false;
+	
+	int pelicula;
+float total;
 	/**
 	 * Launch the application.
 	 */
@@ -94,6 +111,7 @@ public class VistaBoletos extends JFrame{
 		panel_peli_r_3.setVisible(false);
 		txt_id_c.setVisible(false);
 		 lbl_id_c.setVisible(false);
+		 btn_b_c.setVisible(false);
 	}
 	
 	private void initialize() {
@@ -161,6 +179,8 @@ public class VistaBoletos extends JFrame{
 				
 				panel_peli_r_1.setVisible(true);
 				lblpelicula_r_1.setText(lbl_pelicula_1.getText());
+				pelicula =2;
+				//total = 80 * Integer.parseInt( lbl_cantidad_1.getText());
 				
 			}
 		});
@@ -209,6 +229,8 @@ public class VistaBoletos extends JFrame{
 				
 				panel_peli_r_2.setVisible(true);
 				lblpelicula_r_2.setText(lbl_pelicula_2.getText());
+				pelicula =3;
+				//total = 80 * Integer.parseInt( lbl_cantidad_2.getText());
 				
 			}
 		});
@@ -226,7 +248,7 @@ public class VistaBoletos extends JFrame{
 		panel_peli2.add(lbl_idioma_2);
 		
 		JLabel lbl_sala_2 = new JLabel("Sala 1");
-		lbl_sala_2.setBounds(101, 49, 46, 14);
+		lbl_sala_2.setBounds(101, 49, 40, 14);
 		panel_peli2.add(lbl_sala_2);
 		
 		JLabel lbl_horario_2 = new JLabel("Horario 3:30 PM");
@@ -257,6 +279,9 @@ public class VistaBoletos extends JFrame{
 				panel_peli_r_3.setVisible(true);
 				
 				lblpelicula_r_3.setText(lbl_pelicula_3.getText());
+				pelicula =4;
+				//total = 90 * Integer.parseInt( lbl_cantidad_3.getText());
+				
 			}
 		});
 		panel_peli3.setBackground(SystemColor.activeCaptionBorder);
@@ -273,7 +298,7 @@ public class VistaBoletos extends JFrame{
 		panel_peli3.add(lbl_idioma_3);
 		
 		JLabel lbl_sala_3 = new JLabel("Sala 3");
-		lbl_sala_3.setBounds(105, 51, 46, 14);
+		lbl_sala_3.setBounds(105, 51, 36, 14);
 		panel_peli3.add(lbl_sala_3);
 		
 		JLabel lbl_horario_3 = new JLabel("Horario 4:00 PM");
@@ -307,6 +332,11 @@ public class VistaBoletos extends JFrame{
 				panel_peli_r.setVisible(true);
 				//datos
 				lblpelicula_r.setText(lbl_pelicula_4.getText());
+				
+				
+				pelicula =1;
+				
+				
 				
 			}
 		});
@@ -430,7 +460,7 @@ public class VistaBoletos extends JFrame{
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color( 217, 217, 217));
-		panel.setBounds(413, 61, 183, 104);
+		panel.setBounds(413, 61, 183, 121);
 		panel_general.add(panel);
 		panel.setLayout(null);
 		
@@ -441,10 +471,12 @@ public class VistaBoletos extends JFrame{
 				if( chckbxNewCheckBox.isSelected()) {
 					 txt_id_c.setVisible(true);
 					 lbl_id_c.setVisible(true);
+					 btn_b_c.setVisible(true);
 					 
 				}else {
 					txt_id_c.setVisible(false);
 					 lbl_id_c.setVisible(false);
+					 btn_b_c.setVisible(false);
 				}
 			}
 		});
@@ -467,7 +499,184 @@ public class VistaBoletos extends JFrame{
 		lbl_id_c.setBounds(30, 76, 33, 14);
 		panel.add(lbl_id_c);
 		
+		btn_b_c = new JButton("buscar");
+		btn_b_c.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				JSONArray ja =  funciones_get_put.cliente_buscar();
+				if (txt_id_c.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "IMGRESA UN ID", "error", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				
+	           int id = Integer.parseInt( txt_id_c.getText());
+				
+				
+				
+				
+				int x = 0;
+				for (int i=0; i<ja.length();i++) {
+					JSONObject jo = ja.getJSONObject(i);
+
+					if(id == jo.getInt("id")) {
+						x = 1;
+						
+						JOptionPane.showMessageDialog(null, " CLIENTE ENCONTRADO", "VERIFICAR", JOptionPane.INFORMATION_MESSAGE);
+//						lbl_nt.setText(  Integer.toString( jo.getInt("id")));
+//						lbl_fecha.setText(jo.getString("cumple"));
+//						lbl_nom .setText(jo.getString("nombre"));
+//						lbl_ape1 .setText(jo.getString("apellido1"));
+//						lbl_ape2 .setText(jo.getString("apellido2"));
+//						lbl_tipot.setText( jo.getString("tajeta"));
+						
+						jog =  jo;
+						System.out.println(jog);
+						clientee = true;
+						break; 
+					}
+				}
+				
+				if (x == 0) {
+					JOptionPane.showMessageDialog(null, "ClIENTE NO ENCONTRADO", "error", JOptionPane.ERROR_MESSAGE);
+					clientee = false;
+					return;
+					
+				}
+			}
+		});
+		btn_b_c.setBounds(94, 98, 89, 23);
+		panel.add(btn_b_c);
+		
 		JButton btnNewButton = new JButton("REGISTAR VENTA ");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//funciones_get_put.vent_boleto_mostar();
+				funciones_get_put.asiento_ocupados();
+				float desc;
+				
+				if (pelicula==1) {
+					total = 80 * Integer.parseInt( lbl_cantidad.getText());
+					System.out.println( lbl_cantidad.getText());
+					System.out.println( lbl_asientos.getText());
+					//System.out.println(jog);
+					if (clientee == false) {
+						
+						CVentaBoletos.generarVenta(total, 1,Integer.parseInt( lbl_cantidad.getText()), 1, lbl_asientos.getText(), 1);
+						
+					}else {
+						
+						if (jog.getString("tajeta").equals("invitado")) {
+							desc = (float) (total * 0.10);
+							total = total -desc;
+						}else if (jog.getString("tajeta").equals("invitado_especial")) {
+							desc = (float) (total * 0.30);
+							total = total -desc;
+						}else {
+							desc = (float) (total * 0.50);
+							total = total -desc;
+						}
+						
+						CVentaBoletos.generarVentac(total, 1, Integer.parseInt( lbl_cantidad.getText()), 1,  lbl_asientos.getText(), 1, jog.getInt("id"));
+						
+					}
+					
+				}else if (pelicula==2) {
+					total = 80 * Integer.parseInt( lbl_cantidad_1.getText());
+					System.out.println( lbl_cantidad_1.getText());
+					System.out.println( lbl_asientos_1.getText());
+					//System.out.println(jog);
+					if (clientee == false) {
+						
+						CVentaBoletos.generarVenta(total, 2,Integer.parseInt( lbl_cantidad_1.getText()), 2, lbl_asientos_1.getText(), 1);
+						
+					}else {
+						
+						if (jog.getString("tajeta").equals("invitado")) {
+							desc = (float) (total * 0.10);
+							total = total -desc;
+						}else if (jog.getString("tajeta").equals("invitado_especial")) {
+							desc = (float) (total * 0.30);
+							total = total -desc;
+						}else {
+							desc = (float) (total * 0.50);
+							total = total -desc;
+						}
+						
+						CVentaBoletos.generarVentac(total, 2, Integer.parseInt( lbl_cantidad_1.getText()), 2, lbl_asientos_1.getText(), 2, jog.getInt("id"));
+						
+						
+					}
+					
+					
+					
+				}else if (pelicula==3) {
+					
+					total = 80 * Integer.parseInt( lbl_cantidad_2.getText());
+					System.out.println( lbl_cantidad_2.getText());
+					System.out.println( lbl_asientos_2.getText());
+					//System.out.println(jog);
+					if (clientee == false) {
+						
+						CVentaBoletos.generarVenta(total, 1,Integer.parseInt( lbl_cantidad_2.getText()), 3, lbl_asientos_2.getText(), 1);
+						
+					}else {
+						
+						if (jog.getString("tajeta").equals("invitado")) {
+							desc = (float) (total * 0.10);
+							total = total -desc;
+						}else if (jog.getString("tajeta").equals("invitado_especial")) {
+							desc = (float) (total * 0.30);
+							total = total -desc;
+						}else {
+							desc = (float) (total * 0.50);
+							total = total -desc;
+						}
+						
+						CVentaBoletos.generarVentac(total, 1, Integer.parseInt( lbl_cantidad_2.getText()), 3,  lbl_asientos_2.getText(), 1, jog.getInt("id"));
+						
+					}
+					
+				}else if (pelicula==4) {
+					
+					total = 80 * Integer.parseInt( lbl_cantidad_3.getText());
+					System.out.println( lbl_cantidad_3.getText());
+					System.out.println( lbl_asientos_3.getText());
+					//System.out.println(jog);
+					if (clientee == false) {
+						
+						CVentaBoletos.generarVenta(total, 3,Integer.parseInt( lbl_cantidad_3.getText()), 4, lbl_asientos_3.getText(), 1);
+						
+					}else {
+						
+						if (jog.getString("tajeta").equals("invitado")) {
+							desc = (float) (total * 0.10);
+							total = total -desc;
+						}else if (jog.getString("tajeta").equals("invitado_especial")) {
+							desc = (float) (total * 0.30);
+							total = total -desc;
+						}else {
+							desc = (float) (total * 0.50);
+							total = total -desc;
+						}
+						
+						CVentaBoletos.generarVentac(total, 3, Integer.parseInt( lbl_cantidad_3.getText()), 4,  lbl_asientos_3.getText(), 3, jog.getInt("id"));
+						
+					}
+					
+				}
+				
+				
+				clientee = false;
+				total = 0;
+				
+				panel_peli_r.setVisible(false);
+				panel_peli_r_1.setVisible(false);
+				panel_peli_r_2.setVisible(false);
+				panel_peli_r_3.setVisible(false);
+			}
+			
+			
+		});
 		btnNewButton.setBounds(839, 503, 131, 59);
 		panel_general.add(btnNewButton);
 		
