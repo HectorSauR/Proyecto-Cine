@@ -698,7 +698,7 @@ float total;
 				
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					con = DriverManager.getConnection("jdbc:mysql://26.77.197.154:3306/db_cine","ado3","123");
+					con = DriverManager.getConnection("jdbc:mysql://192.168.43.215:3306/db_cine","ado3","123");
 					
 					reporte = JasperCompileManager.compileReport("src/main/java/reportes/ticketVentaBoleto.jrxml");
 					JasperPrint print = JasperFillManager.fillReport(reporte,null,con);
