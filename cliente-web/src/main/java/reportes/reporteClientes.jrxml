@@ -174,7 +174,7 @@ impresion:]]></text>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="72" splitType="Stretch">
+		<band height="43" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
 				<reportElement mode="Opaque" x="0" y="0" width="555" height="30" forecolor="#FFFFFF" backcolor="#336B87" uuid="ffadc897-b7e5-4a33-813d-c3c26f49b1b9">
@@ -185,10 +185,6 @@ impresion:]]></text>
 				</textElement>
 				<text><![CDATA[REPORTE CLIENTES]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="226" y="42" width="100" height="30" uuid="4044a487-2f5e-40b8-a442-45d0d5300aec"/>
-				<textFieldExpression><![CDATA[$P{variable}]]></textFieldExpression>
-			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>

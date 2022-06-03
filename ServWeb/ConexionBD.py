@@ -11,6 +11,13 @@ class conexionBD:
         except con.Error:
             print("Error connecting to database");
     
+    def reiniciarConexion(self):
+        try:
+            self.conexion = con.connect(user="root", password="123",host="localhost",database="db_cine");
+            self.cursor = self.conexion.cursor()
+        except con.Error:
+            print("Error connecting to database");
+
     def ejecutarInsercion(self,nombreTabla:str,datos:list):
         try:
             cadenaTabla = "insert into "+nombreTabla+" values("
@@ -44,9 +51,14 @@ class conexionBD:
         except con.Error:
             return "Error al ejecutar insercion";
 
-    def ejecutarConsulta(self,nombreConsulta:str):
+    def ejecutarConsulta(self,nombreConsulta:str,where:str = None):
         try:
-            self.cursor.execute("SELECT * FROM "+nombreConsulta);
+
+            sql = "SELECT * FROM "+nombreConsulta
+            if(where != None): sql += " "+where
+            
+            self.cursor.execute(sql);
+                
             return self.cursor.fetchall();
 
         except con.Error:
@@ -108,7 +120,7 @@ class conexionBD:
             if(datos.__contains__("where") == True):
                 cadenaTabla += " " + datos["where"]
 
-            # print(cadenaTabla)
+            print(cadenaTabla)
 
             self.cursor.execute(cadenaTabla)
             self.conexion.commit()
@@ -127,12 +139,14 @@ class conexionBD:
 
 #----------------------Pruebas--------------------------
 # cnn = conexionBD()
-
+# 
 # lista = {
 #     "id" : 1,
 #     "cosa" : 2,
 #     "where" : "WHERE id_coca = 1"
 # }
+
+# datos = cnn.ejecutarConsulta("unidad_medida")
 
 # datos = cnn.ejecutarUpdate("venta_productos",lista);
 

@@ -140,20 +140,13 @@ select * from ver_funciones;
 
 ALTER VIEW ver_asientos_disponibles AS
     SELECT 
-        pelicula.nombre_pelicula AS nombre,
-        sala.asiento AS Asiento,
-        DATE_FORMAT(fecha, '%Y/%m/%d') as Fecha,
-        convert(hora,char) as Hora,
-        funcion.sala_id
+        venta_boleto.funcion_id AS id,
+        concat(convert(fn.fecha, char)," ",convert(fn.hora,char)) as fecha,
+        asientos
     FROM
-        funcion
+        venta_boleto
             INNER JOIN
-        pelicula ON funcion.pelicula_id = pelicula.pelicula_id
-            INNER JOIN
-        sala ON funcion.sala_id = sala.sala_id
-    WHERE
-        estadoAsiento = 1
-    ORDER BY funcion_id;
+        funcion fn on fn.funcion_id = venta_boleto.funcion_id
 
 SELECT 
     *

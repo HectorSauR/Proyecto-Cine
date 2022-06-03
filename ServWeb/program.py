@@ -49,6 +49,34 @@ def mostrarProductos():
 
     return jsonify(producto.getProducto());
 
+@app.route('/productos/registrar', methods=['POST'])
+def registrarProducto():
+    datos = request.get_json();
+    
+    if(datos == None):
+        return "No se encontraron datos en formato JSON";
+    producto = CProducto.producto();
+    
+    producto.setProducto(
+        datos["nombre"],
+        datos["unidad_med"],
+        datos["tam"],
+        datos["precio"]
+    )
+    return producto.regProducto()
+
+@app.route('/productos/mostrar/unidadMedida', methods=['GET'])
+def mostrarUnidadesMedida():
+    producto = CProducto.producto();
+    
+    return producto.getUnidadesMedida();
+
+@app.route('/productos/mostrar/tamanio', methods=['GET'])
+def mostrarTamanio():
+    producto = CProducto.producto();
+    
+    return producto.getTamProducto();
+
 # -------------------------------- Películas --------------------------------
 
 @app.route('/pelicula/registrar', methods=['POST'])
@@ -158,6 +186,17 @@ def mostrarAsientosDisponibles():
     # print(funcion.getAsientosDisponibles())
     return jsonify(funcion.getAsientosDisponibles());
     # return "a"
+
+@app.route('/funcion/sala/reiniciar')
+def reiniciarSala():
+    datos = request.get_json();
+
+    funcion = CFuncion.funcion();
+
+    return funcion.reiniciarSala(
+        datos['sala'],
+        datos['funcion']
+    )
 # -------------------------------- Sucursal --------------------------------
 
 # -------------------------------- Tarjeta --------------------------------

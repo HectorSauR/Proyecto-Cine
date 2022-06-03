@@ -130,8 +130,10 @@ class venta:
         }
         
         func = CFuncion.funcion();
+        self.cnn.reiniciarConexion();
+        y = func.actualizarAsientos(self.asientos,self.funcion)
 
-        func.actualizarAsientos(self.asientos, self.sala)
+        if(y == 0): return "Error no se puede registrar un asiento que ya esta vendido"
 
         x = self.cnn.ejecutarInsercion("venta_boleto",lista)
 
