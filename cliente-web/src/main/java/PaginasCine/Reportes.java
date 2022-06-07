@@ -68,7 +68,7 @@ public class Reportes {
 		frmCinema = new JFrame();
 		frmCinema.getContentPane().setBackground(new Color(240, 255, 240));
 		frmCinema.setBackground(new Color(40, 75, 99));
-		frmCinema.setTitle("Cinema");
+		frmCinema.setTitle("Cinema - Reportes");
 		frmCinema.setBounds(100, 100, 1050, 650);
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -121,7 +121,7 @@ public class Reportes {
 		comboBox.setFont(new Font("Arial", Font.PLAIN, 12));
 		comboBox.setMaximumRowCount(3);
 		comboBox.setToolTipText("");
-		comboBox.setModel(new DefaultComboBoxModel(new String[] { "", "Reporte Clientes","Reporte Productos Mayor Ganancia" ,"Ultimo Ticket Venta Producto", "Ultimo Ticket Venta Boleto" }));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"", "Reporte Clientes", "Reporte Productos Mayor Ganancia", "Ultimo Ticket Venta Producto", "Ultimo Ticket Venta Boleto"}));
 		comboBox.setSelectedIndex(0);
 		comboBox.setBounds(480, 187, 189, 22);
 		panel_general.add(comboBox);
@@ -157,7 +157,7 @@ public class Reportes {
 		btn_buscar.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_buscar.setBorder(null);
 		btn_buscar.setBackground(new Color(60, 110, 113));
-		btn_buscar.setBounds(473, 283, 101, 46);
+		btn_buscar.setBounds(568, 287, 101, 46);
 		panel_general.add(btn_buscar);
 		
 		JButton btn_clientes = new JButton("Clientes");

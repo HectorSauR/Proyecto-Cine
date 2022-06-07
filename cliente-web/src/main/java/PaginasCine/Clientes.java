@@ -93,7 +93,7 @@ public class Clientes {
 		frmCinema = new JFrame();
 		frmCinema.getContentPane().setBackground(new Color(240, 255, 240));
 		frmCinema.setBackground(new Color(40, 75, 99));
-		frmCinema.setTitle("Cinema");
+		frmCinema.setTitle("Cinema - Clientes");
 		frmCinema.setBounds(100, 100, 1050, 650);
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -141,37 +141,37 @@ public class Clientes {
 		panel_muestras.setBackground(new Color(217, 217, 217));
 		panel_muestras.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("DATOS DE CLIENTE");
+		JLabel lblNewLabel = new JLabel("Datos del Cliente:");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 16));
 		lblNewLabel.setBounds(111, 11, 152, 14);
 		panel_muestras.add(lblNewLabel);
 		
-		JLabel lblNombre = new JLabel("Nombre");
+		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNombre.setBounds(26, 186, 129, 14);
 		panel_muestras.add(lblNombre);
 		
-		JLabel lblNumeroDeTarjeta = new JLabel("Numero de tarjeta");
+		JLabel lblNumeroDeTarjeta = new JLabel("Numero de tarjeta:");
 		lblNumeroDeTarjeta.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNumeroDeTarjeta.setBounds(26, 56, 129, 14);
 		panel_muestras.add(lblNumeroDeTarjeta);
 		
-		JLabel lblFechaDeCumpleaos = new JLabel("Fecha de Cumplea\u00F1os");
+		JLabel lblFechaDeCumpleaos = new JLabel("Fecha de Cumpleaños:");
 		lblFechaDeCumpleaos.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblFechaDeCumpleaos.setBounds(26, 119, 129, 14);
 		panel_muestras.add(lblFechaDeCumpleaos);
 		
-		JLabel lblTipoDeTarjeta = new JLabel("Apellido paterno");
+		JLabel lblTipoDeTarjeta = new JLabel("Apellido paterno:");
 		lblTipoDeTarjeta.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblTipoDeTarjeta.setBounds(26, 243, 129, 14);
 		panel_muestras.add(lblTipoDeTarjeta);
 		
-		JLabel lblApellidoMaterno_1 = new JLabel("Apellido Materno");
+		JLabel lblApellidoMaterno_1 = new JLabel("Apellido Materno:");
 		lblApellidoMaterno_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblApellidoMaterno_1.setBounds(26, 306, 129, 14);
 		panel_muestras.add(lblApellidoMaterno_1);
 		
-		JLabel lblTipoDeTarjeta_1 = new JLabel("Tipo de tarjeta");
+		JLabel lblTipoDeTarjeta_1 = new JLabel("Tipo de tarjeta:");
 		lblTipoDeTarjeta_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblTipoDeTarjeta_1.setBounds(26, 359, 129, 14);
 		panel_muestras.add(lblTipoDeTarjeta_1);
@@ -207,11 +207,13 @@ public class Clientes {
 		panel_muestras.add(lbl_tipot);
 		
 		txt_id_cliente = new JTextField();
+		txt_id_cliente.setFont(new Font("Arial", Font.PLAIN, 12));
 		txt_id_cliente.setBounds(55, 383, 167, 20);
 		panel_muestras.add(txt_id_cliente);
 		txt_id_cliente.setColumns(10);
 		
-		JButton btnNewButton = new JButton("buscar");
+		JButton btnNewButton = new JButton("Buscar");
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -244,6 +246,7 @@ public class Clientes {
 			}
 		});
 		btnNewButton.setBounds(248, 382, 89, 23);
+		btnNewButton.setBackground(new Color(53, 53, 53));
 		panel_muestras.add(btnNewButton);
 		
 		JPanel panel_resumen = new JPanel();
@@ -258,8 +261,9 @@ public class Clientes {
 		panel_peli1_4.setBounds(10, 278, 344, 68);
 		panel_resumen.add(panel_peli1_4);
 		
-		JLabel lbl_pelicula_4 = new JLabel("Frase Promocional");
-		lbl_pelicula_4.setBounds(10, 11, 122, 20);
+		JLabel lbl_pelicula_4 = new JLabel("!Mostramos fotos, transmitimos alegrías!");
+		lbl_pelicula_4.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_pelicula_4.setBounds(10, 11, 265, 20);
 		panel_peli1_4.add(lbl_pelicula_4);
 		
 		JLabel lblNombre_1 = new JLabel("Nombre:");
@@ -283,16 +287,19 @@ public class Clientes {
 		panel_resumen.add(lblApellidoMaterno);
 		
 		txt_nombre_c = new JTextField();
+		txt_nombre_c.setFont(new Font("Arial", Font.PLAIN, 12));
 		txt_nombre_c.setBounds(172, 29, 182, 20);
 		panel_resumen.add(txt_nombre_c);
 		txt_nombre_c.setColumns(10);
 		
 		txt_ape_1_c = new JTextField();
+		txt_ape_1_c.setFont(new Font("Arial", Font.PLAIN, 12));
 		txt_ape_1_c.setColumns(10);
 		txt_ape_1_c.setBounds(172, 82, 182, 20);
 		panel_resumen.add(txt_ape_1_c);
 		
 		txt_ape_2_c = new JTextField();
+		txt_ape_2_c.setFont(new Font("Arial", Font.PLAIN, 12));
 		txt_ape_2_c.setColumns(10);
 		txt_ape_2_c.setBounds(172, 137, 182, 20);
 		panel_resumen.add(txt_ape_2_c);
@@ -379,12 +386,14 @@ public class Clientes {
 		btn_confirmar.setBackground(new Color(53, 53, 53));
 		
 		JLabel lblNewLabel_1 = new JLabel("Tipo de tarjeta");
+		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(33, 233, 116, 14);
 		panel_resumen.add(lblNewLabel_1);
 		
 		cmb_tarj_c = new JComboBox();
-		cmb_tarj_c.setModel(new DefaultComboBoxModel(new String[] {"invitado", "invitado especial", "vip"}));
-		cmb_tarj_c.setBounds(172, 233, 182, 18);
+		cmb_tarj_c.setFont(new Font("Arial", Font.PLAIN, 12));
+		cmb_tarj_c.setModel(new DefaultComboBoxModel(new String[] {"Invitado", "Invitado especial", "VIP"}));
+		cmb_tarj_c.setBounds(172, 233, 182, 20);
 		panel_resumen.add(cmb_tarj_c);
 		
 		calendario = new JDateChooser();

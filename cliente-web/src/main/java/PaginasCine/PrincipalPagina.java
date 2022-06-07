@@ -180,7 +180,9 @@ public class PrincipalPagina {
 
 			lbl_dulces.setVisible(false);
 			lbl_comidas.setVisible(false);
+			comobo_dulces_extra.setFont(new Font("Arial", Font.PLAIN, 12));
 			comobo_dulces_extra.setVisible(false);
+			comobo_comida_extra.setFont(new Font("Arial", Font.PLAIN, 12));
 			comobo_comida_extra.setVisible(false);
 			cant_dulces.setVisible(false);
 			cant_comida.setVisible(false);
@@ -214,7 +216,7 @@ public class PrincipalPagina {
 		frmCinema = new JFrame();
 		frmCinema.getContentPane().setBackground(new Color(240, 255, 240));
 		frmCinema.setBackground(new Color(40, 75, 99));
-		frmCinema.setTitle("Cinema");
+		frmCinema.setTitle("Cinema - Ventas");
 		frmCinema.setBounds(100, 100, 1050, 650);
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -642,27 +644,32 @@ public class PrincipalPagina {
 		panel_muestras.add(btn_confirmar);
 
 		txt_cant_palo = new JTextField();
+		txt_cant_palo.setFont(new Font("Arial", Font.PLAIN, 12));
 		txt_cant_palo.setText("0");
 		txt_cant_palo.setBounds(355, 63, 86, 20);
 		panel_muestras.add(txt_cant_palo);
 		txt_cant_palo.setColumns(10);
 
 		txt_cant_refre = new JTextField();
+		txt_cant_refre.setFont(new Font("Arial", Font.PLAIN, 12));
 		txt_cant_refre.setText("0");
 		txt_cant_refre.setBounds(355, 159, 86, 20);
 		panel_muestras.add(txt_cant_refre);
 		txt_cant_refre.setColumns(10);
 
 		lblNewLabel = new JLabel("Tamaño");
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel.setBounds(122, 37, 46, 14);
 		panel_muestras.add(lblNewLabel);
 
 		lblSabor = new JLabel("Sabor");
-		lblSabor.setBounds(250, 37, 46, 14);
+		lblSabor.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblSabor.setBounds(250, 37, 56, 14);
 		panel_muestras.add(lblSabor);
 
 		lblCantidad = new JLabel("Cantidad");
-		lblCantidad.setBounds(372, 37, 46, 14);
+		lblCantidad.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblCantidad.setBounds(372, 37, 69, 14);
 		panel_muestras.add(lblCantidad);
 
 		btn_combo_1 = new JButton("Combo cuates");
@@ -770,40 +777,46 @@ public class PrincipalPagina {
 		panel_muestras.add(btn_combo_4);
 
 		lbl_dulces = new JLabel("Dulces");
-		lbl_dulces.setBounds(68, 115, 46, 14);
+		lbl_dulces.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_dulces.setBounds(68, 115, 65, 14);
 		panel_muestras.add(lbl_dulces);
 
 		lbl_comidas = new JLabel("Comidas");
-		lbl_comidas.setBounds(68, 231, 46, 14);
+		lbl_comidas.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_comidas.setBounds(68, 231, 65, 14);
 		panel_muestras.add(lbl_comidas);
 
 		comobo_dulces_extra
-				.setModel(new DefaultComboBoxModel(new String[] { "", "tostitos", "galletas", "skwinkles" }));
+				.setModel(new DefaultComboBoxModel(new String[] {"", "Tostitos", "Galletas", "Skwinkles"}));
 		comobo_dulces_extra.setBounds(160, 111, 155, 22);
 		panel_muestras.add(comobo_dulces_extra);
 
-		comobo_comida_extra.setModel(new DefaultComboBoxModel(new String[] { "", "nachos", "torta", "pizza" }));
+		comobo_comida_extra.setModel(new DefaultComboBoxModel(new String[] {"", "Nachos", "Torta", "Pizza"}));
 		comobo_comida_extra.setBounds(160, 235, 155, 22);
 		panel_muestras.add(comobo_comida_extra);
 
 		cant_dulces = new JTextField();
+		cant_dulces.setFont(new Font("Arial", Font.PLAIN, 12));
 		cant_dulces.setText("0");
 		cant_dulces.setBounds(353, 112, 86, 20);
 		panel_muestras.add(cant_dulces);
 		cant_dulces.setColumns(10);
 
 		cant_comida = new JTextField();
+		cant_comida.setFont(new Font("Arial", Font.PLAIN, 12));
 		cant_comida.setText("0");
 		cant_comida.setColumns(10);
 		cant_comida.setBounds(355, 235, 86, 20);
 		panel_muestras.add(cant_comida);
 
 		lblNewLabel_ext_1 = new JLabel("Producto");
+		lblNewLabel_ext_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel_ext_1.setBounds(196, 51, 71, 14);
 		panel_muestras.add(lblNewLabel_ext_1);
 
 		lblNewLabel_ext_2 = new JLabel("Cantidad");
-		lblNewLabel_ext_2.setBounds(372, 51, 56, 14);
+		lblNewLabel_ext_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblNewLabel_ext_2.setBounds(372, 51, 69, 14);
 		panel_muestras.add(lblNewLabel_ext_2);
 
 		btn_confirmar_2_ext = new JButton("Confirmar");
@@ -926,6 +939,7 @@ public class PrincipalPagina {
 		panel_muestras.add(btn_confirmar_2_ext);
 		
 		txt_cant_combo = new JTextField();
+		txt_cant_combo.setFont(new Font("Arial", Font.PLAIN, 12));
 		txt_cant_combo.setText("0");
 		txt_cant_combo.setBounds(173, 342, 142, 20);
 		panel_muestras.add(txt_cant_combo);
@@ -1009,7 +1023,7 @@ public class PrincipalPagina {
 				}
 
 			}
-		});
+			});
 		btn_confirmar_1.setForeground(Color.WHITE);
 		btn_confirmar_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_confirmar_1.setBorder(null);
@@ -1018,298 +1032,354 @@ public class PrincipalPagina {
 		panel_resumen.add(btn_confirmar_1);
 		
 		JLabel lblNewLabel_r = new JLabel("Mantequilla");
+		lblNewLabel_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r.setBounds(22, 58, 73, 14);
 		panel_resumen.add(lblNewLabel_r);
 		
 		JLabel lblNewLabel_r_1 = new JLabel("Taquis");
+		lblNewLabel_r_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_1.setBounds(32, 81, 59, 14);
 		panel_resumen.add(lblNewLabel_r_1);
 		
 		JLabel lblNewLabel_r_2 = new JLabel("Caramelo");
+		lblNewLabel_r_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_2.setBounds(22, 106, 73, 14);
 		panel_resumen.add(lblNewLabel_r_2);
 		
-		JLabel lblNewLabel_r_9 = new JLabel("PALOMITAS ");
-		lblNewLabel_r_9.setForeground(Color.YELLOW);
-		lblNewLabel_r_9.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel lblNewLabel_r_9 = new JLabel("Palomitas:");
+		lblNewLabel_r_9.setForeground(Color.BLACK);
+		lblNewLabel_r_9.setFont(new Font("Arial", Font.PLAIN, 16));
 		lblNewLabel_r_9.setBounds(22, 11, 107, 14);
 		panel_resumen.add(lblNewLabel_r_9);
 		
-		JLabel lblNewLabel_r_10 = new JLabel("Chicas");
-		lblNewLabel_r_10.setForeground(new Color(30, 144, 255));
-		lblNewLabel_r_10.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_r_10 = new JLabel("Chicas:");
+		lblNewLabel_r_10.setForeground(new Color(0, 0, 0));
+		lblNewLabel_r_10.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel_r_10.setBounds(37, 33, 107, 14);
 		panel_resumen.add(lblNewLabel_r_10);
 		
-		JLabel lblNewLabel_r_10_1 = new JLabel("Medianas");
-		lblNewLabel_r_10_1.setForeground(new Color(30, 144, 255));
-		lblNewLabel_r_10_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_r_10_1 = new JLabel("Medianas:");
+		lblNewLabel_r_10_1.setForeground(new Color(0, 0, 0));
+		lblNewLabel_r_10_1.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel_r_10_1.setBounds(37, 131, 107, 14);
 		panel_resumen.add(lblNewLabel_r_10_1);
 		
-		JLabel lblNewLabel_r_11 = new JLabel("Grandes");
-		lblNewLabel_r_11.setForeground(new Color(30, 144, 255));
-		lblNewLabel_r_11.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_r_11 = new JLabel("Grandes:");
+		lblNewLabel_r_11.setForeground(new Color(0, 0, 0));
+		lblNewLabel_r_11.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel_r_11.setBounds(32, 233, 107, 14);
 		panel_resumen.add(lblNewLabel_r_11);
 		
 		JLabel lblNewLabel_r_2_1 = new JLabel("Caramelo");
+		lblNewLabel_r_2_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_2_1.setBounds(22, 208, 72, 14);
 		panel_resumen.add(lblNewLabel_r_2_1);
 		
 		JLabel lblNewLabel_r_1_1 = new JLabel("Taquis");
+		lblNewLabel_r_1_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_1_1.setBounds(22, 183, 72, 14);
 		panel_resumen.add(lblNewLabel_r_1_1);
 		
 		JLabel lblNewLabel_r_3 = new JLabel("Mantequilla");
+		lblNewLabel_r_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_3.setBounds(22, 160, 72, 14);
 		panel_resumen.add(lblNewLabel_r_3);
 		
 		JLabel lblNewLabel_r_2_2 = new JLabel("Caramelo");
+		lblNewLabel_r_2_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_2_2.setBounds(22, 306, 72, 14);
 		panel_resumen.add(lblNewLabel_r_2_2);
 		
 		JLabel lblNewLabel_r_1_2 = new JLabel("Taquis");
+		lblNewLabel_r_1_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_1_2.setBounds(22, 281, 72, 14);
 		panel_resumen.add(lblNewLabel_r_1_2);
 		
 		JLabel lblNewLabel_r_4 = new JLabel("Mantequilla");
+		lblNewLabel_r_4.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_4.setBounds(22, 258, 72, 14);
 		panel_resumen.add(lblNewLabel_r_4);
 		
 		chicas_cant_1 = new JLabel("0");
+		chicas_cant_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		chicas_cant_1.setBounds(104, 58, 29, 14);
 		panel_resumen.add(chicas_cant_1);
 		
 		chicas_cant_2 = new JLabel("0");
+		chicas_cant_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		chicas_cant_2.setBounds(104, 83, 29, 14);
 		panel_resumen.add(chicas_cant_2);
 		
 		chicas_cant_3 = new JLabel("0");
+		chicas_cant_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		chicas_cant_3.setBounds(104, 106, 29, 14);
 		panel_resumen.add(chicas_cant_3);
 		
 		medianas_cant_3 = new JLabel("0");
+		medianas_cant_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		medianas_cant_3.setBounds(104, 204, 29, 14);
 		panel_resumen.add(medianas_cant_3);
 		
 		medianas_cant_2 = new JLabel("0");
+		medianas_cant_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		medianas_cant_2.setBounds(104, 181, 29, 14);
 		panel_resumen.add(medianas_cant_2);
 		
 		 medianas_cant_1 = new JLabel("0");
+		 medianas_cant_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		medianas_cant_1.setBounds(104, 156, 29, 14);
 		panel_resumen.add(medianas_cant_1);
 		
 		grandes_cant_3 = new JLabel("0");
+		grandes_cant_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		grandes_cant_3.setBounds(104, 306, 29, 14);
 		panel_resumen.add(grandes_cant_3);
 		
 		grandes_cant_2 = new JLabel("0");
+		grandes_cant_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		grandes_cant_2.setBounds(104, 283, 29, 14);
 		panel_resumen.add(grandes_cant_2);
 		
 		grandes_cant_1 = new JLabel("0");
+		grandes_cant_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		grandes_cant_1.setBounds(104, 258, 29, 14);
 		panel_resumen.add(grandes_cant_1);
 		
-		JLabel lblNewLabel_r_10_2 = new JLabel("Chicas");
-		lblNewLabel_r_10_2.setForeground(new Color(30, 144, 255));
-		lblNewLabel_r_10_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_r_10_2 = new JLabel("Chicas:");
+		lblNewLabel_r_10_2.setForeground(new Color(0, 0, 0));
+		lblNewLabel_r_10_2.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel_r_10_2.setBounds(145, 33, 107, 14);
 		panel_resumen.add(lblNewLabel_r_10_2);
 		
 		JLabel lblNewLabel_r_5 = new JLabel("Coca-Cola");
+		lblNewLabel_r_5.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_5.setBounds(130, 58, 73, 14);
 		panel_resumen.add(lblNewLabel_r_5);
 		
 		JLabel lblNewLabel_r_1_3 = new JLabel("Pepsi");
+		lblNewLabel_r_1_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_1_3.setBounds(130, 81, 59, 14);
 		panel_resumen.add(lblNewLabel_r_1_3);
 		
 		JLabel lblNewLabel_r_2_3 = new JLabel("Sprite");
+		lblNewLabel_r_2_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_2_3.setBounds(130, 106, 73, 14);
 		panel_resumen.add(lblNewLabel_r_2_3);
 		
-		JLabel lblNewLabel_r_10_1_1 = new JLabel("Medianas");
-		lblNewLabel_r_10_1_1.setForeground(new Color(30, 144, 255));
-		lblNewLabel_r_10_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_r_10_1_1 = new JLabel("Medianas:");
+		lblNewLabel_r_10_1_1.setForeground(new Color(0, 0, 0));
+		lblNewLabel_r_10_1_1.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel_r_10_1_1.setBounds(145, 131, 107, 14);
 		panel_resumen.add(lblNewLabel_r_10_1_1);
 		
 		JLabel lblNewLabel_r_11_1 = new JLabel("Grandes");
-		lblNewLabel_r_11_1.setForeground(new Color(30, 144, 255));
-		lblNewLabel_r_11_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_r_11_1.setForeground(new Color(0, 0, 0));
+		lblNewLabel_r_11_1.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel_r_11_1.setBounds(140, 233, 107, 14);
 		panel_resumen.add(lblNewLabel_r_11_1);
 		
 		chicas_cant_1_r = new JLabel("0");
+		chicas_cant_1_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		chicas_cant_1_r.setBounds(212, 58, 29, 14);
 		panel_resumen.add(chicas_cant_1_r);
 		
 		chicas_cant_2_r = new JLabel("0");
+		chicas_cant_2_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		chicas_cant_2_r.setBounds(212, 83, 29, 14);
 		panel_resumen.add(chicas_cant_2_r);
 		
 		chicas_cant_3_r = new JLabel("0");
+		chicas_cant_3_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		chicas_cant_3_r.setBounds(212, 106, 29, 14);
 		panel_resumen.add(chicas_cant_3_r);
 		
 		medianas_cant_1_r = new JLabel("0");
+		medianas_cant_1_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		medianas_cant_1_r.setBounds(212, 156, 29, 14);
 		panel_resumen.add(medianas_cant_1_r);
 		
 		medianas_cant_2_r = new JLabel("0");
+		medianas_cant_2_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		medianas_cant_2_r.setBounds(212, 181, 29, 14);
 		panel_resumen.add(medianas_cant_2_r);
 		
 		medianas_cant_3_r = new JLabel("0");
+		medianas_cant_3_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		medianas_cant_3_r.setBounds(212, 204, 29, 14);
 		panel_resumen.add(medianas_cant_3_r);
 		
 		grandes_cant_1_r = new JLabel("0");
+		grandes_cant_1_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		grandes_cant_1_r.setBounds(212, 258, 29, 14);
 		panel_resumen.add(grandes_cant_1_r);
 		
 		grandes_cant_2_r = new JLabel("0");
+		grandes_cant_2_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		grandes_cant_2_r.setBounds(212, 283, 29, 14);
 		panel_resumen.add(grandes_cant_2_r);
 		
 		grandes_cant_3_r = new JLabel("0");
+		grandes_cant_3_r.setFont(new Font("Arial", Font.PLAIN, 11));
 		grandes_cant_3_r.setBounds(212, 306, 29, 14);
 		panel_resumen.add(grandes_cant_3_r);
 		
-		JLabel lblNewLabel_r_9_1 = new JLabel("REFRESCO");
-		lblNewLabel_r_9_1.setForeground(new Color(255, 0, 0));
-		lblNewLabel_r_9_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_r_9_1.setBounds(130, 13, 107, 14);
+		JLabel lblNewLabel_r_9_1 = new JLabel("Refresco:");
+		lblNewLabel_r_9_1.setForeground(Color.BLACK);
+		lblNewLabel_r_9_1.setFont(new Font("Arial", Font.PLAIN, 16));
+		lblNewLabel_r_9_1.setBounds(130, 11, 107, 14);
 		panel_resumen.add(lblNewLabel_r_9_1);
 		
 		JLabel lblNewLabel_r_5_1 = new JLabel("Coca-Cola");
+		lblNewLabel_r_5_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_5_1.setBounds(130, 156, 73, 14);
 		panel_resumen.add(lblNewLabel_r_5_1);
 		
 		JLabel lblNewLabel_r_1_3_1 = new JLabel("Pepsi");
+		lblNewLabel_r_1_3_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_1_3_1.setBounds(130, 179, 59, 14);
 		panel_resumen.add(lblNewLabel_r_1_3_1);
 		
 		JLabel lblNewLabel_r_2_3_1 = new JLabel("Sprite");
+		lblNewLabel_r_2_3_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_2_3_1.setBounds(130, 204, 73, 14);
 		panel_resumen.add(lblNewLabel_r_2_3_1);
 		
 		JLabel lblNewLabel_r_5_2 = new JLabel("Coca-Cola");
+		lblNewLabel_r_5_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_5_2.setBounds(130, 258, 73, 14);
 		panel_resumen.add(lblNewLabel_r_5_2);
 		
 		JLabel lblNewLabel_r_1_3_2 = new JLabel("Pepsi");
+		lblNewLabel_r_1_3_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_1_3_2.setBounds(130, 281, 59, 14);
 		panel_resumen.add(lblNewLabel_r_1_3_2);
 		
 		JLabel lblNewLabel_r_2_3_2 = new JLabel("Sprite");
+		lblNewLabel_r_2_3_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_2_3_2.setBounds(130, 306, 73, 14);
 		panel_resumen.add(lblNewLabel_r_2_3_2);
 		
-		JLabel lblNewLabel_r_9_1_1 = new JLabel("EXTRAS");
-		lblNewLabel_r_9_1_1.setForeground(new Color(255, 69, 0));
-		lblNewLabel_r_9_1_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel lblNewLabel_r_9_1_1 = new JLabel("Extras:");
+		lblNewLabel_r_9_1_1.setForeground(Color.BLACK);
+		lblNewLabel_r_9_1_1.setFont(new Font("Arial", Font.PLAIN, 16));
 		lblNewLabel_r_9_1_1.setBounds(248, 11, 107, 14);
 		panel_resumen.add(lblNewLabel_r_9_1_1);
 		
-		JLabel lblNewLabel_r_10_2_1 = new JLabel("Dulces");
-		lblNewLabel_r_10_2_1.setForeground(new Color(30, 144, 255));
-		lblNewLabel_r_10_2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_r_10_2_1 = new JLabel("Dulces:");
+		lblNewLabel_r_10_2_1.setForeground(new Color(0, 0, 0));
+		lblNewLabel_r_10_2_1.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel_r_10_2_1.setBounds(263, 31, 107, 14);
 		panel_resumen.add(lblNewLabel_r_10_2_1);
 		
 		JLabel lblNewLabel_r_5_3 = new JLabel("Tostitos");
+		lblNewLabel_r_5_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_5_3.setBounds(248, 56, 73, 14);
 		panel_resumen.add(lblNewLabel_r_5_3);
 		
 		JLabel lblNewLabel_r_1_3_3 = new JLabel("Galletas");
+		lblNewLabel_r_1_3_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_1_3_3.setBounds(248, 79, 59, 14);
 		panel_resumen.add(lblNewLabel_r_1_3_3);
 		
-		JLabel lblNewLabel_r_2_3_3 = new JLabel("skwinkles");
+		JLabel lblNewLabel_r_2_3_3 = new JLabel("Skwinkles");
+		lblNewLabel_r_2_3_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_2_3_3.setBounds(248, 104, 73, 14);
 		panel_resumen.add(lblNewLabel_r_2_3_3);
 		
 		dulce_1 = new JLabel("0");
+		dulce_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		dulce_1.setBounds(330, 56, 29, 14);
 		panel_resumen.add(dulce_1);
 		
 		dulce_2 = new JLabel("0");
+		dulce_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		dulce_2.setBounds(330, 81, 29, 14);
 		panel_resumen.add(dulce_2);
 		
 		dulce_3 = new JLabel("0");
+		dulce_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		dulce_3.setBounds(330, 104, 29, 14);
 		panel_resumen.add(dulce_3);
 		
-		JLabel lblNewLabel_r_10_1_1_1 = new JLabel("Comidas");
-		lblNewLabel_r_10_1_1_1.setForeground(new Color(30, 144, 255));
-		lblNewLabel_r_10_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel_r_10_1_1_1 = new JLabel("Comidas:");
+		lblNewLabel_r_10_1_1_1.setForeground(new Color(0, 0, 0));
+		lblNewLabel_r_10_1_1_1.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel_r_10_1_1_1.setBounds(263, 129, 107, 14);
 		panel_resumen.add(lblNewLabel_r_10_1_1_1);
 		
 		JLabel lblNewLabel_r_5_1_1 = new JLabel("Nachos");
+		lblNewLabel_r_5_1_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_5_1_1.setBounds(248, 154, 73, 14);
 		panel_resumen.add(lblNewLabel_r_5_1_1);
 		
 		JLabel lblNewLabel_r_1_3_1_1 = new JLabel("Torta");
+		lblNewLabel_r_1_3_1_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_1_3_1_1.setBounds(248, 177, 59, 14);
 		panel_resumen.add(lblNewLabel_r_1_3_1_1);
 		
 		JLabel lblNewLabel_r_2_3_1_1 = new JLabel("Pizza");
+		lblNewLabel_r_2_3_1_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_2_3_1_1.setBounds(248, 202, 73, 14);
 		panel_resumen.add(lblNewLabel_r_2_3_1_1);
 		
 		comida_1 = new JLabel("0");
+		comida_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		comida_1.setBounds(330, 154, 29, 14);
 		panel_resumen.add(comida_1);
 		
 		comida_2 = new JLabel("0");
+		comida_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		comida_2.setBounds(330, 179, 29, 14);
 		panel_resumen.add(comida_2);
 		
 		comida_3 = new JLabel("0");
+		comida_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		comida_3.setBounds(330, 202, 29, 14);
 		panel_resumen.add(comida_3);
 		
-		JLabel lblNewLabel_r_9_1_1_1 = new JLabel("COMBOS");
-		lblNewLabel_r_9_1_1_1.setForeground(new Color(128, 0, 0));
-		lblNewLabel_r_9_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel lblNewLabel_r_9_1_1_1 = new JLabel("Combos:");
+		lblNewLabel_r_9_1_1_1.setForeground(Color.BLACK);
+		lblNewLabel_r_9_1_1_1.setFont(new Font("Arial", Font.PLAIN, 16));
 		lblNewLabel_r_9_1_1_1.setBounds(362, 11, 107, 14);
 		panel_resumen.add(lblNewLabel_r_9_1_1_1);
 		
 		JLabel lblNewLabel_r_5_3_1 = new JLabel("Cuates");
+		lblNewLabel_r_5_3_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_5_3_1.setBounds(362, 58, 73, 14);
 		panel_resumen.add(lblNewLabel_r_5_3_1);
 		
 		JLabel lblNewLabel_r_1_3_3_1 = new JLabel("Piñata");
+		lblNewLabel_r_1_3_3_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_1_3_3_1.setBounds(362, 81, 59, 14);
 		panel_resumen.add(lblNewLabel_r_1_3_3_1);
 		
 		JLabel lblNewLabel_r_2_3_3_1 = new JLabel("Fiesta");
+		lblNewLabel_r_2_3_3_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_2_3_3_1.setBounds(362, 106, 73, 14);
 		panel_resumen.add(lblNewLabel_r_2_3_3_1);
 		
 		JLabel lblNewLabel_r_5_1_1_1 = new JLabel("Triston");
+		lblNewLabel_r_5_1_1_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblNewLabel_r_5_1_1_1.setBounds(362, 131, 73, 14);
 		panel_resumen.add(lblNewLabel_r_5_1_1_1);
 		
 		combo_1 = new JLabel("0");
+		combo_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		combo_1.setBounds(444, 58, 29, 14);
 		panel_resumen.add(combo_1);
 		
 		combo_2 = new JLabel("0");
+		combo_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		combo_2.setBounds(444, 83, 29, 14);
 		panel_resumen.add(combo_2);
 		
 		combo_3 = new JLabel("0");
+		combo_3.setFont(new Font("Arial", Font.PLAIN, 11));
 		combo_3.setBounds(444, 106, 29, 14);
 		panel_resumen.add(combo_3);
 		
 		combo_4 = new JLabel("0");
+		combo_4.setFont(new Font("Arial", Font.PLAIN, 11));
 		combo_4.setBounds(445, 131, 29, 14);
 		panel_resumen.add(combo_4);
 		

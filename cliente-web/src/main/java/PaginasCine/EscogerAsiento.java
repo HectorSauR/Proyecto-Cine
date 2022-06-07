@@ -257,13 +257,14 @@ public class EscogerAsiento {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("Seleccionar Asiento");
 		frame.setBounds(100, 100, 870, 650);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel_general = new JPanel();
 		panel_general.setBackground(new Color(217, 217, 217));
-		panel_general.setBounds(10, 0, 870, 650);
+		panel_general.setBounds(0, 0, 880, 650);
 		frame.getContentPane().add(panel_general);
 		panel_general.setLayout(null);
 		

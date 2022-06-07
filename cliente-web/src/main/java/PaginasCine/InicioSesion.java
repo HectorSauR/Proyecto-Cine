@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 
 public class InicioSesion {
 
-	private JFrame frame;
+	private JFrame frmInicioDeSesin;
 	private JTextField usuariotxt;
 	private JTextField contrtxt;
 
@@ -26,7 +26,7 @@ public class InicioSesion {
 			public void run() {
 				try {
 					InicioSesion window = new InicioSesion();
-					window.frame.setVisible(true);
+					window.frmInicioDeSesin.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -45,35 +45,40 @@ public class InicioSesion {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(255, 245, 238));
-		frame.setBounds(100, 100, 509, 427);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmInicioDeSesin = new JFrame();
+		frmInicioDeSesin.setTitle("Inicio de Sesión");
+		frmInicioDeSesin.getContentPane().setBackground(new Color(255, 245, 238));
+		frmInicioDeSesin.setBounds(100, 100, 509, 427);
+		frmInicioDeSesin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmInicioDeSesin.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("INICIO DE SESI\u00D3N");
+		JLabel lblNewLabel = new JLabel("Inicio de Sesión");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblNewLabel.setBounds(169, 11, 174, 22);
-		frame.getContentPane().add(lblNewLabel);
+		frmInicioDeSesin.getContentPane().add(lblNewLabel);
 		
 		usuariotxt = new JTextField();
+		usuariotxt.setFont(new Font("Arial", Font.PLAIN, 12));
 		usuariotxt.setBounds(182, 222, 231, 20);
-		frame.getContentPane().add(usuariotxt);
+		frmInicioDeSesin.getContentPane().add(usuariotxt);
 		usuariotxt.setColumns(10);
 		
 		contrtxt = new JTextField();
+		contrtxt.setFont(new Font("Arial", Font.PLAIN, 12));
 		contrtxt.setColumns(10);
 		contrtxt.setBounds(182, 273, 231, 20);
-		frame.getContentPane().add(contrtxt);
+		frmInicioDeSesin.getContentPane().add(contrtxt);
 		
-		JLabel lblNewLabel_1 = new JLabel("USUARIO");
+		JLabel lblNewLabel_1 = new JLabel("Usuario:");
+		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(47, 225, 65, 14);
-		frame.getContentPane().add(lblNewLabel_1);
+		frmInicioDeSesin.getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("CONTRASE\u00D1A");
+		JLabel lblNewLabel_2 = new JLabel("Contraseña:");
+		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel_2.setBounds(47, 276, 99, 14);
-		frame.getContentPane().add(lblNewLabel_2);
+		frmInicioDeSesin.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -83,10 +88,11 @@ public class InicioSesion {
 		
 		ImageIcon ico = new ImageIcon(getClass().getResource("usuario.png"));
 		ImageIcon img = new ImageIcon(ico.getImage().getScaledInstance(lblNewLabel_3.getWidth(), lblNewLabel_3.getHeight(), Image.SCALE_SMOOTH));
-		frame.getContentPane().add(lblNewLabel_3);
+		frmInicioDeSesin.getContentPane().add(lblNewLabel_3);
 		lblNewLabel_3.setIcon(img);
 		
-		JButton btnNewButton = new JButton("INGRESAR");
+		JButton btnNewButton = new JButton("Ingresar");
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				funciones_get_put usr = new funciones_get_put();
@@ -112,7 +118,7 @@ public class InicioSesion {
 					
 					JOptionPane.showMessageDialog(null, "Ingreso de session exitoso","Bienvenido",JOptionPane.INFORMATION_MESSAGE);
 					
-					frame.dispose();
+					frmInicioDeSesin.dispose();
 					
 					PrincipalPagina window2 = new PrincipalPagina();
 					window2.frmCinema.setVisible(true);
@@ -127,6 +133,6 @@ public class InicioSesion {
 			}
 		});
 		btnNewButton.setBounds(356, 342, 115, 35);
-		frame.getContentPane().add(btnNewButton);
+		frmInicioDeSesin.getContentPane().add(btnNewButton);
 	}
 }

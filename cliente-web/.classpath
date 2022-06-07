@@ -28,8 +28,8 @@
 	<classpathentry kind="con" path="net.sf.jasperreports.JR_CONTAINER"/>
 	<classpathentry kind="con" path="net.sf.jasperreports.JR_DEPENDENCIES_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/Hp/Desktop/barcode4j.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Hp/Desktop/jcalendar-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Hp/Downloads/mysql-connector-java-8.0.28.jar.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Usuario de Windows/Desktop/barcode4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Usuario de Windows/Desktop/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Usuario de Windows/Desktop/mysql-connector-java-8.0.28.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

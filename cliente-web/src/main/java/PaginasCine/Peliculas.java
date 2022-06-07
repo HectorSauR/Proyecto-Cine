@@ -55,7 +55,7 @@ public class Peliculas {
 		frmCinema = new JFrame();
 		frmCinema.getContentPane().setBackground(new Color(240, 255, 240));
 		frmCinema.setBackground(new Color(40, 75, 99));
-		frmCinema.setTitle("Cinema");
+		frmCinema.setTitle("Cinema - Peliculas");
 		frmCinema.setBounds(100, 100, 1050, 650);
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

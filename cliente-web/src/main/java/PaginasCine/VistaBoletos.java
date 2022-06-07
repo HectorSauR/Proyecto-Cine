@@ -146,7 +146,7 @@ float total;
 		frmCinema = new JFrame();
 		frmCinema.getContentPane().setBackground(new Color(240, 255, 240));
 		frmCinema.setBackground(new Color(40, 75, 99));
-		frmCinema.setTitle("Cinema");
+		frmCinema.setTitle("Cinema - Boletos");
 		frmCinema.setBounds(100, 100, 1050, 650);
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -214,23 +214,28 @@ float total;
 		panel_peli1.setLayout(null);
 		
 		lbl_pelicula_1 = new JLabel("Jurassic World");
+		lbl_pelicula_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_pelicula_1.setBounds(95, 11, 110, 20);
 		panel_peli1.add(lbl_pelicula_1);
 		
 		JLabel lbl_idioma_1 = new JLabel("Espa\u00F1ol");
-		lbl_idioma_1.setBounds(95, 30, 46, 14);
+		lbl_idioma_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_idioma_1.setBounds(95, 30, 58, 14);
 		panel_peli1.add(lbl_idioma_1);
 		
 		JLabel lbl_sala_1 = new JLabel("Sala 2");
+		lbl_sala_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_sala_1.setBounds(95, 42, 46, 14);
 		panel_peli1.add(lbl_sala_1);
 		
 		JLabel lbl_horario_1 = new JLabel("Horario 2:00 PM");
+		lbl_horario_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_horario_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lbl_horario_1.setBounds(95, 55, 97, 14);
 		panel_peli1.add(lbl_horario_1);
 		
 		JLabel lbl_clasifi_1 = new JLabel("B15");
+		lbl_clasifi_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_clasifi_1.setBounds(294, 14, 40, 14);
 		panel_peli1.add(lbl_clasifi_1);
 		
@@ -264,23 +269,28 @@ float total;
 		panel_peli2.setLayout(null);
 		
 		lbl_pelicula_2 = new JLabel("Increibles 2");
+		lbl_pelicula_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_pelicula_2.setBounds(101, 11, 89, 20);
 		panel_peli2.add(lbl_pelicula_2);
 		
 		JLabel lbl_idioma_2 = new JLabel("Espa\u00F1ol\r\n");
-		lbl_idioma_2.setBounds(101, 31, 46, 14);
+		lbl_idioma_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_idioma_2.setBounds(101, 31, 58, 14);
 		panel_peli2.add(lbl_idioma_2);
 		
 		JLabel lbl_sala_2 = new JLabel("Sala 1");
+		lbl_sala_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_sala_2.setBounds(101, 49, 40, 14);
 		panel_peli2.add(lbl_sala_2);
 		
 		JLabel lbl_horario_2 = new JLabel("Horario 3:30 PM");
+		lbl_horario_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_horario_2.setHorizontalAlignment(SwingConstants.LEFT);
 		lbl_horario_2.setBounds(101, 67, 103, 14);
 		panel_peli2.add(lbl_horario_2);
 		
 		JLabel lbl_clasifi_2 = new JLabel("B15");
+		lbl_clasifi_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_clasifi_2.setBounds(294, 14, 40, 14);
 		panel_peli2.add(lbl_clasifi_2);
 		
@@ -314,23 +324,28 @@ float total;
 		panel_peli3.setLayout(null);
 		
 		lbl_pelicula_3 = new JLabel("Megamente");
+		lbl_pelicula_3.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_pelicula_3.setBounds(105, 11, 80, 20);
 		panel_peli3.add(lbl_pelicula_3);
 		
 		JLabel lbl_idioma_3 = new JLabel("Espa\u00F1ol");
-		lbl_idioma_3.setBounds(105, 30, 46, 14);
+		lbl_idioma_3.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_idioma_3.setBounds(105, 30, 58, 14);
 		panel_peli3.add(lbl_idioma_3);
 		
 		JLabel lbl_sala_3 = new JLabel("Sala 3");
-		lbl_sala_3.setBounds(105, 51, 36, 14);
+		lbl_sala_3.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_sala_3.setBounds(105, 51, 58, 14);
 		panel_peli3.add(lbl_sala_3);
 		
 		JLabel lbl_horario_3 = new JLabel("Horario 4:00 PM");
+		lbl_horario_3.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_horario_3.setHorizontalAlignment(SwingConstants.LEFT);
 		lbl_horario_3.setBounds(105, 67, 98, 14);
 		panel_peli3.add(lbl_horario_3);
 		
 		JLabel lbl_clasifi_3 = new JLabel("B15");
+		lbl_clasifi_3.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_clasifi_3.setBounds(294, 14, 40, 14);
 		panel_peli3.add(lbl_clasifi_3);
 		
@@ -371,23 +386,28 @@ float total;
 		
 		
 		lbl_pelicula_4 = new JLabel("Spiderman: sin camino a casa");
+		lbl_pelicula_4.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_pelicula_4.setBounds(95, 11, 189, 20);
 		panel_peli4.add(lbl_pelicula_4);
 		
 		JLabel lbl_idioma_4 = new JLabel("Espa\u00F1ol");
-		lbl_idioma_4.setBounds(95, 30, 46, 14);
+		lbl_idioma_4.setFont(new Font("Arial", Font.PLAIN, 12));
+		lbl_idioma_4.setBounds(95, 30, 59, 14);
 		panel_peli4.add(lbl_idioma_4);
 		
 		JLabel lbl_sala_4 = new JLabel("Sala 1");
+		lbl_sala_4.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_sala_4.setBounds(95, 42, 46, 14);
 		panel_peli4.add(lbl_sala_4);
 		
 		JLabel lbl_horario_4 = new JLabel("Horario 1:00 PM");
+		lbl_horario_4.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_horario_4.setHorizontalAlignment(SwingConstants.LEFT);
 		lbl_horario_4.setBounds(95, 55, 100, 14);
 		panel_peli4.add(lbl_horario_4);
 		
 		JLabel lbl_clasifi_4 = new JLabel("B15");
+		lbl_clasifi_4.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_clasifi_4.setBounds(294, 14, 40, 14);
 		panel_peli4.add(lbl_clasifi_4);
 		
@@ -417,14 +437,17 @@ float total;
 		panel_resumen.add(panel_peli_r);
 		
 		lblpelicula_r = new JLabel("Spiderman");
+		lblpelicula_r.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblpelicula_r.setBounds(92, 11, 226, 20);
 		panel_peli_r.add(lblpelicula_r);
 		
 		lbl_cantidad = new JLabel("Cantidad");
+		lbl_cantidad.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_cantidad.setBounds(92, 32, 71, 14);
 		panel_peli_r.add(lbl_cantidad);
 		
 		lbl_asientos = new JLabel("Asientos");
+		lbl_asientos.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_asientos.setBounds(92, 51, 82, 14);
 		panel_peli_r.add(lbl_asientos);
 		
@@ -435,14 +458,17 @@ float total;
 		panel_resumen.add(panel_peli_r_1);
 		
 		lblpelicula_r_1 = new JLabel("Spiderman");
+		lblpelicula_r_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblpelicula_r_1.setBounds(92, 11, 205, 20);
 		panel_peli_r_1.add(lblpelicula_r_1);
 		
 		lbl_cantidad_1 = new JLabel("Cantidad");
+		lbl_cantidad_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_cantidad_1.setBounds(92, 32, 71, 14);
 		panel_peli_r_1.add(lbl_cantidad_1);
 		
 	    lbl_asientos_1 = new JLabel("Asientos");
+	    lbl_asientos_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_asientos_1.setBounds(92, 51, 82, 14);
 		panel_peli_r_1.add(lbl_asientos_1);
 		
@@ -453,14 +479,17 @@ float total;
 		panel_resumen.add(panel_peli_r_2);
 		
 		lblpelicula_r_2 = new JLabel("Spiderman");
+		lblpelicula_r_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblpelicula_r_2.setBounds(92, 11, 219, 20);
 		panel_peli_r_2.add(lblpelicula_r_2);
 		
 		lbl_cantidad_2 = new JLabel("Cantidad");
+		lbl_cantidad_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_cantidad_2.setBounds(92, 32, 71, 14);
 		panel_peli_r_2.add(lbl_cantidad_2);
 		
 		 lbl_asientos_2 = new JLabel("Asientos");
+		 lbl_asientos_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_asientos_2.setBounds(92, 51, 82, 14);
 		panel_peli_r_2.add(lbl_asientos_2);
 		
@@ -471,14 +500,17 @@ float total;
 		panel_resumen.add(panel_peli_r_3);
 		
 		lblpelicula_r_3 = new JLabel("Spiderman");
+		lblpelicula_r_3.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblpelicula_r_3.setBounds(92, 11, 217, 20);
 		panel_peli_r_3.add(lblpelicula_r_3);
 		
 		 lbl_cantidad_3 = new JLabel("Cantidad");
+		 lbl_cantidad_3.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_cantidad_3.setBounds(92, 32, 71, 14);
 		panel_peli_r_3.add(lbl_cantidad_3);
 		
 		 lbl_asientos_3 = new JLabel("Asientos");
+		 lbl_asientos_3.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_asientos_3.setBounds(92, 51, 82, 14);
 		panel_peli_r_3.add(lbl_asientos_3);
 		
@@ -489,6 +521,7 @@ float total;
 		panel.setLayout(null);
 		
 		final JCheckBox chckbxNewCheckBox = new JCheckBox("SI");
+		chckbxNewCheckBox.setFont(new Font("Arial", Font.PLAIN, 12));
 		chckbxNewCheckBox.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -508,22 +541,25 @@ float total;
 		chckbxNewCheckBox.setBounds(63, 32, 59, 23);
 		panel.add(chckbxNewCheckBox);
 		
-		JLabel lblNewLabel = new JLabel("CLIENTE ");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		JLabel lblNewLabel = new JLabel("Cliente");
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 15));
 		lblNewLabel.setForeground(new Color(0, 0, 0));
 		lblNewLabel.setBounds(63, 11, 76, 14);
 		panel.add(lblNewLabel);
 		
 		txt_id_c = new JTextField();
+		txt_id_c.setFont(new Font("Arial", Font.PLAIN, 12));
 		txt_id_c.setBounds(63, 73, 86, 20);
 		panel.add(txt_id_c);
 		txt_id_c.setColumns(10);
 		
-	    lbl_id_c = new JLabel("ID");
+	    lbl_id_c = new JLabel("ID:");
+	    lbl_id_c.setFont(new Font("Arial", Font.PLAIN, 12));
 		lbl_id_c.setBounds(30, 76, 33, 14);
 		panel.add(lbl_id_c);
 		
-		btn_b_c = new JButton("buscar");
+		btn_b_c = new JButton("Buscar");
+		btn_b_c.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_b_c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -571,7 +607,9 @@ float total;
 		btn_b_c.setBounds(94, 98, 89, 23);
 		panel.add(btn_b_c);
 		
-		JButton btnNewButton = new JButton("REGISTAR VENTA ");
+		JButton btnNewButton = new JButton("Registrar Venta");
+		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//funciones_get_put.vent_boleto_mostar();
@@ -719,6 +757,7 @@ float total;
 			
 		});
 		btnNewButton.setBounds(839, 503, 131, 59);
+		btnNewButton.setBackground(new Color(60, 110, 113));
 		panel_general.add(btnNewButton);
 		
 		//ir al frame de clientes
