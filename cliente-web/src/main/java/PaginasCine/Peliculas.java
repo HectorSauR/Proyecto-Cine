@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 
 
 
@@ -60,6 +61,7 @@ public class Peliculas {
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btn_ventas = new JButton("Ventas");
+		btn_ventas.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\ventasb.png"));
 		btn_ventas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PrincipalPagina s = new PrincipalPagina ();
@@ -74,6 +76,7 @@ public class Peliculas {
 		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
+		btn_boletos.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\boletosb.png"));
 		btn_boletos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VistaBoletos s = new VistaBoletos ();
@@ -250,6 +253,7 @@ public class Peliculas {
 		panel_peli1_1.add(lblnom_peli_1_3);
 		
 		JButton btn_clientes = new JButton("Clientes");
+		btn_clientes.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\clienteb.png"));
 		btn_clientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clientes s = new Clientes ();
@@ -266,6 +270,7 @@ public class Peliculas {
 		frmCinema.getContentPane().add(btn_clientes);
 		
 		JButton btn_clientes_1 = new JButton("Almacen");
+		btn_clientes_1.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\almacenb.png"));
 		btn_clientes_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Almacen s = new Almacen();
@@ -281,6 +286,7 @@ public class Peliculas {
 		frmCinema.getContentPane().add(btn_clientes_1);
 		
 		JButton btn_clientes_2 = new JButton("Peliculas");
+		btn_clientes_2.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\peliculasb.png"));
 		btn_clientes_2.setForeground(Color.WHITE);
 		btn_clientes_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes_2.setBorder(null);
@@ -289,6 +295,7 @@ public class Peliculas {
 		frmCinema.getContentPane().add(btn_clientes_2);
 		
 		JButton btn_clientes_3 = new JButton("Reportes");
+		btn_clientes_3.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\reporteb.png"));
 		btn_clientes_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Reportes s = new Reportes ();

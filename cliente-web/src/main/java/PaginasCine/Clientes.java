@@ -30,6 +30,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import org.krysalis.barcode4j.impl.code128.Code128Bean;
 import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
+import javax.swing.ImageIcon;
 
 
 public class Clientes {
@@ -98,6 +99,7 @@ public class Clientes {
 		frmCinema.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btn_ventas = new JButton("Ventas");
+		btn_ventas.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\ventasb.png"));
 		btn_ventas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PrincipalPagina s = new PrincipalPagina ();
@@ -112,6 +114,7 @@ public class Clientes {
 		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
+		btn_boletos.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\boletosb.png"));
 		btn_boletos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VistaBoletos s = new VistaBoletos ();
@@ -401,6 +404,7 @@ public class Clientes {
 		panel_resumen.add(calendario);
 		
 		JButton btn_clientes = new JButton("Clientes");
+		btn_clientes.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\clienteb.png"));
 		btn_clientes.setForeground(Color.WHITE);
 		btn_clientes.setFont(new Font("Arial", Font.PLAIN, 12));
 		btn_clientes.setBorder(null);
@@ -409,6 +413,7 @@ public class Clientes {
 		frmCinema.getContentPane().add(btn_clientes);
 		
 		btn_clientes_1 = new JButton("Almacen");
+		btn_clientes_1.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\almacenb.png"));
 		btn_clientes_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Almacen s = new Almacen ();
@@ -424,6 +429,7 @@ public class Clientes {
 		frmCinema.getContentPane().add(btn_clientes_1);
 		
 		btn_clientes_2 = new JButton("Peliculas");
+		btn_clientes_2.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\peliculasb.png"));
 		btn_clientes_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Peliculas s = new Peliculas ();
@@ -439,6 +445,7 @@ public class Clientes {
 		frmCinema.getContentPane().add(btn_clientes_2);
 		
 		btn_clientes_3 = new JButton("Reportes");
+		btn_clientes_3.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\reporteb.png"));
 		btn_clientes_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Reportes s = new Reportes ();

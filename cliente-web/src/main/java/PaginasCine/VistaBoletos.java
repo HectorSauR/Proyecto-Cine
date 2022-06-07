@@ -152,6 +152,7 @@ float total;
 		
 		//ir al frame de ventas
 		JButton btn_ventas = new JButton("Ventas");
+		btn_ventas.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\ventasb.png"));
 		btn_ventas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -170,6 +171,7 @@ float total;
 		btn_ventas.setBackground(new Color(40, 75, 99));
 		
 		JButton btn_boletos = new JButton("Boletos");
+		btn_boletos.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\boletosb.png"));
 		btn_boletos.setBounds(0, 0, 100, 38);
 		btn_boletos.setBorder(null);
 		btn_boletos.setForeground(Color.white);
@@ -762,6 +764,7 @@ float total;
 		
 		//ir al frame de clientes
 		JButton btn_clientes = new JButton("Clientes");
+		btn_clientes.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\clienteb.png"));
 		btn_clientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clientes s = new Clientes();
@@ -777,6 +780,7 @@ float total;
 		frmCinema.getContentPane().add(btn_clientes);
 		
 		btn_clientes_1 = new JButton("Almacen");
+		btn_clientes_1.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\almacenb.png"));
 		btn_clientes_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Almacen s = new Almacen ();
@@ -792,6 +796,7 @@ float total;
 		frmCinema.getContentPane().add(btn_clientes_1);
 		
 		btn_clientes_2 = new JButton("Peliculas");
+		btn_clientes_2.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\peliculasb.png"));
 		btn_clientes_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Peliculas s = new Peliculas ();
@@ -807,6 +812,7 @@ float total;
 		frmCinema.getContentPane().add(btn_clientes_2);
 		
 		btn_clientes_3 = new JButton("Reportes");
+		btn_clientes_3.setIcon(new ImageIcon("C:\\Users\\Usuario de Windows\\Documents\\GitHub\\Proyecto-Cine\\cliente-web\\IMG\\reporteb.png"));
 		btn_clientes_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Reportes s = new Reportes ();
