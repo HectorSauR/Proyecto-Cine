@@ -79,7 +79,7 @@ order by total_ventas desc limit 5]]>
 		<property name="com.jaspersoft.studio.field.label" value="total_ventas"/>
 	</field>
 	<title>
-		<band height="110" splitType="Stretch">
+		<band height="101" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
 				<reportElement x="10" y="10" width="80" height="80" uuid="e596375f-4494-4d9e-9330-57760851666f">
@@ -198,7 +198,7 @@ impresion:]]></text>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Open Sans" size="14"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
 				<text><![CDATA[REPORTE PRODUCTOS MAYOR GANANCIAS]]></text>
 			</staticText>
