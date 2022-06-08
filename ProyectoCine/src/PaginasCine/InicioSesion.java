@@ -1,16 +1,21 @@
 package PaginasCine;
 
 import java.awt.EventQueue;
+import javax.swing.JPanel;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.JButton;
 
-public class InicioSesion {
+public class InicioSesion extends JFrame{
 
 	private JFrame frame;
 	private JTextField textField;
@@ -44,41 +49,61 @@ public class InicioSesion {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 334);
+		frame.getContentPane().setBackground(new Color(255, 245, 238));
+		frame.setBounds(100, 100, 450, 342);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("INICIO DE SESI\u00D3N");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel.setBounds(134, 11, 174, 22);
+		lblNewLabel.setBounds(147, 11, 174, 22);
 		frame.getContentPane().add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(157, 184, 231, 20);
+		textField.setBounds(159, 173, 231, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(157, 235, 231, 20);
+		textField_1.setBounds(159, 224, 231, 20);
 		frame.getContentPane().add(textField_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("USUARIO");
-		lblNewLabel_1.setBounds(22, 187, 65, 14);
+		lblNewLabel_1.setBounds(24, 176, 65, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("CONTRASE\u00D1A");
-		lblNewLabel_2.setBounds(22, 238, 99, 14);
+		lblNewLabel_2.setBounds(24, 227, 99, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
 		
-		lblNewLabel_3.setBounds(102, 33, 231, 116);
+		lblNewLabel_3.setBounds(95, 35, 242, 127);
 		
 		
 		ImageIcon ico = new ImageIcon(getClass().getResource("usuario.png"));
 		ImageIcon img = new ImageIcon(ico.getImage().getScaledInstance(lblNewLabel_3.getWidth(), lblNewLabel_3.getHeight(), Image.SCALE_SMOOTH));
 		frame.getContentPane().add(lblNewLabel_3);
 		lblNewLabel_3.setIcon(img);
+		
+		JButton btnNewButton = new JButton("INGRESAR");
+		btnNewButton.setBounds(335, 261, 89, 23);
+		frame.getContentPane().add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VistaBoletos s = new VistaBoletos();
+				s.frmCinema.setVisible(true);
+				InicioSesion window = new InicioSesion();
+				window.frame.setVisible(false);
+			}
+		});
+		
+		
+		
+		JButton btnNewButton_1 = new JButton("REGISTRARSE");
+		btnNewButton_1.setBounds(216, 261, 105, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	}
+	
 }

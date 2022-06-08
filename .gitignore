@@ -22,5 +22,5 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /.metadata/
-ServWeb/__pycache__/program.cpython-310.pyc
 ServWeb/env
+ServWeb/env/ServWeb

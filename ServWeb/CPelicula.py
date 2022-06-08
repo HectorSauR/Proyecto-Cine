@@ -4,7 +4,7 @@ class pelicula:
     cnn = ConexionBD.conexionBD()
 
     #registrar pelicula
-    def __init__(self,nombre:str,categoria:int,precio:float,dur:int,lang:int,img:bytes):
+    def setPelicula(self,nombre:str,categoria:int,precio:float,dur:int,lang:int,img:str):
         self.nombre_pelicula = nombre
         self.categoria_id = categoria
         self.precio_boleto = precio
@@ -12,9 +12,12 @@ class pelicula:
         self.idioma_pelicula_id = lang
         self.imagen_pelicula = img
 
-    def registrarPelicula(self):
+    def regPelicula(self):
+
+        id = self.cnn.obtenerSiguienteID("pelicula");
+
         lista = {
-            "id" : 3,
+            "id" : id,
             "nombre" : self.nombre_pelicula,
             "cat" : self.categoria_id,
             "duracion" : self.duracion_pelicula,
@@ -22,5 +25,27 @@ class pelicula:
             "precio" : self.precio_boleto,
             "imagen" : self.imagen_pelicula,
         }
-        self.cnn.ejecutarInsercion("pelicula",lista)
-        return 'Ejecutado con exito!'
+        try:
+            self.cnn.ejecutarInsercion("pelicula",lista)
+            return 'Ejecutado con exito!'
+        except Exception:
+            return 'Error al hacer la insercion';
+
+    def getPelicula(self):
+        try:
+            datos = self.cnn.ejecutarConsulta("ver_pelicula");
+            lista = [];
+
+            for linea in datos:
+                lista.append({
+                    "nombre" : linea[0],
+                    "categoria" : linea[1],
+                    "duracion" : linea[2],
+                    "idioma" : linea[3],
+                    "precio" : linea[4],
+                    "imagen" : linea[5]
+                })
+
+            return lista
+        except Exception:
+            return 'Error al hacer la conexion';
