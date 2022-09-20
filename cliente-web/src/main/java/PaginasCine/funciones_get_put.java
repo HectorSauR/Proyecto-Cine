@@ -10,7 +10,7 @@ public class funciones_get_put {
 	}
 	
 	//public static  String ip="26.77.197.154" ;
-	public static  String ip="192.168.43.215" ;
+	public static  String ip="192.168.43.215";
 
 
 
